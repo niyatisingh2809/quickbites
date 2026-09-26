@@ -1,0 +1,407 @@
+/* ============================================================
+   MODERN HIGH-END HERO SECTION STYLING (QuickBites 2.0)
+   ============================================================ */
+
+.hero-banner-wrap {
+    margin: 20px 0 45px 0;
+    width: 100%;
+}
+
+.hero-card {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 45%, #fee2e2 100%);
+    border-radius: 28px;
+    padding: 42px 48px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(254, 215, 170, 0.6);
+    box-shadow: 0 20px 45px -10px rgba(234, 88, 12, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Ambient glow accents behind the card */
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-glow-1 {
+    width: 320px;
+    height: 320px;
+    background: rgba(251, 146, 60, 0.22);
+    top: -80px;
+    right: 10%;
+}
+
+.hero-glow-2 {
+    width: 250px;
+    height: 250px;
+    background: rgba(239, 68, 68, 0.15);
+    bottom: -60px;
+    left: 20%;
+}
+
+/* 2-Column Hero Grid */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* LEFT COLUMN */
+.hero-left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Live Express Delivery Badge */
+.hero-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ea580c;
+    border: 1px solid #fed7aa;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);
+    margin-bottom: 20px;
+    letter-spacing: -0.2px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ea580c;
+    animation: heroPulse 1.4s infinite;
+}
+
+@keyframes heroPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.6); opacity: 0.4; }
+}
+
+/* Main Headline */
+.hero-headline {
+    font-size: 44px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.18;
+    letter-spacing: -1.2px;
+    margin: 0 0 16px 0;
+}
+
+.hero-accent-text {
+    background: linear-gradient(90deg, #ea580c, #dc2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Subtitle */
+.hero-subtext {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    max-width: 95%;
+}
+
+/* Hero Search Bar */
+.hero-search-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 6px 8px 6px 18px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    border: 1.5px solid #fed7aa;
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 18px;
+    transition: all 0.25s ease;
+}
+
+.hero-search-box:focus-within {
+    border-color: #ea580c;
+    box-shadow: 0 8px 28px rgba(234, 88, 12, 0.2);
+}
+
+.hero-search-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #94a3b8;
+}
+
+.hero-search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14.5px;
+    color: #1e293b;
+    font-family: inherit;
+    background: transparent;
+}
+
+.hero-search-input::placeholder {
+    color: #94a3b8;
+}
+
+.btn-hero-search {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    color: #ffffff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-hero-search:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(234, 88, 12, 0.45);
+}
+
+/* Quick Filter Tags */
+.hero-quick-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.quick-tag-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    margin-right: 2px;
+}
+
+.quick-tag-pill {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #fed7aa;
+    color: #334155;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-tag-pill:hover {
+    background: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(234, 88, 12, 0.25);
+}
+
+/* Trust Stats Bar */
+.hero-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(234, 88, 12, 0.15);
+    width: 100%;
+}
+
+.hero-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-val {
+    font-size: 15px;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+.stat-lbl {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 24px;
+    background: #fed7aa;
+}
+
+/* RIGHT VISUAL SHOWCASE */
+.hero-right-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-card-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+}
+
+.hero-image-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+    border: 4px solid #ffffff;
+    background: #ffffff;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-image-frame:hover {
+    transform: scale(1.02) rotate(-0.5deg);
+}
+
+.hero-main-dish-img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Floating Glassmorphic Badges */
+.floating-chip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8);
+    z-index: 5;
+    animation: floatUpDown 3.5s infinite ease-in-out;
+}
+
+.floating-chip .chip-icon {
+    font-size: 24px;
+}
+
+.chip-title {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.chip-sub {
+    font-size: 11px;
+    color: #64748b;
+    display: block;
+}
+
+.chip-promo {
+    top: -16px;
+    left: -20px;
+    border-left: 3px solid #ea580c;
+    animation-delay: 0s;
+}
+
+.chip-promo .chip-title {
+    color: #ea580c;
+}
+
+.chip-rider {
+    bottom: -18px;
+    right: -10px;
+    border-left: 3px solid #10b981;
+    animation-delay: 1.5s;
+}
+
+.chip-rider .chip-title {
+    color: #065f46;
+}
+
+.chip-rating {
+    top: 50%;
+    right: -24px;
+    transform: translateY(-50%);
+    border-left: 3px solid #f59e0b;
+    animation-delay: 0.8s;
+}
+
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 1024px) {
+    .hero-headline {
+        font-size: 36px;
+    }
+    .hero-card {
+        padding: 32px;
+    }
+    .hero-main-dish-img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 860px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .hero-right-visual {
+        order: -1;
+    }
+    .hero-image-card-wrap {
+        max-width: 100%;
+    }
+    .hero-main-dish-img {
+        height: 240px;
+    }
+    .floating-chip {
+        padding: 8px 12px;
+    }
+    .chip-promo { left: 4px; top: -10px; }
+    .chip-rider { right: 4px; bottom: -10px; }
+    .chip-rating { display: none; }
+}
+
+@media (max-width: 540px) {
+    .hero-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+    .hero-headline {
+        font-size: 28px;
+    }
+    .hero-subtext {
+        font-size: 14px;
+    }
+    .hero-search-box {
+        flex-direction: column;
+        padding: 10px;
+        gap: 8px;
+    }
+    .btn-hero-search {
+        width: 100%;
+    }
+    .hero-stats-row {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .stat-divider { display: none; }
+}

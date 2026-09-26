@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: outfit;
+  scroll-behavior: smooth;
+}
+:root {
+  --primary: #ff5722;
+  --primary-hover: #e64a19;
+  --primary-gradient: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+  --secondary: #ff9800;
+  --text-dark: #262626;
+  --text-muted: #676767;
+}
+
+body{
+  min-height: 100vh;
+  background-color: #fafbfc;
+  color: #262626;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.app{
+  width: 90%;
+  max-width: 1240px;
+  margin: auto;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

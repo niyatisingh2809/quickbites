@@ -1,0 +1,238 @@
+/* ============================================================
+   MODERN EXPLORE MENU SECTION STYLING
+   ============================================================ */
+
+.explore-menu-section {
+    margin: 30px 0 20px 0;
+    width: 100%;
+}
+
+.explore-menu-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 22px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.explore-header-left {
+    max-width: 680px;
+}
+
+.explore-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #ea580c;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.explore-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.6px;
+    margin: 0 0 8px 0;
+}
+
+.explore-subtext {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.explore-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.explore-category-pill {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.explore-nav-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-arrow-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    color: #334155;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.nav-arrow-btn:hover {
+    background: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    transform: translateY(-1px);
+}
+
+/* Horizontal Category List */
+.explore-menu-list {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 12px 6px 20px 6px;
+    scrollbar-width: thin;
+    scrollbar-color: #fed7aa transparent;
+}
+
+.explore-menu-list::-webkit-scrollbar {
+    height: 5px;
+}
+
+.explore-menu-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.explore-menu-list::-webkit-scrollbar-thumb {
+    background: #fed7aa;
+    border-radius: 10px;
+}
+
+.explore-menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 96px;
+}
+
+.explore-menu-item:hover {
+    transform: translateY(-4px);
+}
+
+/* Circle Frame around image */
+.menu-circle-frame {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 4px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-circle-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.explore-menu-item:hover .menu-circle-img {
+    transform: scale(1.08);
+}
+
+/* "All Dishes" Custom Circle */
+.all-circle-frame {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    border-color: #fed7aa;
+}
+
+.all-icon-emoji {
+    font-size: 34px;
+}
+
+/* Active State */
+.explore-menu-item.active .menu-circle-frame {
+    border-color: #ea580c;
+    box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.18), 0 8px 20px rgba(234, 88, 12, 0.25);
+    background: #fff7ed;
+}
+
+.active-badge-tick {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: #ea580c;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Category Label */
+.menu-category-name {
+    margin: 10px 0 0 0;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #475569;
+    text-align: center;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.explore-menu-item:hover .menu-category-name {
+    color: #0f172a;
+}
+
+.explore-menu-item.active .menu-category-name {
+    color: #ea580c;
+    font-weight: 800;
+}
+
+.explore-bottom-divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin-top: 14px;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .explore-title {
+        font-size: 24px;
+    }
+    .explore-header-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .menu-circle-frame {
+        width: 76px;
+        height: 76px;
+    }
+    .explore-menu-item {
+        width: 82px;
+    }
+}

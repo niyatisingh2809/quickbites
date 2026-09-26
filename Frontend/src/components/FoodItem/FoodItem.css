@@ -1,0 +1,287 @@
+/* ============================================================
+   MODERN FOOD ITEM CARD STYLING (Swiggy / Zomato Grade)
+   ============================================================ */
+
+.food-item-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.food-item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(234, 88, 12, 0.15);
+}
+
+/* Media / Image Container */
+.food-item-media {
+    position: relative;
+    width: 100%;
+    height: 195px;
+    background: #f8fafc;
+    overflow: hidden;
+}
+
+.food-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.food-item-card:hover .food-item-img {
+    transform: scale(1.06);
+}
+
+/* Diet Indicator Badge (Veg / Non-Veg Standard FSSAI Icon) */
+.diet-indicator-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.diet-indicator-badge.veg {
+    border: 1.5px solid #16a34a;
+}
+
+.diet-indicator-badge.veg .diet-symbol-shape {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #16a34a;
+}
+
+.diet-indicator-badge.non-veg {
+    border: 1.5px solid #dc2626;
+}
+
+.diet-indicator-badge.non-veg .diet-symbol-shape {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 9px solid #dc2626;
+}
+
+/* Prep Time Pill */
+.prep-time-pill {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+/* Bestseller Badge */
+.bestseller-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #ffffff;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    letter-spacing: 0.3px;
+}
+
+/* Card Content Body */
+.food-item-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.food-item-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.dish-category-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #ea580c;
+    background: #fff7ed;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.dish-rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+}
+
+.star-icon {
+    font-size: 11px;
+    color: #16a34a;
+}
+
+.rating-reviews-count {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 10.5px;
+}
+
+/* Title & Description */
+.dish-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+    letter-spacing: -0.2px;
+}
+
+.dish-description {
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+/* Footer Pricing & CTA */
+.dish-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 12px;
+    border-top: 1px dashed #e2e8f0;
+    margin-top: auto;
+}
+
+.dish-pricing-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish-price-group {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+.original-mrp {
+    font-size: 12px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-weight: 600;
+}
+
+.save-badge {
+    font-size: 10px;
+    font-weight: 800;
+    color: #16a34a;
+    letter-spacing: 0.2px;
+    margin-top: 1px;
+}
+
+/* Smart Add Button & Counter */
+.dish-action-col {
+    display: flex;
+    align-items: center;
+}
+
+.btn-add-dish {
+    background: #ffffff;
+    border: 1.5px solid #16a34a;
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 7px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.12);
+    transition: all 0.2s ease;
+}
+
+.btn-add-dish:hover {
+    background: #16a34a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Active Stepper Counter */
+.dish-stepper-counter {
+    display: flex;
+    align-items: center;
+    background: #16a34a;
+    color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
+}
+
+.stepper-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.stepper-btn:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.stepper-count {
+    font-size: 13px;
+    font-weight: 900;
+    padding: 0 6px;
+    min-width: 18px;
+    text-align: center;
+}

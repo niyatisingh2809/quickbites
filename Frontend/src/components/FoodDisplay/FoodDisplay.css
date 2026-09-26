@@ -1,0 +1,203 @@
+/* ============================================================
+   MODERN FOOD DISPLAY SECTION STYLING
+   ============================================================ */
+
+.food-display-wrap {
+    margin-top: 36px;
+    margin-bottom: 70px;
+    width: 100%;
+}
+
+.food-display-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dishes-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    color: #ea580c;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.dishes-main-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.6px;
+    margin: 0 0 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.category-title-badge {
+    color: #ea580c;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.dishes-count-label {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.dishes-count-label b {
+    color: #0f172a;
+}
+
+/* Filter Controls Bar */
+.food-filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-chip-btn {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.filter-chip-btn:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+
+.filter-chip-btn.active-veg {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #065f46;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.filter-chip-btn.active-gold {
+    background: #fffbeb;
+    border-color: #f59e0b;
+    color: #92400e;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.veg-symbol-icon {
+    font-size: 11px;
+}
+
+/* Sort Select Input */
+.sort-select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 2px 14px 2px 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sort-icon {
+    font-size: 13px;
+    margin-right: 6px;
+    color: #ea580c;
+}
+
+.sort-select-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 6px 0;
+}
+
+/* Modern Dishes Responsive Grid */
+.food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 26px;
+    row-gap: 32px;
+    align-items: stretch;
+}
+
+/* Empty State */
+.no-dishes-found {
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 50px 20px;
+    border: 1.5px dashed #cbd5e1;
+    margin: 20px 0;
+}
+
+.empty-dish-icon {
+    font-size: 44px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.no-dishes-found h3 {
+    font-size: 18px;
+    color: #0f172a;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+}
+
+.no-dishes-found p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0 0 18px 0;
+}
+
+.btn-reset-filters {
+    background: #ea580c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-reset-filters:hover {
+    background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .food-display-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .dishes-main-title {
+        font-size: 24px;
+    }
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 18px;
+    }
+}

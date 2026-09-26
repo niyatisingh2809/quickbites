@@ -1,0 +1,48 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    border-bottom: 1.5px solid #eee;
+    background-color: #ffffff;
+}
+.admin-brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.admin-brand-icon {
+    font-size: 32px;
+}
+.admin-brand-text {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.admin-brand-name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #262626;
+    letter-spacing: -0.5px;
+}
+.admin-brand-accent {
+    background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+.admin-badge {
+    background: #fff2e8;
+    color: #d4380d;
+    border: 1px solid #ffbb96;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.navbar .profile{
+    width: 40px;
+    border-radius: 50%;
+}
