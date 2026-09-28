@@ -65,7 +65,7 @@ app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
-  res.json({ success: true, message: "Food Delivery API & Socket.IO server is running" });
+  res.json({ success: true, message: "QuickBites API v2.0 — Live & Running 🚀", version: "2.0.0" });
 });
 
 // Centralized Error Handling Middleware
