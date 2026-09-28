@@ -18,7 +18,11 @@ const FoodItem = ({ id, name, price, description, image, rating, reviewsCount, c
       <div className="food-item-media">
         <img
           className='food-item-img'
-          src={url + "/images/" + image}
+          src={image?.startsWith("http") ? image : `${url}/images/${image}`}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = `/images/${image}`;
+          }}
           alt={name}
           loading="lazy"
         />

@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { food_list as defaultFoodList } from "../assets/assets";
 
 export const StoreContext = createContext(null);
 
@@ -44,7 +45,7 @@ const StoreContextProvider = (props) => {
         }
     });
 
-    const [food_list, setFoodList] = useState([]);
+    const [food_list, setFoodList] = useState(defaultFoodList || []);
     const [promoCode, setPromoCode] = useState("");
     const [discount, setDiscount] = useState(0);
 
