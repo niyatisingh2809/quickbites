@@ -72,7 +72,16 @@ const Cart = ({ setShowLogin }) => {
             return (
               <div key={index}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={url + "/images/" + item.image} alt='' />
+                  <img
+                    src={item.image?.startsWith("http") ? item.image : `/images/${item.image}`}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      if (url && !e.target.src.includes(url)) {
+                        e.target.src = `${url}/images/${item.image}`;
+                      }
+                    }}
+                    alt={item.name}
+                  />
                   <p>{item.name}</p>
                   <p>₹{item.price}</p>
                   <p>{cartItems[item._id]}</p>

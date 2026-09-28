@@ -139,16 +139,26 @@ export const menu_list = [
 export const food_list = [
     {
         _id: "1",
+        name: "Greek salad",
+        image: "food_1.png",
+        price: 180,
+        description: "Traditional Mediterranean salad with plump Kalamata olives, juicy tomatoes, crisp cucumber, and crumbly Greek feta.",
+        category: "Salad",
+        rating: 4.9,
+        reviewsCount: 380
+    },
+    {
+        _id: "2",
         name: "Veg salad",
         image: "food_2.png",
         price: 145,
         description: "Crispy garden-fresh cucumbers, ripe tomatoes, carrots, and sweet bell peppers drizzled with extra virgin lemon olive oil.",
         category: "Salad",
         rating: 4.8,
-        reviewsCount: 380
+        reviewsCount: 420
     },
     {
-        _id: "2",
+        _id: "3",
         name: "Clover Salad",
         image: "food_3.png",
         price: 166,
@@ -158,7 +168,17 @@ export const food_list = [
         reviewsCount: 520
     },
     {
-        _id: "3",
+        _id: "4",
+        name: "Chicken Salad",
+        image: "food_4.png",
+        price: 240,
+        description: "Tender grilled herb chicken breast slices tossed with organic greens, sweet corn, and creamy honey mustard dressing.",
+        category: "Salad",
+        rating: 4.6,
+        reviewsCount: 290
+    },
+    {
+        _id: "5",
         name: "Sprouted Moong Protein Salad",
         image: "food_sprout_salad.jpg",
         price: 175,
@@ -168,7 +188,7 @@ export const food_list = [
         reviewsCount: 240
     },
     {
-        _id: "4",
+        _id: "6",
         name: "Quinoa Corn Fiesta Salad",
         image: "food_quinoa_salad.jpg",
         price: 199,
@@ -178,7 +198,7 @@ export const food_list = [
         reviewsCount: 690
     },
     {
-        _id: "5",
+        _id: "7",
         name: "Caesar Salad",
         image: "food_caesar_salad.jpg",
         price: 216,
@@ -188,7 +208,7 @@ export const food_list = [
         reviewsCount: 185
     },
     {
-        _id: "6",
+        _id: "8",
         name: "Mediterranean Chickpea Salad",
         image: "food_chickpea_salad.jpg",
         price: 225,
@@ -198,7 +218,7 @@ export const food_list = [
         reviewsCount: 430
     },
     {
-        _id: "7",
+        _id: "9",
         name: "Fresh Fruit Nutty Salad",
         image: "food_fruit_salad.jpg",
         price: 242,
@@ -208,17 +228,7 @@ export const food_list = [
         reviewsCount: 750
     },
     {
-        _id: "8",
-        name: "Greek salad",
-        image: "food_1.png",
-        price: 258,
-        description: "Traditional Mediterranean salad with plump Kalamata olives, juicy tomatoes, crisp cucumber, and crumbly Greek feta.",
-        category: "Salad",
-        rating: 4.9,
-        reviewsCount: 290
-    },
-    {
-        _id: "9",
+        _id: "10",
         name: "Rainbow Garden Avocado Salad",
         image: "food_rainbow_salad.jpg",
         price: 275,
@@ -228,17 +238,47 @@ export const food_list = [
         reviewsCount: 610
     },
     {
-        _id: "10",
-        name: "Chicken Salad",
-        image: "food_4.png",
-        price: 294,
-        description: "Tender grilled herb chicken breast slices tossed with organic greens, sweet corn, and creamy honey mustard dressing.",
-        category: "Salad",
-        rating: 4.6,
-        reviewsCount: 150
+        _id: "11",
+        name: "Lasagna Rolls",
+        image: "food_5.png",
+        price: 199,
+        description: "Tender pasta sheet rolled with ricotta, parmesan, spinach, and Italian herb tomato marinara.",
+        category: "Rolls",
+        rating: 4.7,
+        reviewsCount: 310
     },
     {
-        _id: "11",
+        _id: "12",
+        name: "Peri Peri Rolls",
+        image: "food_6.png",
+        price: 175,
+        description: "Spicy zesty peri-peri seasoned vegetables rolled in flaky multi-grain paratha with mint mayo.",
+        category: "Rolls",
+        rating: 4.8,
+        reviewsCount: 450
+    },
+    {
+        _id: "13",
+        name: "Chicken Rolls",
+        image: "food_7.png",
+        price: 220,
+        description: "Succulent smoked chicken tikka chunks rolled with pickled onions, bell peppers, and chipotle dip.",
+        category: "Rolls",
+        rating: 4.9,
+        reviewsCount: 580
+    },
+    {
+        _id: "14",
+        name: "Veg Rolls",
+        image: "food_8.png",
+        price: 149,
+        description: "Classic street-style crunchy shredded cabbage, carrots, capsicum, and paneer roll with sweet chili sauce.",
+        category: "Rolls",
+        rating: 4.6,
+        reviewsCount: 390
+    },
+    {
+        _id: "15",
         name: "Aloo Frankie Roll",
         image: "food_aloo_frankie.jpg",
         price: 129,
@@ -248,1114 +288,1074 @@ export const food_list = [
         reviewsCount: 480
     },
     {
-        _id: "12",
-        name: "Veg Rolls",
-        image: "food_8.png",
-        price: 149,
-        description: "Crunchy stir-fried spiced vegetables and paneer wrapped in a golden toasted crispy paratha.",
-        category: "Rolls",
-        rating: 4.5,
-        reviewsCount: 310
-    },
-    {
-        _id: "13",
+        _id: "16",
         name: "Cheesy Corn Roll",
         image: "food_corn_cheese_roll.jpg",
-        price: 165,
-        description: "Melted mozzarella and sweet corn kernels wrapped in a flaky golden paratha with creamy mayo.",
-        category: "Rolls",
-        rating: 4.9,
-        reviewsCount: 820
-    },
-    {
-        _id: "14",
-        name: "Spring Rolls Crisp",
-        image: "food_spring_rolls.jpg",
-        price: 177,
-        description: "Golden fried crispy wrappers stuffed with seasoned shredded vegetables and glass noodles, served with sweet chili dip.",
+        price: 169,
+        description: "Sweet golden corn and melted mozzarella enveloped in a crisp wrap with creamy herb spread.",
         category: "Rolls",
         rating: 4.7,
-        reviewsCount: 260
-    },
-    {
-        _id: "15",
-        name: "Peri Peri Rolls",
-        image: "food_6.png",
-        price: 189,
-        description: "Fiery peri-peri seasoned crispy fillings rolled in a flakey paratha with cooling mint mayonnaise.",
-        category: "Rolls",
-        rating: 4.3,
-        reviewsCount: 195
-    },
-    {
-        _id: "16",
-        name: "Paneer Kathi Roll",
-        image: "food_paneer_roll.jpg",
-        price: 196,
-        description: "Marinated tandoori paneer tikka chunks wrapped with pickled onions, bell peppers, and signature green chutney.",
-        category: "Rolls",
-        rating: 4.8,
-        reviewsCount: 540
+        reviewsCount: 360
     },
     {
         _id: "17",
-        name: "Schezwan Paneer Roll",
-        image: "food_schezwan_roll.jpg",
-        price: 208,
-        description: "Spicy Schezwan tossed paneer cubes with crunchy cabbage, capsicum, and garlic mayo in a toasted wrap.",
+        name: "Spring Rolls Crisp",
+        image: "food_spring_rolls.jpg",
+        price: 185,
+        description: "Golden crispy fried rolls stuffed with glass noodles, cabbage, carrots, and sweet chili dip.",
         category: "Rolls",
-        rating: 4.8,
-        reviewsCount: 380
+        rating: 4.9,
+        reviewsCount: 620
     },
     {
         _id: "18",
-        name: "Lasagna Rolls",
-        image: "food_5.png",
-        price: 219,
-        description: "Gourmet baked pasta sheets rolled with seasoned ricotta, mozzarella, and savory marinara sauce.",
+        name: "Paneer Kathi Roll",
+        image: "food_paneer_roll.jpg",
+        price: 195,
+        description: "Char-grilled spiced cottage cheese cubes wrapped in rumali roti with mint chutney and crunchy salad.",
         category: "Rolls",
-        rating: 4.7,
-        reviewsCount: 520
+        rating: 4.8,
+        reviewsCount: 510
     },
     {
         _id: "19",
-        name: "Chicken Rolls",
-        image: "food_7.png",
-        price: 228,
-        description: "Juicy smoked shredded chicken tikka wrapped with spicy masala onions and rich garlic mayo in a crisp roti.",
+        name: "Schezwan Paneer Roll",
+        image: "food_schezwan_roll.jpg",
+        price: 205,
+        description: "Fiery Schezwan tossed paneer strips wrapped in butter toasted paratha with sesame garnish.",
         category: "Rolls",
-        rating: 4.9,
-        reviewsCount: 240
+        rating: 4.7,
+        reviewsCount: 290
     },
     {
         _id: "20",
         name: "Tandoori Mushroom Roll",
         image: "food_mushroom_roll.jpg",
-        price: 239,
-        description: "Char-grilled tandoori spiced button mushrooms with crunchy onions, capsicum, and mint chutney in soft paratha.",
+        price: 199,
+        description: "Earthy button mushrooms marinated in aromatic tandoori spices and rolled with mint garlic mayo.",
         category: "Rolls",
         rating: 4.6,
-        reviewsCount: 690
+        reviewsCount: 330
     },
     {
         _id: "21",
-        name: "Vanilla Ice Cream",
-        image: "food_12.png",
-        price: 125,
-        description: "Classic rich and velvety Madagascar vanilla bean ice cream served with a crisp waffle crunch.",
+        name: "Ripple Ice Cream",
+        image: "food_9.png",
+        price: 120,
+        description: "Creamy vanilla gelato swirled with rich raspberry syrup and dark chocolate fudge ripples.",
         category: "Deserts",
-        rating: 4.5,
-        reviewsCount: 185
+        rating: 4.8,
+        reviewsCount: 620
     },
     {
         _id: "22",
-        name: "Gulab Jamun Warm",
-        image: "food_gulab_jamun.jpg",
-        price: 131,
-        description: "Two melt-in-mouth golden fried milk solids dumplings soaked in aromatic cardamom and rose saffron syrup.",
+        name: "Fruit Ice Cream",
+        image: "food_10.png",
+        price: 135,
+        description: "Velvety fresh cream ice cream loaded with real chunks of strawberries, kiwi, and tender mango.",
         category: "Deserts",
-        rating: 4.8,
-        reviewsCount: 430
+        rating: 4.7,
+        reviewsCount: 480
     },
     {
         _id: "23",
-        name: "Ripple Ice Cream",
-        image: "food_9.png",
-        price: 135,
-        description: "Creamy vanilla gelato swirled with tart raspberry and sweet strawberry ribbons.",
+        name: "Jar Ice Cream",
+        image: "food_11.png",
+        price: 160,
+        description: "Artisanal Belgian chocolate layered cake and gelato dessert packed in an elegant reusable glass jar.",
         category: "Deserts",
-        rating: 4.4,
-        reviewsCount: 750
+        rating: 4.9,
+        reviewsCount: 710
     },
     {
         _id: "24",
-        name: "Jar Ice Cream",
-        image: "food_11.png",
-        price: 158,
-        description: "Artisanal layered dessert jar packed with rich chocolate ganache, cookie crumbles, and creamy soft serve.",
+        name: "Vanilla Ice Cream",
+        image: "food_12.png",
+        price: 110,
+        description: "Classic aromatic Bourbon Madagascar vanilla bean double-churned ice cream scoop.",
         category: "Deserts",
-        rating: 4.9,
-        reviewsCount: 290
+        rating: 4.7,
+        reviewsCount: 540
     },
     {
         _id: "25",
-        name: "Rasmalai Royal",
-        image: "food_rasmalai.jpg",
-        price: 169,
-        description: "Soft spongy cottage cheese patties immersed in chilled clotted saffron cream, garnished with pistachios and almonds.",
+        name: "Gulab Jamun Warm",
+        image: "food_gulab_jamun.jpg",
+        price: 99,
+        description: "Soft khoya dumplings deep fried and steeped in fragrant cardamom saffron sugar syrup.",
         category: "Deserts",
-        rating: 4.7,
-        reviewsCount: 610
+        rating: 4.9,
+        reviewsCount: 890
     },
     {
         _id: "26",
-        name: "Fruit Ice Cream",
-        image: "food_10.png",
-        price: 178,
-        description: "Exotic tropical fruit sundae loaded with fresh mango chunks, kiwi, berries, and sweetened cream.",
+        name: "Rasmalai Royal",
+        image: "food_rasmalai.jpg",
+        price: 139,
+        description: "Delicate chenna patties soaked in chilled thick saffron milk garnished with slivered pistachios.",
         category: "Deserts",
-        rating: 4.6,
-        reviewsCount: 150
+        rating: 4.9,
+        reviewsCount: 780
     },
     {
         _id: "27",
         name: "Chocolate Lava Cake",
         image: "food_choco_lava.jpg",
-        price: 197,
-        description: "Decadent warm mini chocolate cake with a molten Belgian chocolate center that erupts upon first spoonful.",
+        price: 149,
+        description: "Warm moist chocolate cake with a molten chocolate center that flows luxuriously at first bite.",
         category: "Deserts",
         rating: 4.8,
-        reviewsCount: 480
+        reviewsCount: 670
     },
     {
         _id: "28",
         name: "Sizzling Brownie",
         image: "food_chocolate_brownie.jpg",
-        price: 209,
-        description: "Warm gooey chocolate fudge brownie topped with melting vanilla ice cream and drizzled hot chocolate sauce.",
+        price: 165,
+        description: "Decadent dark chocolate brownie served with hot chocolate fudge drizzle and crushed walnuts.",
         category: "Deserts",
-        rating: 4.5,
-        reviewsCount: 310
+        rating: 4.7,
+        reviewsCount: 540
     },
     {
         _id: "29",
         name: "Kulfi Falooda Sundae",
         image: "food_kulfi_falooda.jpg",
-        price: 217,
-        description: "Traditional rich malai kulfi served over silky falooda vermicelli, sweet basil seeds, and fragrant rose syrup.",
+        price: 145,
+        description: "Authentic kesar pista kulfi served with rose syrup, basil seeds, and slippery falooda sev.",
         category: "Deserts",
-        rating: 4.9,
-        reviewsCount: 820
+        rating: 4.8,
+        reviewsCount: 410
     },
     {
         _id: "30",
         name: "Mango Panna Cotta",
         image: "food_mango_panna_cotta.jpg",
-        price: 231,
-        description: "Silky Italian sweet cream set to perfection and topped with a glossy layer of natural Alphonso mango puree.",
+        price: 155,
+        description: "Silky smooth Italian sweet cream set pudding topped with fresh Alphonso mango coulis.",
         category: "Deserts",
         rating: 4.7,
-        reviewsCount: 260
+        reviewsCount: 320
     },
     {
         _id: "31",
-        name: "Bread Sandwich",
-        image: "food_16.png",
-        price: 139,
-        description: "Classic street-style double-layer sandwich stuffed with spiced potatoes, cucumbers, tomatoes, and tangy chutney.",
+        name: "Chicken Sandwich",
+        image: "food_13.png",
+        price: 195,
+        description: "Herb roasted chicken breast, crisp lettuce, cheddar slice, and garlic aioli between toasted sourdough.",
         category: "Sandwich",
-        rating: 4.3,
-        reviewsCount: 195
+        rating: 4.8,
+        reviewsCount: 490
     },
     {
         _id: "32",
-        name: "Spinach Corn Toast",
-        image: "food_spinach_corn_toast.jpg",
+        name: "Vegan Sandwich",
+        image: "food_14.png",
         price: 155,
-        description: "Crispy grilled sourdough toast crowned with creamy garlic-sauteed baby spinach, sweet corn, and melted mozzarella.",
+        description: "Avocado mash, heirloom tomatoes, alfalfa sprouts, and dairy-free pesto on whole wheat multi-seed bread.",
         category: "Sandwich",
-        rating: 4.8,
-        reviewsCount: 540
+        rating: 4.6,
+        reviewsCount: 360
     },
     {
         _id: "33",
-        name: "Vegan Sandwich",
-        image: "food_14.png",
-        price: 162,
-        description: "Wholesome multigrain bread filled with creamy avocado spread, crisp cucumbers, tomatoes, and organic baby greens.",
+        name: "Grilled Sandwich",
+        image: "food_15.png",
+        price: 169,
+        description: "Golden butter-toasted sandwich stuffed with spiced potatoes, green peppers, melted cheese, and green chutney.",
         category: "Sandwich",
         rating: 4.8,
-        reviewsCount: 380
+        reviewsCount: 680
     },
     {
         _id: "34",
-        name: "Corn & Cheese Grilled Sandwich",
-        image: "food_corn_cheese_sandwich.jpg",
-        price: 182,
-        description: "Golden griddled jumbo sandwich loaded with sweet American corn kernels, melted cheddar, and mozzarella herbs.",
+        name: "Bread Sandwich",
+        image: "food_16.png",
+        price: 139,
+        description: "Traditional Bombay triple-decker cucumber and butter sandwich sprinkled with special sandwich masala.",
         category: "Sandwich",
-        rating: 4.7,
-        reviewsCount: 520
+        rating: 4.5,
+        reviewsCount: 290
     },
     {
         _id: "35",
-        name: "Mexican Jalapeno Cheese Sandwich",
-        image: "food_jalapeno_sandwich.jpg",
-        price: 193,
-        description: "Zesty toasted sandwich with pickled jalapenos, spicy tomato salsa, bell peppers, and gooey Monterey Jack cheese.",
+        name: "Spinach Corn Toast",
+        image: "food_spinach_corn_toast.jpg",
+        price: 149,
+        description: "Creamy garlic sauteed spinach and sweet corn gratin on toasted artisanal sourdough.",
         category: "Sandwich",
-        rating: 4.9,
-        reviewsCount: 240
+        rating: 4.7,
+        reviewsCount: 420
     },
     {
         _id: "36",
-        name: "Bombay Veg Club Sandwich",
-        image: "food_veg_club_sandwich.jpg",
-        price: 205,
-        description: "Famous triple-decker Mumbai club sandwich layered with spiced potato masala, beetroot, cucumber, cheese, and mint chutney.",
+        name: "Corn & Cheese Grilled Sandwich",
+        image: "food_corn_cheese_sandwich.jpg",
+        price: 165,
+        description: "Loaded with sweet American corn and gooey melted mozzarella between buttered grill-marked bread.",
         category: "Sandwich",
-        rating: 4.6,
-        reviewsCount: 690
+        rating: 4.8,
+        reviewsCount: 560
     },
     {
         _id: "37",
-        name: "Paneer Tikka Sandwich",
-        image: "food_paneer_sandwich.jpg",
-        price: 215,
-        description: "Grilled multigrain sandwich filled with char-grilled paneer tikka, crunchy onions, and mint coriander mayo.",
+        name: "Mexican Jalapeno Cheese Sandwich",
+        image: "food_jalapeno_sandwich.jpg",
+        price: 175,
+        description: "Zesty Mexican salsa, pickled jalapenos, black beans, and Monterey Jack cheese pressed to crisp perfection.",
         category: "Sandwich",
-        rating: 4.5,
-        reviewsCount: 185
+        rating: 4.6,
+        reviewsCount: 310
     },
     {
         _id: "38",
-        name: "Classic Egg Mayo Sandwich",
-        image: "food_egg_mayo_sandwich.jpg",
-        price: 221,
-        description: "Creamy chopped boiled eggs tossed in Dijon mustard mayonnaise, fresh chives, and cracked black pepper in soft brioche.",
+        name: "Bombay Veg Club Sandwich",
+        image: "food_veg_club_sandwich.jpg",
+        price: 185,
+        description: "Three-tiered street delight packed with beetroot, boiled potato, cucumber, tomato, cheese, and spicy mint dip.",
         category: "Sandwich",
-        rating: 4.8,
-        reviewsCount: 430
+        rating: 4.9,
+        reviewsCount: 840
     },
     {
         _id: "39",
-        name: "Chicken Sandwich",
-        image: "food_13.png",
-        price: 232,
-        description: "Juicy shredded roasted chicken with melted cheddar, black pepper mayo, and fresh lettuce in toasted brioche.",
+        name: "Paneer Tikka Sandwich",
+        image: "food_paneer_sandwich.jpg",
+        price: 189,
+        description: "Tandoori marinated cottage cheese slabs layered with mint chutney and crunchy capsicum.",
         category: "Sandwich",
-        rating: 4.4,
-        reviewsCount: 750
+        rating: 4.8,
+        reviewsCount: 610
     },
     {
         _id: "40",
-        name: "Grilled Sandwich",
-        image: "food_15.png",
-        price: 299,
-        description: "Jumbo triple-layered grilled sandwich loaded with melted mozzarella, sweet corn, bell peppers, and chipotle mayo.",
+        name: "Classic Egg Mayo Sandwich",
+        image: "food_egg_mayo_sandwich.jpg",
+        price: 169,
+        description: "Fluffy hard-boiled eggs mashed with Dijon mustard, Japanese mayo, and cracked black pepper.",
         category: "Sandwich",
-        rating: 4.9,
-        reviewsCount: 290
+        rating: 4.7,
+        reviewsCount: 390
     },
     {
         _id: "41",
         name: "Cup Cake",
         image: "food_17.png",
-        price: 115,
-        description: "Moist freshly baked vanilla cupcake with a swirl of buttery pastel frosting and rainbow sprinkles.",
-        category: "Cake",
-        rating: 4.7,
-        reviewsCount: 610
-    },
-    {
-        _id: "42",
-        name: "Sliced Cake",
-        image: "food_20.png",
-        price: 174,
-        description: "Traditional moist English tea cake slice infused with aromatic cardamom and candied dried fruit peel.",
-        category: "Cake",
-        rating: 4.6,
-        reviewsCount: 150
-    },
-    {
-        _id: "43",
-        name: "Pineapple Fresh Cream Pastry",
-        image: "food_pineapple_pastry.jpg",
-        price: 187,
-        description: "Puffy vanilla sponge layered with freshly whipped dairy cream and chunks of juicy sweet tropical pineapple.",
-        category: "Cake",
-        rating: 4.8,
-        reviewsCount: 480
-    },
-    {
-        _id: "44",
-        name: "Black Forest Pastry",
-        image: "food_black_forest_pastry.jpg",
-        price: 195,
-        description: "Classic German chocolate sponge layered with fluffy whipped cream, sour dark cherries, and bittersweet chocolate shavings.",
-        category: "Cake",
-        rating: 4.5,
-        reviewsCount: 310
-    },
-    {
-        _id: "45",
-        name: "Belgian Hazelnut Cake",
-        image: "food_hazelnut_cake.jpg",
-        price: 244,
-        description: "Intense dark chocolate sponge infused with roasted hazelnut praline paste and glossy dark chocolate glaze.",
+        price: 99,
+        description: "Moist red velvet cupcake topped with silky swirls of Philadelphia cream cheese frosting and gold pearls.",
         category: "Cake",
         rating: 4.9,
         reviewsCount: 820
     },
     {
-        _id: "46",
+        _id: "42",
         name: "Vegan Cake",
         image: "food_18.png",
-        price: 254,
-        description: "100% plant-based moist dark chocolate truffle cake made with almond milk and premium cocoa.",
+        price: 185,
+        description: "Rich plant-based dark chocolate sponge layered with organic coconut ganache and roasted almonds.",
         category: "Cake",
         rating: 4.7,
-        reviewsCount: 260
+        reviewsCount: 340
+    },
+    {
+        _id: "43",
+        name: "Butterscotch Cake",
+        image: "food_19.png",
+        price: 199,
+        description: "Fluffy vanilla sponge smothered with caramel butterscotch mousse, crunchy praline nuggets, and drizzle.",
+        category: "Cake",
+        rating: 4.8,
+        reviewsCount: 590
+    },
+    {
+        _id: "44",
+        name: "Sliced Cake",
+        image: "food_20.png",
+        price: 140,
+        description: "Traditional British tea-time loaf slice infused with golden candied citrus peel, raisins, and aromatic spices.",
+        category: "Cake",
+        rating: 4.6,
+        reviewsCount: 270
+    },
+    {
+        _id: "45",
+        name: "Pineapple Fresh Cream Pastry",
+        image: "food_pineapple_pastry.jpg",
+        price: 110,
+        description: "Light airy sponge cake layered with sweet crushed pineapple chunks and freshly whipped dairy cream.",
+        category: "Cake",
+        rating: 4.8,
+        reviewsCount: 460
+    },
+    {
+        _id: "46",
+        name: "Black Forest Pastry",
+        image: "food_black_forest_pastry.jpg",
+        price: 125,
+        description: "German classic chocolate sponge infused with cherry liqueur syrup, sour cherries, and chocolate shavings.",
+        category: "Cake",
+        rating: 4.9,
+        reviewsCount: 630
     },
     {
         _id: "47",
-        name: "New York Cheesecake",
-        image: "food_cheesecake.jpg",
-        price: 289,
-        description: "Dense, ultra-rich baked cream cheese cake on a golden buttery graham cracker crust with a light berry compote.",
+        name: "Belgian Hazelnut Cake",
+        image: "food_hazelnut_cake.jpg",
+        price: 219,
+        description: "Nutty roasted hazelnut gianduja mousse on a crunchy feuilletine base coated in chocolate mirror glaze.",
         category: "Cake",
-        rating: 4.3,
-        reviewsCount: 195
+        rating: 4.9,
+        reviewsCount: 710
     },
     {
         _id: "48",
-        name: "Red Velvet Cake",
-        image: "food_red_velvet_cake.jpg",
-        price: 310,
-        description: "Luxurious deep red sponge cake layered with silky cream cheese frosting and dusted with red velvet crumbs.",
+        name: "New York Cheesecake",
+        image: "food_cheesecake.jpg",
+        price: 235,
+        description: "Dense, ultra-creamy baked cream cheese filling resting on a sweet cinnamon graham cracker crust.",
         category: "Cake",
-        rating: 4.8,
-        reviewsCount: 540
+        rating: 4.9,
+        reviewsCount: 870
     },
     {
         _id: "49",
-        name: "Layered Chocolate Truffle Cake",
-        image: "food_chocolate_truffle_cake.jpg",
-        price: 335,
-        description: "Decadent multi-layered artisan chocolate cake filled with smooth Belgian chocolate truffle ganache and piped rosettes.",
+        name: "Red Velvet Cake",
+        image: "food_red_velvet_cake.jpg",
+        price: 199,
+        description: "Velvety crimson cocoa sponge layered with tangy Madagascar vanilla cream cheese frosting.",
         category: "Cake",
         rating: 4.8,
-        reviewsCount: 380
-    },
-    {
-        _id: "50",
-        name: "Butterscotch Cake",
-        image: "food_19.png",
-        price: 349,
-        description: "Rich butterscotch sponge layered with caramel glaze, crunchy caramelized cashew praline, and fluffy cream.",
-        category: "Cake",
-        rating: 4.7,
         reviewsCount: 520
     },
     {
-        _id: "51",
-        name: "Fried Cauliflower",
-        image: "food_22.png",
-        price: 192,
-        description: "Crispy golden battered cauliflower florets tossed with toasted sesame, ginger, garlic, and scallions.",
-        category: "Pure Veg",
+        _id: "50",
+        name: "Layered Chocolate Truffle Cake",
+        image: "food_chocolate_truffle_cake.jpg",
+        price: 220,
+        description: "Decadent Dutch chocolate sponge saturated with 70% dark chocolate ganache and chocolate curls.",
+        category: "Cake",
         rating: 4.9,
-        reviewsCount: 240
+        reviewsCount: 940
     },
     {
-        _id: "52",
+        _id: "51",
         name: "Garlic Mushroom",
         image: "food_21.png",
-        price: 245,
-        description: "Plump button mushrooms sautéed in garlic-herb butter, crushed black pepper, and fresh parsley.",
-        category: "Pure Veg",
-        rating: 4.6,
-        reviewsCount: 690
-    },
-    {
-        _id: "53",
-        name: "Palak Paneer Desi Ghee",
-        image: "food_palak_paneer.jpg",
-        price: 255,
-        description: "Fresh tender paneer cubes cooked in a vibrant green spinach puree tempered with garlic, cumin, and desi ghee.",
-        category: "Pure Veg",
-        rating: 4.5,
-        reviewsCount: 185
-    },
-    {
-        _id: "54",
-        name: "Paneer Tikka",
-        image: "food_paneer_tikka.jpg",
-        price: 264,
-        description: "Cottage cheese cubes marinated in yogurt and aromatic Indian tandoori spices, char-grilled to perfection.",
+        price: 210,
+        description: "Fresh button mushrooms tossed in butter, burnt garlic flakes, cracked pepper, and Italian parsley.",
         category: "Pure Veg",
         rating: 4.8,
         reviewsCount: 430
     },
     {
-        _id: "55",
+        _id: "52",
+        name: "Fried Cauliflower",
+        image: "food_22.png",
+        price: 185,
+        description: "Crispy battered cauliflower florets tossed in sweet and tangy chili garlic glaze with spring onions.",
+        category: "Pure Veg",
+        rating: 4.7,
+        reviewsCount: 510
+    },
+    {
+        _id: "53",
         name: "Mix Veg Pulao",
         image: "food_23.png",
-        price: 288,
-        description: "Fragrant long-grain basmati rice gently simmered with whole spices, green peas, carrots, beans, and fried cashews.",
+        price: 220,
+        description: "Fragrant long-grain aged basmati rice cooked with whole spices, carrots, green peas, and paneer cubes.",
         category: "Pure Veg",
-        rating: 4.4,
-        reviewsCount: 750
+        rating: 4.8,
+        reviewsCount: 670
+    },
+    {
+        _id: "54",
+        name: "Rice Zucchini",
+        image: "food_24.png",
+        price: 235,
+        description: "Herb infused Italian arborio rice risotto simmered with tender green zucchini ribbons and parmesan.",
+        category: "Pure Veg",
+        rating: 4.7,
+        reviewsCount: 310
+    },
+    {
+        _id: "55",
+        name: "Palak Paneer Desi Ghee",
+        image: "food_palak_paneer.jpg",
+        price: 245,
+        description: "Fresh cottage cheese cubes cooked in a smooth, mildly spiced organic spinach puree tempered with garlic and cumin.",
+        category: "Pure Veg",
+        rating: 4.8,
+        reviewsCount: 520
     },
     {
         _id: "56",
-        name: "Kadhai Paneer Special",
-        image: "food_kadhai_paneer.jpg",
-        price: 305,
-        description: "Tender paneer cubes and crunchy bell peppers tossed in a robust crushed coriander and dry red chili kadhai masala gravy.",
+        name: "Paneer Tikka",
+        image: "food_paneer_tikka.jpg",
+        price: 260,
+        description: "Cubes of malai paneer, bell peppers, and red onions marinated in curd and tandoori spices, char-grilled.",
         category: "Pure Veg",
         rating: 4.9,
-        reviewsCount: 290
+        reviewsCount: 780
     },
     {
         _id: "57",
-        name: "Paneer Butter Masala",
-        image: "food_paneer_butter_masala.jpg",
-        price: 315,
-        description: "Succulent paneer cubes simmered in a velvety, rich tomato cashew gravy scented with kasuri methi and butter.",
+        name: "Kadhai Paneer Special",
+        image: "food_kadhai_paneer.jpg",
+        price: 255,
+        description: "Cottage cheese simmered in spicy onion-tomato gravy with freshly ground coriander seeds and crunchy bell peppers.",
         category: "Pure Veg",
-        rating: 4.7,
+        rating: 4.8,
         reviewsCount: 610
     },
     {
         _id: "58",
-        name: "Dal Makhani & Naan",
-        image: "food_dal_makhani.jpg",
-        price: 329,
-        description: "Slow-cooked black lentils overnight in butter and cream, served alongside hot, crispy tandoori butter naan.",
+        name: "Paneer Butter Masala",
+        image: "food_paneer_butter_masala.jpg",
+        price: 270,
+        description: "Rich, velvety tomato and cashew nut makhani gravy infused with kasuri methi and finished with white butter.",
         category: "Pure Veg",
-        rating: 4.6,
-        reviewsCount: 150
+        rating: 4.9,
+        reviewsCount: 890
     },
     {
         _id: "59",
-        name: "Malai Kofta Curry",
-        image: "food_malai_kofta.jpg",
-        price: 342,
-        description: "Melt-in-mouth paneer and potato dumplings stuffed with dry fruits, simmered in a creamy golden cashew gravy.",
+        name: "Dal Makhani & Naan",
+        image: "food_dal_makhani.jpg",
+        price: 230,
+        description: "Slow-cooked black lentils and kidney beans simmered overnight on tandoor with fresh cream and butter.",
         category: "Pure Veg",
-        rating: 4.8,
-        reviewsCount: 480
+        rating: 4.9,
+        reviewsCount: 920
     },
     {
         _id: "60",
         name: "Deluxe Royal Veg Thali",
         image: "food_veg_thali.jpg",
-        price: 365,
-        description: "Grand traditional Indian platter with Shahi Paneer, Dal Makhani, mixed seasonal veg, aromatic jeera rice, butter roti, and salad.",
+        price: 299,
+        description: "Complete feast with Dal Makhani, Shahi Paneer, Mix Veg, Pulao, 2 Butter Naan, Raita, and Gulab Jamun.",
         category: "Pure Veg",
-        rating: 4.5,
-        reviewsCount: 310
+        rating: 4.9,
+        reviewsCount: 1100
     },
     {
         _id: "61",
-        name: "Tomato Pasta",
-        image: "food_26.png",
-        price: 224,
-        description: "Al dente penne pasta tossed in slow-simmered San Marzano tomato sauce, fresh basil, and extra virgin olive oil.",
+        name: "Cheese Pasta",
+        image: "food_25.png",
+        price: 210,
+        description: "Gooey four-cheese macaroni pasta baked to bubbly golden perfection with an herb panko crust.",
         category: "Pasta",
         rating: 4.9,
-        reviewsCount: 820
+        reviewsCount: 780
     },
     {
         _id: "62",
-        name: "Cheese Pasta",
-        image: "food_25.png",
-        price: 236,
-        description: "Creamy macaroni and penne loaded with rich cheddar and mozzarella cheese sauce, baked golden on top.",
+        name: "Tomato Pasta",
+        image: "food_26.png",
+        price: 195,
+        description: "Penne tossed in slow-simmered San Marzano plum tomato pomodoro sauce with torn fresh sweet basil.",
         category: "Pasta",
         rating: 4.7,
-        reviewsCount: 260
+        reviewsCount: 460
     },
     {
         _id: "63",
         name: "Creamy Pasta",
         image: "food_27.png",
-        price: 249,
-        description: "Silky fettuccine smothered in rich white garlic cream sauce with sautéed mushrooms and fresh parmesan.",
+        price: 225,
+        description: "Silky fettuccine enrobed in garlic parmesan cream sauce with sauteed broccoli and sweet bell peppers.",
         category: "Pasta",
-        rating: 4.3,
-        reviewsCount: 195
+        rating: 4.8,
+        reviewsCount: 610
     },
     {
         _id: "64",
-        name: "Aglio Olio Peperoncino",
-        image: "food_aglio_olio.jpg",
-        price: 257,
-        description: "Classic Italian spaghetti tossed in extra virgin olive oil, sliced golden garlic cloves, chili flakes, and parsley.",
+        name: "Chicken Pasta",
+        image: "food_28.png",
+        price: 260,
+        description: "Tender rosemary grilled chicken tossed with fusilli in rich pink Aurora sauce and black olives.",
         category: "Pasta",
-        rating: 4.8,
-        reviewsCount: 540
+        rating: 4.9,
+        reviewsCount: 530
     },
     {
         _id: "65",
-        name: "Penne Arrabbiata",
-        image: "food_penne_arrabbiata.jpg",
-        price: 269,
-        description: "Spicy Italian penne pasta tossed in fiery red chili tomato sauce, fragrant garlic, fresh basil, and parmesan.",
+        name: "Aglio Olio Peperoncino",
+        image: "food_aglio_olio.jpg",
+        price: 220,
+        description: "Classic spaghetti tossed in extra virgin olive oil, toasted garlic slivers, red pepper flakes, and parsley.",
         category: "Pasta",
-        rating: 4.8,
+        rating: 4.7,
         reviewsCount: 380
     },
     {
         _id: "66",
-        name: "White Sauce Alfredo Pasta",
-        image: "food_alfredo_pasta.jpg",
-        price: 281,
-        description: "Tender penne pasta coated in velvety rich parmesan cream Alfredo sauce with sweet corn, broccoli, and black olives.",
+        name: "Penne Arrabbiata",
+        image: "food_penne_arrabbiata.jpg",
+        price: 215,
+        description: "Al dente penne in fiery spicy garlic tomato sauce with black olives and fresh parmesan shavings.",
         category: "Pasta",
-        rating: 4.7,
-        reviewsCount: 520
+        rating: 4.8,
+        reviewsCount: 490
     },
     {
         _id: "67",
-        name: "Mac & Cheese Supreme",
-        image: "food_mac_and_cheese.jpg",
-        price: 291,
-        description: "Comforting elbow macaroni baked in four-cheese sauce (cheddar, mozzarella, gouda, and parmesan) with a toasted breadcrumb crust.",
+        name: "White Sauce Alfredo Pasta",
+        image: "food_alfredo_pasta.jpg",
+        price: 235,
+        description: "Penne coated in rich, velvety butter parmesan cream sauce with sauteed button mushrooms.",
         category: "Pasta",
         rating: 4.9,
-        reviewsCount: 240
+        reviewsCount: 720
     },
     {
         _id: "68",
-        name: "Peri Peri Cheesy Pasta",
-        image: "food_peri_peri_pasta.jpg",
-        price: 308,
-        description: "Spicy fusion pasta tossed in zesty peri-peri cheese sauce with sauteed bell peppers, sweet corn, and jalapeños.",
+        name: "Mac & Cheese Supreme",
+        image: "food_mac_and_cheese.jpg",
+        price: 225,
+        description: "Elbow macaroni enveloped in sharp yellow cheddar and gruyere sauce with crispy golden breadcrumbs.",
         category: "Pasta",
-        rating: 4.6,
-        reviewsCount: 690
+        rating: 4.8,
+        reviewsCount: 610
     },
     {
         _id: "69",
-        name: "Pesto Basil Penne",
-        image: "food_pesto_pasta.jpg",
-        price: 322,
-        description: "Al dente penne smothered in vibrant Genovese basil pesto, crushed pine nuts, garlic, parmesan, and extra virgin olive oil.",
+        name: "Peri Peri Cheesy Pasta",
+        image: "food_peri_peri_pasta.jpg",
+        price: 240,
+        description: "Fusilli pasta tossed in creamy spicy African peri-peri cheese sauce with crunchy bell peppers.",
         category: "Pasta",
-        rating: 4.5,
-        reviewsCount: 185
+        rating: 4.7,
+        reviewsCount: 340
     },
     {
         _id: "70",
-        name: "Chicken Pasta",
-        image: "food_28.png",
-        price: 345,
-        description: "Juicy herb-grilled chicken slices with tender pasta tossed in a velvety pink tomato-cream sauce.",
+        name: "Pesto Basil Penne",
+        image: "food_pesto_pasta.jpg",
+        price: 250,
+        description: "Penne tossed in freshly pounded Genoa sweet basil, pine nut, parmesan, and extra virgin olive oil pesto.",
         category: "Pasta",
-        rating: 4.8,
-        reviewsCount: 430
+        rating: 4.9,
+        reviewsCount: 580
     },
     {
         _id: "71",
-        name: "Veg Hakka Noodles",
-        image: "food_hakka_noodles.jpg",
-        price: 179,
-        description: "Classic street-style wok-tossed noodles with shredded cabbage, capsicum, carrots, spring onions, and light soy sauce.",
+        name: "Butter Noodles",
+        image: "food_29.png",
+        price: 165,
+        description: "Delicate egg noodles tossed in melted French butter, fresh cracked sea salt, and toasted garlic chives.",
         category: "Noodles",
-        rating: 4.4,
-        reviewsCount: 750
+        rating: 4.6,
+        reviewsCount: 340
     },
     {
         _id: "72",
         name: "Veg Noodles",
         image: "food_30.png",
-        price: 184,
-        description: "Street-style Hakka noodles stir-fried with crunchy cabbage, capsicum, carrots, and savory dark soy sauce.",
+        price: 175,
+        description: "Wok-tossed noodles with julienned cabbage, capsicum, carrots, and scallions in light soy dressing.",
         category: "Noodles",
-        rating: 4.9,
-        reviewsCount: 290
+        rating: 4.8,
+        reviewsCount: 720
     },
     {
         _id: "73",
-        name: "Singapore Crispy Noodles",
-        image: "food_singapore_noodles.jpg",
-        price: 191,
-        description: "Thin vermicelli noodles wok-tossed with mild curry powder, crunchy bell peppers, bean sprouts, and sesame oil.",
+        name: "Somen Noodles",
+        image: "food_31.png",
+        price: 195,
+        description: "Delicate Japanese wheat noodles served chilled or warm with fragrant tsuyu broth and sesame garnish.",
         category: "Noodles",
         rating: 4.7,
-        reviewsCount: 610
+        reviewsCount: 290
     },
     {
         _id: "74",
-        name: "Chilli Garlic Noodles",
-        image: "food_chilli_garlic_noodles.jpg",
-        price: 207,
-        description: "Fiery wok-tossed noodles loaded with crushed garlic, bird eye chili, spring onions, and spicy Schezwan sauce.",
+        name: "Cooked Noodles",
+        image: "food_32.png",
+        price: 180,
+        description: "Steaming hot street-style stir-fried hakka noodles with crunchy vegetables and spicy schezwan splash.",
         category: "Noodles",
-        rating: 4.6,
-        reviewsCount: 150
+        rating: 4.8,
+        reviewsCount: 550
     },
     {
         _id: "75",
-        name: "Cooked Noodles",
-        image: "food_32.png",
-        price: 212,
-        description: "Classic Chinese wok-tossed noodles with farm vegetables, mild spices, and a touch of roasted sesame oil.",
+        name: "Veg Hakka Noodles",
+        image: "food_hakka_noodles.jpg",
+        price: 185,
+        description: "Classic Chinese wok-tossed long wheat noodles with cabbage, carrots, capsicum, and spring onions.",
         category: "Noodles",
-        rating: 4.8,
-        reviewsCount: 480
+        rating: 4.9,
+        reviewsCount: 840
     },
     {
         _id: "76",
-        name: "Schezwan Veg Noodles",
-        image: "food_schezwan_noodles.jpg",
-        price: 226,
-        description: "Spicy wok-tossed noodles smothered in authentic Sichuan chili-garlic paste with crispy stir-fried vegetables.",
+        name: "Singapore Crispy Noodles",
+        image: "food_singapore_noodles.jpg",
+        price: 210,
+        description: "Crisp golden fried noodles topped with sweet and sour exotic vegetable gravy and baby corn.",
         category: "Noodles",
-        rating: 4.5,
-        reviewsCount: 310
+        rating: 4.7,
+        reviewsCount: 420
     },
     {
         _id: "77",
-        name: "Butter Noodles",
-        image: "food_29.png",
-        price: 240,
-        description: "Silky egg noodles tossed in melted butter, mild garlic, fresh parsley, and cracked black pepper.",
+        name: "Chilli Garlic Noodles",
+        image: "food_chilli_garlic_noodles.jpg",
+        price: 195,
+        description: "Fiery wok-tossed spicy noodles loaded with charred crushed garlic cloves and red chili oil paste.",
         category: "Noodles",
-        rating: 4.9,
-        reviewsCount: 820
+        rating: 4.8,
+        reviewsCount: 660
     },
     {
         _id: "78",
-        name: "Pan Fried Spicy Noodles",
-        image: "food_pan_fried_noodles.jpg",
-        price: 265,
-        description: "Crispy pan-fried golden noodles base topped with a thick, savory chili garlic vegetable and mushroom gravy.",
+        name: "Schezwan Veg Noodles",
+        image: "food_schezwan_noodles.jpg",
+        price: 200,
+        description: "Spicy noodles tossed in authentic in-house fermented Schezwan pepper sauce with crunchy celery.",
         category: "Noodles",
-        rating: 4.7,
-        reviewsCount: 260
+        rating: 4.8,
+        reviewsCount: 590
     },
     {
         _id: "79",
-        name: "Somen Noodles",
-        image: "food_31.png",
-        price: 279,
-        description: "Delicate thin Japanese wheat noodles served in a savory seasoned broth with scallions and toasted sesame.",
+        name: "Pan Fried Spicy Noodles",
+        image: "food_pan_fried_noodles.jpg",
+        price: 215,
+        description: "Pan-crisped noodle nest crowned with hot Hunan vegetable stir-fry and toasted sesame seeds.",
         category: "Noodles",
-        rating: 4.3,
-        reviewsCount: 195
+        rating: 4.7,
+        reviewsCount: 310
     },
     {
         _id: "80",
         name: "Thai Pad Noodles",
         image: "food_pad_thai.jpg",
-        price: 295,
-        description: "Traditional Thai flat rice noodles stir-fried with bean sprouts, crushed peanuts, tamarind glaze, and fresh lime.",
+        price: 235,
+        description: "Broad flat rice noodles stir-fried with tofu, bean sprouts, tamarind sauce, and crushed peanuts.",
         category: "Noodles",
-        rating: 4.8,
-        reviewsCount: 540
+        rating: 4.9,
+        reviewsCount: 750
     },
     {
         _id: "81",
         name: "Idli Sambar",
         image: "food_idli_sambar.jpg",
-        price: 108,
-        description: "Three soft, piping-hot steamed rice cakes served with authentic spiced vegetable lentil stew and coconut chutney.",
+        price: 120,
+        description: "Steaming soft and fluffy fermented rice cakes served with aromatic drumstick sambar and fresh coconut chutney.",
         category: "South Indian",
-        rating: 4.8,
-        reviewsCount: 380
+        rating: 4.9,
+        reviewsCount: 920
     },
     {
         _id: "82",
         name: "Medu Vada",
         image: "food_medu_vada.jpg",
-        price: 122,
-        description: "Crispy golden lentil fritters spiced with peppercorns and curry leaves, served with fresh coconut chutney and sambar.",
+        price: 130,
+        description: "Golden crispy fried lentil fritters spiced with peppercorns, curry leaves, and ginger.",
         category: "South Indian",
-        rating: 4.7,
-        reviewsCount: 520
+        rating: 4.8,
+        reviewsCount: 680
     },
     {
         _id: "83",
         name: "Vegetable Upma",
         image: "food_veg_upma.jpg",
-        price: 128,
-        description: "Aromatic roasted semolina cooked with ghee, mustard seeds, curry leaves, ginger, and diced vegetables.",
+        price: 110,
+        description: "Wholesome roasted semolina cooked with mustard seeds, curry leaves, ginger, cashews, and garden vegetables.",
         category: "South Indian",
-        rating: 4.9,
-        reviewsCount: 240
+        rating: 4.6,
+        reviewsCount: 340
     },
     {
         _id: "84",
         name: "Plain Roast Dosa",
         image: "food_plain_dosa.jpg",
-        price: 146,
-        description: "Crisp golden crepe made from naturally fermented rice and lentil batter, served with 3 signature chutneys and sambar.",
+        price: 140,
+        description: "Paper-thin, golden, crisp crepe made from fermented rice and lentil batter served with trio of chutneys.",
         category: "South Indian",
-        rating: 4.6,
-        reviewsCount: 690
+        rating: 4.8,
+        reviewsCount: 510
     },
     {
         _id: "85",
         name: "Ghee Podi Dosa",
         image: "food_podi_dosa.jpg",
-        price: 160,
-        description: "Crispy golden dosa generously smeared with aromatic pure desi ghee and sprinkled with spicy gunpowder podi.",
+        price: 165,
+        description: "Crispy dosa smeared generously with pure desi ghee and aromatic spicy gunpowder lentil podi.",
         category: "South Indian",
-        rating: 4.5,
-        reviewsCount: 185
+        rating: 4.9,
+        reviewsCount: 840
     },
     {
         _id: "86",
         name: "Masala Dosa",
         image: "food_masala_dosa.jpg",
-        price: 172,
-        description: "Legendary crispy golden dosa folded over a flavorful spiced mustard-tempered potato masala filling.",
+        price: 160,
+        description: "Iconic crisp golden dosa folded over aromatic turmeric spiced mashed potato and onion filling.",
         category: "South Indian",
-        rating: 4.8,
-        reviewsCount: 430
+        rating: 4.9,
+        reviewsCount: 1150
     },
     {
         _id: "87",
         name: "Onion Rava Dosa",
         image: "food_onion_rava_dosa.jpg",
-        price: 194,
-        description: "Authentic thin net-textured crisp semolina crepe loaded with chopped onions, green chilies, cumin, and fresh cilantro.",
+        price: 170,
+        description: "Crispy lace-patterned semolina and rice crepe studded with cumin, finely chopped onions, and green chilies.",
         category: "South Indian",
-        rating: 4.4,
-        reviewsCount: 750
+        rating: 4.7,
+        reviewsCount: 460
     },
     {
         _id: "88",
         name: "Onion Tomato Uttapam",
         image: "food_onion_tomato_uttapam.jpg",
-        price: 202,
-        description: "Authentic fluffy round savory rice-lentil pancake topped with sweet onions, juicy tomatoes, curry leaves, and green chillies.",
+        price: 175,
+        description: "Thick, soft savory pancake topped with caramelized red onions, juicy diced tomatoes, and fresh cilantro.",
         category: "South Indian",
-        rating: 4.9,
-        reviewsCount: 290
+        rating: 4.8,
+        reviewsCount: 580
     },
     {
         _id: "89",
         name: "Mysore Masala Dosa",
         image: "food_mysore_masala_dosa.jpg",
-        price: 218,
-        description: "Famous Bangalore-style crisp dosa smeared with fiery red garlic chili chutney and filled with potato mash.",
+        price: 180,
+        description: "Crispy dosa with internal spicy red garlic chutney lining and traditional spiced potato stuffing.",
         category: "South Indian",
-        rating: 4.7,
-        reviewsCount: 610
+        rating: 4.9,
+        reviewsCount: 890
     },
     {
         _id: "90",
         name: "Paneer Cheese Dosa",
         image: "food_paneer_cheese_dosa.jpg",
-        price: 248,
-        description: "Decadent crispy golden cone dosa stuffed with shredded paneer, melted mozzarella, bell peppers, and chatpata spices.",
+        price: 195,
+        description: "Fusion favorite stuffed with spiced grated paneer and melted mozzarella cheese.",
         category: "South Indian",
-        rating: 4.6,
-        reviewsCount: 150
+        rating: 4.8,
+        reviewsCount: 620
     },
     {
         _id: "91",
         name: "Espresso Shot",
         image: "food_espresso_shot.jpg",
-        price: 105,
-        description: "Intense, full-bodied single shot of dark-roasted Arabica coffee topped with a thick hazelnut-colored crema.",
+        price: 110,
+        description: "Intense, concentrated 30ml double shot of dark roasted Arabica coffee with thick golden crema.",
         category: "Coffee",
-        rating: 4.8,
-        reviewsCount: 480
+        rating: 4.7,
+        reviewsCount: 310
     },
     {
         _id: "92",
         name: "South Indian Filter Coffee",
         image: "food_filter_coffee.jpg",
-        price: 112,
-        description: "Traditional frothy chicory-blended decoction coffee brewed with rich boiled milk in a classic brass dabarah.",
+        price: 90,
+        description: "Traditional chicory-infused decoction brewed with frothy boiling milk served in brass davara tumbler.",
         category: "Coffee",
-        rating: 4.5,
-        reviewsCount: 310
+        rating: 4.9,
+        reviewsCount: 1420
     },
     {
         _id: "93",
         name: "Iced Americano",
         image: "food_iced_americano.jpg",
-        price: 132,
-        description: "Bold double shots of rich espresso poured over ice and cold filtered water for a clean, refreshing coffee experience.",
+        price: 130,
+        description: "Bold double espresso poured over chilled mineral water and crystalline ice cubes.",
         category: "Coffee",
-        rating: 4.9,
-        reviewsCount: 820
+        rating: 4.6,
+        reviewsCount: 280
     },
     {
         _id: "94",
         name: "Flat White",
         image: "food_flat_white.jpg",
-        price: 138,
-        description: "Expertly pulled double ristretto espresso blended with a micro-thin layer of steamed whole milk.",
+        price: 160,
+        description: "Velvety micro-foamed steamed milk poured over a rich ristretto espresso shot.",
         category: "Coffee",
-        rating: 4.7,
-        reviewsCount: 260
+        rating: 4.8,
+        reviewsCount: 410
     },
     {
         _id: "95",
         name: "Hot Cappuccino",
         image: "food_hot_cappuccino.jpg",
-        price: 142,
-        description: "Freshly brewed espresso topped with equal parts steamed milk and dense velvety foam, dusted with cocoa.",
+        price: 150,
+        description: "Balanced espresso with equal parts steamed milk and dense creamy foam dusted with cocoa powder.",
         category: "Coffee",
-        rating: 4.3,
-        reviewsCount: 195
+        rating: 4.9,
+        reviewsCount: 980
     },
     {
         _id: "96",
         name: "Iced Cold Coffee",
         image: "food_iced_cold_coffee.jpg",
-        price: 170,
-        description: "Chilled blended espresso with creamy sweetened milk and a scoop of vanilla ice cream, topped with cocoa powder.",
+        price: 165,
+        description: "Creamy classic blended cold coffee with chilled milk, sugar, espresso, and vanilla ice cream scoop.",
         category: "Coffee",
-        rating: 4.8,
-        reviewsCount: 540
+        rating: 4.9,
+        reviewsCount: 1250
     },
     {
         _id: "97",
         name: "Cold Brew On Rocks",
         image: "food_cold_brew.jpg",
-        price: 186,
-        description: "Smooth 18-hour cold steeped single-origin coffee served over crystal ice cubes with zero bitterness.",
+        price: 175,
+        description: "18-hour slow cold-steeped coarse ground Arabica coffee with natural chocolate and caramel notes.",
         category: "Coffee",
         rating: 4.8,
-        reviewsCount: 380
+        reviewsCount: 520
     },
     {
         _id: "98",
         name: "Vanilla Iced Latte",
         image: "food_vanilla_iced_latte.jpg",
-        price: 198,
-        description: "Espresso poured over chilled milk, ice cubes, and premium Madagascar vanilla syrup.",
+        price: 175,
+        description: "Espresso and chilled milk flavored with pure French vanilla syrup served over ice.",
         category: "Coffee",
         rating: 4.7,
-        reviewsCount: 520
+        reviewsCount: 390
     },
     {
         _id: "99",
         name: "Cafe Mocha",
         image: "food_cafe_mocha.jpg",
-        price: 210,
-        description: "Espresso combined with dark chocolate ganache, steamed milk, and crowned with freshly whipped cream.",
+        price: 180,
+        description: "Espresso combined with bittersweet Dutch cocoa, steamed milk, and whipped cream swirl.",
         category: "Coffee",
-        rating: 4.9,
-        reviewsCount: 240
+        rating: 4.8,
+        reviewsCount: 640
     },
     {
         _id: "100",
         name: "Caramel Macchiato",
         image: "food_caramel_macchiato.jpg",
-        price: 238,
-        description: "Freshly steamed vanilla milk marked with bold espresso shots and crosshatched with golden caramel drizzle.",
+        price: 190,
+        description: "Steamed vanilla milk marked with bold espresso and crosshatched with rich buttery caramel sauce.",
         category: "Coffee",
-        rating: 4.6,
-        reviewsCount: 690
+        rating: 4.9,
+        reviewsCount: 870
     },
     {
         _id: "101",
         name: "Hazelnut Frappe",
         image: "food_hazelnut_frappe.jpg",
-        price: 262,
-        description: "Blended coffee frappe infused with roasted hazelnut praline syrup, crushed ice, and chocolate chips.",
+        price: 195,
+        description: "Blended ice frappe flavored with roasted hazelnut praline syrup and whipped cream topping.",
         category: "Coffee",
-        rating: 4.5,
-        reviewsCount: 185
+        rating: 4.8,
+        reviewsCount: 560
     },
     {
         _id: "102",
         name: "Affogato Espresso",
         image: "food_affogato.jpg",
-        price: 272,
-        description: "A scoop of premium vanilla bean gelato drowned in a piping hot shot of freshly pulled Italian espresso.",
+        price: 170,
+        description: "Hot freshly extracted espresso shot poured directly over a cold scoop of artisanal vanilla bean gelato.",
         category: "Coffee",
-        rating: 4.8,
+        rating: 4.9,
         reviewsCount: 430
     },
     {
         _id: "103",
         name: "Classic Irish Coffee",
         image: "food_irish_coffee.jpg",
-        price: 285,
-        description: "Aromatic piping hot black coffee infused with Irish cream notes and layered with heavy chilled cream.",
+        price: 210,
+        description: "Hot brewed dark roast coffee with brown sugar and Irish cream essence topped with thick heavy cream.",
         category: "Coffee",
-        rating: 4.4,
-        reviewsCount: 750
+        rating: 4.7,
+        reviewsCount: 310
     },
     {
         _id: "104",
         name: "Classic Vanilla Shake",
         image: "food_vanilla_shake.jpg",
-        price: 152,
-        description: "Thick creamy old-school milkshake made with double vanilla bean ice cream and topped with fluffy whipped cream.",
+        price: 150,
+        description: "Thick creamy shake blended with double scoops of Madagascar vanilla ice cream and whole milk.",
         category: "Shakes",
-        rating: 4.9,
-        reviewsCount: 290
+        rating: 4.7,
+        reviewsCount: 420
     },
     {
         _id: "105",
         name: "Strawberry Cream Shake",
         image: "food_strawberry_shake.jpg",
-        price: 185,
-        description: "Luscious pink milkshake blended with ripe strawberries, cream, and topped with vibrant berry drizzle.",
+        price: 165,
+        description: "Fresh strawberry puree churned with strawberry ice cream and topped with strawberry drizzle.",
         category: "Shakes",
-        rating: 4.7,
-        reviewsCount: 610
+        rating: 4.8,
+        reviewsCount: 650
     },
     {
         _id: "106",
         name: "Banana Peanut Butter Shake",
         image: "food_banana_pb_shake.jpg",
-        price: 204,
-        description: "Powerhouse energizing shake with ripe Robusta bananas, crunchy roasted peanut butter, and honey.",
-        category: "Shakes",
-        rating: 4.6,
-        reviewsCount: 150
-    },
-    {
-        _id: "107",
-        name: "Butterscotch Caramel Shake",
-        image: "food_butterscotch_shake.jpg",
-        price: 222,
-        description: "Rich butterscotch shake loaded with caramelized cashew crunchies and sweet golden caramel sauce.",
+        price: 175,
+        description: "Ripe bananas blended with creamy organic peanut butter, honey, and chia seeds for a high-protein boost.",
         category: "Shakes",
         rating: 4.8,
         reviewsCount: 480
     },
     {
+        _id: "107",
+        name: "Butterscotch Caramel Shake",
+        image: "food_butterscotch_shake.jpg",
+        price: 170,
+        description: "Butterscotch ice cream blended with golden butterscotch crunchies and salty caramel sauce.",
+        category: "Shakes",
+        rating: 4.7,
+        reviewsCount: 390
+    },
+    {
         _id: "108",
         name: "Alphonso Mango Shake",
         image: "food_mango_shake.jpg",
-        price: 235,
-        description: "Vibrant golden shake prepared with pure Ratnagiri Alphonso mango pulp and rich malai ice cream.",
+        price: 180,
+        description: "Seasonal specialty made with 100% Ratnagiri Alphonso mango pulp and vanilla ice cream.",
         category: "Shakes",
-        rating: 4.5,
-        reviewsCount: 310
+        rating: 4.9,
+        reviewsCount: 940
     },
     {
         _id: "109",
         name: "Blueberry Bliss Shake",
         image: "food_blueberry_shake.jpg",
-        price: 252,
-        description: "Gorgeous purple thickshake loaded with wild Canadian blueberries, Greek yogurt, and sweet berry compote.",
+        price: 195,
+        description: "Wild Canadian blueberries blended with Greek yogurt, ice cream, and blueberry compote.",
         category: "Shakes",
-        rating: 4.9,
-        reviewsCount: 820
+        rating: 4.8,
+        reviewsCount: 520
     },
     {
         _id: "110",
         name: "KitKat Crunch Shake",
         image: "food_kitkat_shake.jpg",
-        price: 268,
-        description: "Crunchy milkshake blended with crushed KitKat wafer bars, rich chocolate fudge, and whipped cream.",
+        price: 185,
+        description: "Crisp KitKat chocolate wafer bars crushed and blended into rich chocolate milkshake with waffle stick.",
         category: "Shakes",
-        rating: 4.7,
-        reviewsCount: 260
+        rating: 4.9,
+        reviewsCount: 1120
     },
     {
         _id: "111",
         name: "Oreo Thickshake",
         image: "food_oreo_shake.jpg",
-        price: 274,
-        description: "Ultra-thick dark chocolate shake packed with whole Oreo cookies, chocolate sauce, and cookie crumbs.",
+        price: 180,
+        description: "Crunchy Oreo cookies blended with chocolate ice cream and topped with cookie crumbs.",
         category: "Shakes",
-        rating: 4.3,
-        reviewsCount: 195
+        rating: 4.9,
+        reviewsCount: 1280
     },
     {
         _id: "112",
         name: "Nutella Hazelnut Shake",
         image: "food_nutella_shake.jpg",
-        price: 318,
-        description: "Sinful shake packed with generous spoonfuls of Italian Nutella, roasted hazelnuts, and whipped topping.",
+        price: 210,
+        description: "Generous swirl of Italian Nutella spread blended with chocolate ice cream and roasted hazelnuts.",
         category: "Shakes",
-        rating: 4.8,
-        reviewsCount: 540
+        rating: 4.9,
+        reviewsCount: 1350
     },
     {
         _id: "113",
         name: "Belgian Chocolate Shake",
         image: "food_belgian_chocolate_shake.jpg",
-        price: 325,
-        description: "Gourmet thickshake crafted with 70% pure Belgian dark chocolate, double cream, and chocolate flakes.",
+        price: 199,
+        description: "Intense 70% dark Belgian cocoa blended into an ultra-thick ganache shake for pure chocoholics.",
         category: "Shakes",
-        rating: 4.8,
-        reviewsCount: 380
+        rating: 4.9,
+        reviewsCount: 860
     },
     {
         _id: "114",
         name: "Fresh Coconut Water",
         image: "food_coconut_water.jpg",
-        price: 110,
-        description: "100% natural, refreshing tender coconut water served chilled with tender coconut malai ribbons.",
+        price: 90,
+        description: "Naturally electrolyte-rich tender coconut water served chilled and fresh from the shell.",
         category: "Juice",
-        rating: 4.7,
-        reviewsCount: 520
+        rating: 4.9,
+        reviewsCount: 780
     },
     {
         _id: "115",
         name: "Watermelon Mint Juice",
         image: "food_watermelon_juice.jpg",
-        price: 120,
-        description: "Cold-pressed sweet red watermelon juice infused with fresh garden mint leaves and black salt.",
+        price: 110,
+        description: "Fresh cold-pressed sweet watermelon juice with a hint of garden mint and black salt.",
         category: "Juice",
-        rating: 4.9,
-        reviewsCount: 240
+        rating: 4.8,
+        reviewsCount: 650
     },
     {
         _id: "116",
         name: "Sweet Mosambi Juice",
         image: "food_mosambi_juice.jpg",
-        price: 126,
-        description: "Freshly squeezed Indian sweet lime juice seasoned with a hint of roasted cumin and rock salt.",
+        price: 120,
+        description: "Pure sweet lime juice freshly squeezed without added water or artificial sugar.",
         category: "Juice",
-        rating: 4.6,
-        reviewsCount: 690
+        rating: 4.7,
+        reviewsCount: 490
     },
     {
         _id: "117",
         name: "Fresh Orange Juice",
         image: "food_orange_juice.jpg",
         price: 130,
-        description: "Cold-pressed juicy Nagpur oranges packed with natural Vitamin C and invigorating citrus flavors.",
+        description: "Pulpy Nagpur orange juice packed with natural Vitamin C, cold-pressed to preserve nutrition.",
         category: "Juice",
-        rating: 4.5,
-        reviewsCount: 185
+        rating: 4.8,
+        reviewsCount: 710
     },
     {
         _id: "118",
         name: "Lemon Mint Refresher Juice",
         image: "food_lemon_mint_juice.jpg",
-        price: 134,
-        description: "Zesty lemon and crushed spearmint cooler sweetened with organic raw sugar and pink salt.",
+        price: 80,
+        description: "Tangy Indian shikanji with fresh lemon, crushed mint leaves, roasted cumin, and black salt.",
         category: "Juice",
         rating: 4.8,
-        reviewsCount: 430
+        reviewsCount: 540
     },
     {
         _id: "119",
         name: "Pineapple Lime Juice",
         image: "food_pineapple_juice.jpg",
-        price: 148,
-        description: "Sun-ripened tropical pineapple juice touched with a squeeze of fresh lime for a tangy-sweet punch.",
+        price: 125,
+        description: "Tropical sweet and tart pineapple juice with a squeeze of fresh key lime.",
         category: "Juice",
-        rating: 4.4,
-        reviewsCount: 750
+        rating: 4.7,
+        reviewsCount: 380
     },
     {
         _id: "120",
         name: "Alphonso Mango Juice",
         image: "food_mango_juice.jpg",
-        price: 154,
-        description: "Luscious chilled mango juice made from naturally sweetened handpicked Alphonso mangoes.",
+        price: 140,
+        description: "Thick luscious nectar extracted from naturally ripened Alphonso mangoes.",
         category: "Juice",
         rating: 4.9,
-        reviewsCount: 290
+        reviewsCount: 820
     },
     {
         _id: "121",
         name: "Apple Beetroot Carrot (ABC) Juice",
         image: "food_abc_juice.jpg",
-        price: 168,
-        description: "The ultimate detox blend of sweet Himalayan apples, earthy beetroot, and crunchy carrots.",
+        price: 145,
+        description: "The ultimate miracle detox juice: crunchy apples, sweet beetroot, and fresh carrots.",
         category: "Juice",
-        rating: 4.7,
+        rating: 4.8,
         reviewsCount: 610
     },
     {
         _id: "122",
         name: "Green Detox Kiwi Juice",
         image: "food_kiwi_green_juice.jpg",
-        price: 176,
-        description: "Nutrient-dense power juice with tart kiwi, green apple, cucumber, and fresh lemon juice.",
+        price: 155,
+        description: "Nutrient powerhouse with tangy kiwi, green apple, cucumber, spinach, and lemon.",
         category: "Juice",
-        rating: 4.6,
-        reviewsCount: 150
+        rating: 4.7,
+        reviewsCount: 390
     },
     {
         _id: "123",

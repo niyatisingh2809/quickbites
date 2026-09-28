@@ -105,7 +105,14 @@ const SearchModal = ({ showSearch, setShowSearch }) => {
               <div className="search-featured-list">
                 {food_list.slice(0, 4).map((item, idx) => (
                   <div key={idx} className="search-featured-item" onClick={() => handleDishClick(item)}>
-                    <img src={url + "/images/" + item.image} alt={item.name} />
+                    <img
+                      src={item.image?.startsWith("http") ? item.image : `/images/${item.image}`}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        if (url && !e.target.src.includes(url)) e.target.src = `${url}/images/${item.image}`;
+                      }}
+                      alt={item.name}
+                    />
                     <div>
                       <p className="featured-name">{item.name}</p>
                       <span className="featured-price">₹{item.price} • {item.category}</span>
@@ -135,7 +142,14 @@ const SearchModal = ({ showSearch, setShowSearch }) => {
                   return (
                     <div key={item._id} className="search-result-card">
                       <div className="search-result-img-wrap" onClick={() => handleDishClick(item)}>
-                        <img src={url + "/images/" + item.image} alt={item.name} />
+                        <img
+                          src={item.image?.startsWith("http") ? item.image : `/images/${item.image}`}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            if (url && !e.target.src.includes(url)) e.target.src = `${url}/images/${item.image}`;
+                          }}
+                          alt={item.name}
+                        />
                         <span className="search-card-category">{item.category}</span>
                       </div>
 

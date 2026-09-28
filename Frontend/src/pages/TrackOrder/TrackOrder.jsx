@@ -360,7 +360,11 @@ const TrackOrder = () => {
                 <div key={idx} className="receipt-item-row">
                   <div className="receipt-item-img-title">
                     <img 
-                      src={`${url}/images/${item.image}`} 
+                      src={item.image?.startsWith("http") ? item.image : `/images/${item.image}`}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        if (url && !e.target.src.includes(url)) e.target.src = `${url}/images/${item.image}`;
+                      }}
                       alt={item.name} 
                       className="receipt-item-img"
                     />
