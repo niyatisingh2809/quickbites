@@ -17,7 +17,8 @@ const PlaceOrder = ({ setShowLogin }) => {
     discount,
     promoCode,
     deliveryAddress,
-    updateDeliveryAddress
+    updateDeliveryAddress,
+    currentLocation
   } = useContext(StoreContext);
 
   const [paymentMethod, setPaymentMethod] = useState("gpay");
@@ -29,21 +30,33 @@ const PlaceOrder = ({ setShowLogin }) => {
   const [data, setData] = useState(() => {
     const addr = deliveryAddress || {};
     const u = user || {};
+    const loc = currentLocation || {};
     const nameParts = (u.name || "").trim().split(" ");
     return {
       firstName: addr.firstName || nameParts[0] || "",
       lastName: addr.lastName || nameParts.slice(1).join(" ") || "",
       email: addr.email || u.email || "",
       street: addr.street || "",
-      city: addr.city || "",
-      state: addr.state || "",
-      zipcode: addr.zipcode || "",
+      city: addr.city || loc.city || "Delhi NCR",
+      state: addr.state || loc.state || "Delhi",
+      zipcode: addr.zipcode || loc.pincode || "110001",
       country: addr.country || "India",
       phone: addr.phone || u.phone || ""
     };
   });
 
-  // Keep delivery data in sync if user logs in on this page
+  // Keep delivery data in sync if user changes location or logs in
+  useEffect(() => {
+    if (currentLocation) {
+      setData((prev) => ({
+        ...prev,
+        city: prev.city || currentLocation.city,
+        state: prev.state || currentLocation.state,
+        zipcode: prev.zipcode || currentLocation.pincode
+      }));
+    }
+  }, [currentLocation]);
+
   useEffect(() => {
     if (user) {
       setData((prev) => {
@@ -124,7 +137,12 @@ const PlaceOrder = ({ setShowLogin }) => {
       paymentMethod: paymentMethod,
       upiId: upiId || undefined,
       promoCode: promoCode || undefined,
-      discount: discount || 0
+      discount: discount || 0,
+      hub: currentLocation || {
+        city: data.city || "Delhi NCR",
+        hubName: `QuickBites ${data.city || 'Local'} Hub`,
+        area: data.street || "Local Hub"
+      }
     };
 
     setPendingOrderPayload(orderData);
@@ -141,7 +159,11 @@ const PlaceOrder = ({ setShowLogin }) => {
           items: food_list.filter(i => cartItems[i._id] > 0).map(i => ({ ...i, quantity: cartItems[i._id] })),
           amount: finalAmount,
           promoCode: promoCode || undefined,
-          discount: discount || 0
+          discount: discount || 0,
+          hub: currentLocation || {
+            city: data.city || "Delhi NCR",
+            hubName: `QuickBites ${data.city || 'Local'} Hub`
+          }
         }),
         paymentMethod: paymentResult.paymentMethod || paymentMethod,
         transactionId: paymentResult.transactionId
@@ -197,6 +219,34 @@ const PlaceOrder = ({ setShowLogin }) => {
   return (
     <form onSubmit={placeOrder} className='place-order'>
       <div className="place-order-left">
+        {/* Delivering Cloud Kitchen Hub Info */}
+        <div style={{
+          background: '#f8fafc',
+          border: '1.5px solid #e2e8f0',
+          borderRadius: '12px',
+          padding: '12px 16px',
+          marginBottom: '16px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px'
+        }}>
+          <span style={{ fontSize: '24px' }}>🏪</span>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b' }}>Fulfilling Cloud Kitchen:</span>
+              <span style={{ fontSize: '11px', fontWeight: '800', background: '#fee2e2', color: '#e23744', padding: '1px 6px', borderRadius: '4px' }}>
+                {currentLocation?.city || data.city || "Delhi NCR"} Hub
+              </span>
+            </div>
+            <p style={{ margin: '2px 0 0 0', fontSize: '13.5px', fontWeight: '800', color: '#1e293b' }}>
+              {currentLocation?.hubName || `QuickBites ${data.city || 'Express'} Kitchen`}
+            </p>
+            <span style={{ fontSize: '11.5px', color: '#64748b' }}>
+              📍 {currentLocation?.hubLandmark || "Local Dark Store Hub"} • {currentLocation?.deliveryTime || "15 mins"} delivery
+            </span>
+          </div>
+        </div>
+
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
           <p className="title" style={{ margin: 0 }}>Delivery Information</p>
           <span style={{ fontSize: '12px', color: '#16a34a', background: '#dcfce7', padding: '3px 8px', borderRadius: '6px', fontWeight: 600 }}>

@@ -3,10 +3,23 @@ import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
+import LocationModal from '../../components/LocationModal/LocationModal';
 
 const Navbar = ({ setShowLogin, setShowSearch }) => {
     const [menu, setMenu] = useState("home");
-    const { getTotalCartAmount, getTotalItemsCount, token, user, logoutUser, deliveryAddress } = useContext(StoreContext);
+    const [showLocationModal, setShowLocationModal] = useState(false);
+    const { 
+        getTotalCartAmount, 
+        getTotalItemsCount, 
+        token, 
+        user, 
+        logoutUser, 
+        deliveryAddress,
+        currentLocation,
+        selectLocation,
+        detectGPSLocation,
+        isDetectingGPS
+    } = useContext(StoreContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -44,13 +57,33 @@ const Navbar = ({ setShowLogin, setShowSearch }) => {
 
     return (
         <div className='navbar'>
-            <Link to='/' onClick={() => navigateToSection('header', 'home')} className='brand-logo-container'>
-                <span className='brand-icon'>⚡🍔</span>
-                <div className='brand-text-wrap'>
-                    <span className='brand-name'>Quick<span className='brand-accent'>Bites</span></span>
-                    <span className='brand-tagline'>Fast & Fresh Delivery</span>
+            <div className="navbar-brand-location-group">
+                <Link to='/' onClick={() => navigateToSection('header', 'home')} className='brand-logo-container'>
+                    <span className='brand-icon'>⚡🍔</span>
+                    <div className='brand-text-wrap'>
+                        <span className='brand-name'>Quick<span className='brand-accent'>Bites</span></span>
+                        <span className='brand-tagline'>Fast & Fresh Delivery</span>
+                    </div>
+                </Link>
+
+                {/* Hyperlocal Multi-Outlet Location Selector */}
+                <div 
+                    className="nav-location-pill" 
+                    onClick={() => setShowLocationModal(true)}
+                    title="Change Delivery Location / Cloud Kitchen Outlet"
+                >
+                    <span className="loc-pin-icon">📍</span>
+                    <div className="loc-text-col">
+                        <div className="loc-city-row">
+                            <span className="loc-city-name">{currentLocation?.city || "Delhi NCR"}</span>
+                            <span className="loc-chevron">▾</span>
+                        </div>
+                        <span className="loc-area-sub">
+                            {currentLocation?.area ? (currentLocation.area.length > 18 ? `${currentLocation.area.slice(0, 18)}...` : currentLocation.area) : "Select Outlet"}
+                        </span>
+                    </div>
                 </div>
-            </Link>
+            </div>
 
             <ul className='navbar-menu'>
                 <li 
@@ -152,6 +185,16 @@ const Navbar = ({ setShowLogin, setShowSearch }) => {
                     </div>
                 )}
             </div>
+
+            {/* Hyperlocal Location Selector Modal */}
+            <LocationModal
+                isOpen={showLocationModal}
+                onClose={() => setShowLocationModal(false)}
+                currentLocation={currentLocation}
+                onSelectLocation={selectLocation}
+                onDetectGPS={detectGPSLocation}
+                isDetectingGPS={isDetectingGPS}
+            />
         </div>
     );
 };

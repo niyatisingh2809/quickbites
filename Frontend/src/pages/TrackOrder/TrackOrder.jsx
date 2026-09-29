@@ -160,6 +160,71 @@ const TrackOrder = () => {
 
   const riderProgressPercent = step === 4 ? 92 : (step === 3 ? 58 : 22);
 
+  // Dynamic city-based cloud kitchen hub, landmarks & vehicle registration
+  const city = (order.address?.city || order.hub?.city || '').toLowerCase();
+  
+  let hubName = order.hub?.hubName || 'QuickBites Delhi NCR Mega Hub';
+  let hubLandmark = order.hub?.hubLandmark || 'Connaught Place / Sector 18';
+  let vehicleNumber = '⚡ Hero Electric Optima • UP 16 AB 9120 • Wearing Mask & Gloves';
+  let landmarks = [
+    'Sector 18 Metro',
+    'Atta Market Hub',
+    'Sector 19 Green Park',
+    'Residential Pocket C'
+  ];
+
+  if (city.includes('mirzapur')) {
+    hubName = 'QuickBites Mirzapur Hub';
+    hubLandmark = 'Station Road & Civil Lines Kitchen';
+    vehicleNumber = '⚡ Hero Electric Optima • UP 63 AB 4520 (Mirzapur) • Masked & Sanitized';
+    landmarks = [
+      'Station Road Hub',
+      'Civil Lines Chauraha',
+      'Ganga Ghat Road',
+      'Lal Diggi Residential'
+    ];
+  } else if (city.includes('varanasi') || city.includes('kashi') || city.includes('banaras')) {
+    hubName = 'QuickBites Varanasi Hub';
+    hubLandmark = 'Cantt Station & Sigra Kitchen';
+    vehicleNumber = '⚡ Hero Electric Optima • UP 65 AB 7710 (Varanasi) • Masked & Sanitized';
+    landmarks = [
+      'Cantt Railway Hub',
+      'Sigra Commercial Belt',
+      'Godowlia Chowk',
+      'Mahmoorganj Pocket'
+    ];
+  } else if (city.includes('lucknow')) {
+    hubName = 'QuickBites Lucknow Hub';
+    hubLandmark = 'Hazratganj Commercial Kitchen';
+    vehicleNumber = '⚡ Hero Electric Optima • UP 32 AB 3340 (Lucknow) • Masked & Sanitized';
+    landmarks = [
+      'Hazratganj Metro',
+      'Vidhan Sabha Marg',
+      'Gomti Nagar Link',
+      'Civil Lines Park'
+    ];
+  } else if (city.includes('mumbai')) {
+    hubName = 'QuickBites Mumbai Hub';
+    hubLandmark = 'Bandra West Coastal Kitchen';
+    vehicleNumber = '⚡ Hero Electric Optima • MH 02 AB 1190 (Mumbai) • Masked & Sanitized';
+    landmarks = [
+      'Bandra Linking Road',
+      'Hill Road Junction',
+      'Carter Road Promenade',
+      'Pali Hill Residential'
+    ];
+  } else if (city.includes('bengaluru') || city.includes('bangalore')) {
+    hubName = 'QuickBites Bengaluru Hub';
+    hubLandmark = 'Koramangala 80ft Road Kitchen';
+    vehicleNumber = '⚡ Ather 450X • KA 01 AB 5520 (Bengaluru) • Masked & Sanitized';
+    landmarks = [
+      'Koramangala 4th Block',
+      'Sony World Signal',
+      '100ft Road Indiranagar',
+      'Koramangala Club'
+    ];
+  }
+
   // Delivery destination address
   const deliveryAddressStr = order.address 
     ? `${order.address.street || ''}, ${order.address.city || ''}, ${order.address.state || ''} ${order.address.zipcode || ''}`.trim()
@@ -201,7 +266,7 @@ const TrackOrder = () => {
                     step === 3 ? (
                       `Rider Amit is en route • ${riderDistance} km away from your location`
                     ) : (
-                      'QuickBites Kitchen is packing your delicious order fresh & hot'
+                      `QuickBites ${hubName} is packing your delicious order fresh & hot`
                     )
                   )}
                 </p>
@@ -242,11 +307,11 @@ const TrackOrder = () => {
           {/* REALISTIC HIGH-FIDELITY DELIVERY MAP (Zepto / Swiggy Style) */}
           <div className="zepto-map-viewport">
             <div className="map-city-grid">
-              {/* Street Names & Landmarks */}
-              <span className="map-landmark mark-1">Sector 18 Metro</span>
-              <span className="map-landmark mark-2">Atta Market Hub</span>
-              <span className="map-landmark mark-3">Sector 19 Green Park</span>
-              <span className="map-landmark mark-4">Residential Pocket C</span>
+              {/* Dynamic Landmarks */}
+              <span className="map-landmark mark-1">{landmarks[0]}</span>
+              <span className="map-landmark mark-2">{landmarks[1]}</span>
+              <span className="map-landmark mark-3">{landmarks[2]}</span>
+              <span className="map-landmark mark-4">{landmarks[3]}</span>
 
               {/* Road Network */}
               <div className="road-horizontal road-1"></div>
@@ -282,8 +347,8 @@ const TrackOrder = () => {
                 <div className="store-pin-bubble">
                   <span className="pin-icon">🏪</span>
                   <div className="pin-text">
-                    <b>QuickBites Kitchen</b>
-                    <span>Sector 18 Cloud Hub</span>
+                    <b>{hubName}</b>
+                    <span>{hubLandmark}</span>
                   </div>
                 </div>
               </div>
@@ -315,7 +380,7 @@ const TrackOrder = () => {
                   <span className="rating-badge">★ 4.96 (1,420 deliveries)</span>
                 </div>
                 <p className="rider-vehicle-text">
-                  ⚡ Hero Electric Optima • UP 16 AB 9120 • Wearing Mask & Gloves
+                  {vehicleNumber}
                 </p>
               </div>
             </div>

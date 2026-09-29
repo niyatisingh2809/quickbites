@@ -55,6 +55,137 @@ const StoreContextProvider = (props) => {
     const [promoCode, setPromoCode] = useState("");
     const [discount, setDiscount] = useState(0);
 
+    const defaultLocation = {
+        city: "Delhi NCR",
+        area: "Connaught Place / Sector 18",
+        state: "Delhi",
+        pincode: "110001",
+        hubName: "QuickBites Delhi NCR Mega Hub",
+        hubLandmark: "Inner Circle & Sector 18 Dark Store",
+        deliveryTime: "10-15 mins",
+        latitude: 28.6139,
+        longitude: 77.2090
+    };
+
+    const [currentLocation, setCurrentLocation] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem("quickbites_location")) || defaultLocation;
+        } catch (e) {
+            return defaultLocation;
+        }
+    });
+
+    const [isDetectingGPS, setIsDetectingGPS] = useState(false);
+
+    const selectLocation = (hub) => {
+        setCurrentLocation(hub);
+        try {
+            localStorage.setItem("quickbites_location", JSON.stringify(hub));
+        } catch (e) {}
+
+        // Automatically update delivery address city & state so PlaceOrder reflects the chosen hub
+        updateDeliveryAddress({
+            city: hub.city,
+            state: hub.state,
+            zipcode: hub.pincode
+        });
+    };
+
+    // Live GPS Detection via HTML5 Geolocation API
+    const detectGPSLocation = async () => {
+        if (!navigator.geolocation) {
+            alert("⚠️ Geolocation is not supported by your browser. Please select your city manually.");
+            return;
+        }
+
+        setIsDetectingGPS(true);
+        navigator.geolocation.getCurrentPosition(
+            async (position) => {
+                const { latitude, longitude } = position.coords;
+                try {
+                    // Try reverse geocoding with OpenStreetMap Nominatim
+                    const res = await axios.get(
+                        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=14&addressdetails=1`,
+                        { timeout: 4000 }
+                    );
+
+                    let detectedCity = "Delhi NCR";
+                    let detectedArea = "Detected Live Location";
+                    let detectedState = "Delhi";
+                    let detectedPincode = "110001";
+
+                    if (res.data && res.data.address) {
+                        const addr = res.data.address;
+                        detectedCity = addr.city || addr.town || addr.village || addr.county || addr.state_district || "Delhi NCR";
+                        detectedArea = addr.suburb || addr.neighbourhood || addr.road || "Live Location";
+                        detectedState = addr.state || "India";
+                        detectedPincode = addr.postcode || "110001";
+                    }
+
+                    // Check if detected city matches or is close to Mirzapur, Delhi, etc.
+                    const isMirzapur = detectedCity.toLowerCase().includes("mirzapur") || 
+                                       detectedArea.toLowerCase().includes("mirzapur");
+
+                    const newHub = {
+                        city: isMirzapur ? "Mirzapur" : detectedCity,
+                        area: detectedArea,
+                        state: detectedState,
+                        pincode: detectedPincode,
+                        hubName: isMirzapur ? "QuickBites Mirzapur Express Hub" : `QuickBites ${detectedCity} Cloud Hub`,
+                        hubLandmark: `Near ${detectedArea} Local Outlet`,
+                        deliveryTime: "12-18 mins",
+                        latitude: latitude,
+                        longitude: longitude,
+                        isGPSDetected: true
+                    };
+
+                    selectLocation(newHub);
+                } catch (apiErr) {
+                    // Fallback using latitude/longitude proximity:
+                    // Mirzapur approx: lat 25.13, lon 82.56
+                    const distToMirzapur = Math.sqrt(Math.pow(latitude - 25.13, 2) + Math.pow(longitude - 82.56, 2));
+                    const distToDelhi = Math.sqrt(Math.pow(latitude - 28.61, 2) + Math.pow(longitude - 77.20, 2));
+
+                    if (distToMirzapur < distToDelhi) {
+                        selectLocation({
+                            city: "Mirzapur",
+                            area: "Civil Lines / Station Road",
+                            state: "Uttar Pradesh",
+                            pincode: "231001",
+                            hubName: "QuickBites Mirzapur Express Hub",
+                            hubLandmark: "Near Station Road, Civil Lines",
+                            deliveryTime: "15-20 mins",
+                            latitude: latitude,
+                            longitude: longitude,
+                            isGPSDetected: true
+                        });
+                    } else {
+                        selectLocation({
+                            city: "Delhi NCR",
+                            area: "Live GPS Location",
+                            state: "Delhi",
+                            pincode: "110001",
+                            hubName: "QuickBites Delhi NCR Mega Hub",
+                            hubLandmark: "Connaught Place / Sector 18 Dark Store",
+                            deliveryTime: "10-15 mins",
+                            latitude: latitude,
+                            longitude: longitude,
+                            isGPSDetected: true
+                        });
+                    }
+                } finally {
+                    setIsDetectingGPS(false);
+                }
+            },
+            (error) => {
+                setIsDetectingGPS(false);
+                console.warn("GPS Geolocation error:", error.message);
+                alert("📍 Location permission was denied or unavailable. Please pick your city from the list.");
+            },
+            { timeout: 7000, enableHighAccuracy: true }
+        );
+    };
+
     const updateDeliveryAddress = (newAddr) => {
         setDeliveryAddress((prev) => {
             const updated = { ...prev, ...newAddr };
@@ -250,7 +381,12 @@ const StoreContextProvider = (props) => {
         promoCode,
         discount,
         applyPromo,
-        removePromo
+        removePromo,
+        currentLocation,
+        setCurrentLocation,
+        selectLocation,
+        detectGPSLocation,
+        isDetectingGPS
     };
 
     return (
