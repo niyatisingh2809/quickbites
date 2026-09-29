@@ -33,7 +33,13 @@ const MyOrders = ({ setShowLogin }) => {
                 }
             }
         } catch (err) {
-            console.error("Fetch orders error:", err);
+            console.warn("Fetch orders notice:", err.message);
+            try {
+                const localOrders = JSON.parse(localStorage.getItem("quickbites_orders")) || [];
+                if (localOrders.length > 0) {
+                    setData(localOrders);
+                }
+            } catch (e) {}
         } finally {
             if (!isQuiet) setLoading(false);
         }

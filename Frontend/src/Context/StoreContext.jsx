@@ -7,7 +7,13 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
     const url = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 
-    const [cartItems, setCartItems] = useState({});
+    const [cartItems, setCartItems] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem("quickbites_cart")) || {};
+        } catch (e) {
+            return {};
+        }
+    });
     const [token, setToken] = useState(() => localStorage.getItem("token") || "");
     const [user, setUser] = useState(() => {
         try {
@@ -74,9 +80,16 @@ const StoreContextProvider = (props) => {
         }
     };
 
+    useEffect(() => {
+        try {
+            localStorage.setItem("quickbites_cart", JSON.stringify(cartItems));
+        } catch (e) {}
+    }, [cartItems]);
+
     const logoutUser = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("quickbites_user");
+        localStorage.removeItem("quickbites_cart");
         setToken("");
         setUser(null);
         setCartItems({});
@@ -87,11 +100,11 @@ const StoreContextProvider = (props) => {
             ...prev,
             [itemId]: (prev[itemId] || 0) + 1
         }));
-        if (token) {
+        if (token && url && !token.startsWith("quickbites_local_")) {
             try {
                 await axios.post(url + "/api/cart/add", { itemId }, { headers: { token } });
             } catch (e) {
-                console.warn("Cart sync warning:", e.message);
+                console.warn("Cart sync notice:", e.message);
             }
         }
     };
@@ -106,11 +119,11 @@ const StoreContextProvider = (props) => {
             }
             return next;
         });
-        if (token) {
+        if (token && url && !token.startsWith("quickbites_local_")) {
             try {
                 await axios.post(url + "/api/cart/remove", { itemId }, { headers: { token } });
             } catch (e) {
-                console.warn("Cart remove warning:", e.message);
+                console.warn("Cart remove notice:", e.message);
             }
         }
     };
