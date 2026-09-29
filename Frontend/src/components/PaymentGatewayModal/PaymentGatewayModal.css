@@ -268,14 +268,48 @@
     background: #ffffff;
     padding: 8px;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.dynamic-qr-svg {
+.qr-code-frame:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(226, 55, 68, 0.2);
+}
+
+.dynamic-qr-image {
+    width: 140px;
+    height: 140px;
     display: block;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.btn-pay-qr-quick {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    border: none;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-pay-qr-quick:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
 }
 
 .qr-scan-line {

@@ -281,71 +281,39 @@ const PaymentGatewayModal = ({
                     <span className="qr-timer-pill">⏱ Expires in {formattedQrTimer}</span>
                   </div>
 
-                  {/* REAL-LOOKING DYNAMIC UPI QR CODE */}
+                  {/* REAL SCANNABLE DYNAMIC UPI QR CODE */}
                   <div className="upi-qr-card">
-                    <div className="qr-code-frame">
-                      {/* Realistic SVG generated high-density QR code visual */}
-                      <svg viewBox="0 0 160 160" width="140" height="140" className="dynamic-qr-svg">
-                        <rect width="160" height="160" fill="#ffffff" rx="10" />
-                        {/* Corner Targets */}
-                        <rect x="14" y="14" width="38" height="38" fill="#0f172a" rx="6" />
-                        <rect x="22" y="22" width="22" height="22" fill="#ffffff" rx="3" />
-                        <rect x="27" y="27" width="12" height="12" fill="#e23744" rx="2" />
-
-                        <rect x="108" y="14" width="38" height="38" fill="#0f172a" rx="6" />
-                        <rect x="116" y="22" width="22" height="22" fill="#ffffff" rx="3" />
-                        <rect x="121" y="27" width="12" height="12" fill="#e23744" rx="2" />
-
-                        <rect x="14" y="108" width="38" height="38" fill="#0f172a" rx="6" />
-                        <rect x="22" y="116" width="22" height="22" fill="#ffffff" rx="3" />
-                        <rect x="27" y="121" width="12" height="12" fill="#e23744" rx="2" />
-
-                        {/* QR Matrix Pixels */}
-                        <g fill="#1e293b">
-                          <rect x="58" y="18" width="8" height="8" />
-                          <rect x="72" y="18" width="8" height="8" />
-                          <rect x="86" y="18" width="8" height="8" />
-                          <rect x="58" y="32" width="8" height="8" />
-                          <rect x="80" y="32" width="8" height="8" />
-                          <rect x="66" y="46" width="8" height="8" />
-                          <rect x="86" y="46" width="8" height="8" />
-
-                          <rect x="18" y="58" width="8" height="8" />
-                          <rect x="32" y="66" width="8" height="8" />
-                          <rect x="46" y="58" width="8" height="8" />
-                          <rect x="18" y="80" width="8" height="8" />
-                          <rect x="38" y="86" width="8" height="8" />
-
-                          <rect x="108" y="58" width="8" height="8" />
-                          <rect x="126" y="66" width="8" height="8" />
-                          <rect x="136" y="80" width="8" height="8" />
-
-                          <rect x="58" y="108" width="8" height="8" />
-                          <rect x="72" y="120" width="8" height="8" />
-                          <rect x="86" y="136" width="8" height="8" />
-                          <rect x="58" y="136" width="8" height="8" />
-                          <rect x="108" y="108" width="8" height="8" />
-                          <rect x="126" y="120" width="8" height="8" />
-                          <rect x="136" y="136" width="8" height="8" />
-                        </g>
-
-                        {/* Center Logo Shield */}
-                        <circle cx="80" cy="80" r="18" fill="#ffffff" stroke="#e23744" strokeWidth="2.5" />
-                        <text x="80" y="86" textAnchor="middle" fill="#e23744" fontSize="16" fontWeight="bold">Q</text>
-                      </svg>
+                    <div 
+                      className="qr-code-frame" 
+                      onClick={() => executePaymentFlow('UPI QR Code')}
+                      title="Scan with any UPI App or click to simulate scan"
+                    >
+                      <img
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=280x280&margin=8&data=${encodeURIComponent(`upi://pay?pa=quickbites@hdfcbank&pn=QuickBites%20Logistics&am=${amount}&cu=INR`)}`}
+                        alt="Scan UPI QR Code"
+                        className="dynamic-qr-image"
+                        loading="eager"
+                      />
                       <div className="qr-scan-line"></div>
                     </div>
 
                     <div className="upi-qr-meta">
                       <p className="qr-scan-title">Scan & Pay using any UPI App</p>
                       <div className="upi-supported-badges">
-                        <span className="upi-badge-pill">GPay</span>
+                        <span className="upi-badge-pill">Google Pay</span>
                         <span className="upi-badge-pill">PhonePe</span>
                         <span className="upi-badge-pill">Paytm</span>
                         <span className="upi-badge-pill">CRED</span>
                         <span className="upi-badge-pill">BHIM</span>
                       </div>
                       <p className="qr-vpa-text">UPI ID: <b>quickbites@hdfcbank</b></p>
+                      <button
+                        type="button"
+                        className="btn-pay-qr-quick"
+                        onClick={() => executePaymentFlow('UPI QR Code')}
+                      >
+                        ⚡ Simulate QR Scan (₹{amount})
+                      </button>
                     </div>
                   </div>
 
