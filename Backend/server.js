@@ -54,7 +54,7 @@ const apiLimiter = rateLimit({
 });
 app.use("/api", apiLimiter);
 
-// Database connection & migrations
+// Database connection & migrations (synced with unique dish images)
 connectDB().then(() => {
   runInitialMigrations();
   startTiffinScheduler();
