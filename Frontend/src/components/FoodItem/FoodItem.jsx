@@ -21,9 +21,12 @@ const FoodItem = ({ id, name, price, description, image, rating, reviewsCount, c
           className='food-item-img'
           src={image?.startsWith("http") ? image : `/images/${image}`}
           onError={(e) => {
-            e.target.onerror = null;
-            if (url && !e.target.src.includes(url)) {
+            if (!e.target.dataset.triedBackend && url && !image?.startsWith("http")) {
+              e.target.dataset.triedBackend = "true";
               e.target.src = `${url}/images/${image}`;
+            } else if (!e.target.dataset.triedFallback) {
+              e.target.dataset.triedFallback = "true";
+              e.target.src = "/images/food_1.png";
             }
           }}
           alt={name}

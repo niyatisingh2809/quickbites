@@ -4,7 +4,7 @@ export const catalogDishes = [
   // ================= CHAAP (10 items - 100% Veg) =================
   {
     name: "Soya Malai Chaap",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Soya_Chaap_dish.jpg",
+    image: "food_malai_chaap.jpg",
     price: 240,
     description: "Tender soya chaap chunks marinated in rich cream, cashew paste, green cardamom, and grilled in tandoor.",
     category: "Chaap",
@@ -17,7 +17,7 @@ export const catalogDishes = [
   },
   {
     name: "Tandoori Masala Chaap",
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Tandoori_platter.jpg",
+    image: "food_tandoori_chaap.jpg",
     price: 220,
     description: "Spicy roasted soya chaap skewers coated with Punjabi tandoori masala and basted in lemon butter.",
     category: "Chaap",
@@ -30,7 +30,7 @@ export const catalogDishes = [
   },
   {
     name: "Afghani Soya Chaap",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/31/Malai_chicken_tikka.JPG",
+    image: "food_afghani_chaap.jpg",
     price: 250,
     description: "Mild and aromatic soya chaap grilled with white pepper, fresh hung curd, and rich garlic marinade.",
     category: "Chaap",
@@ -43,7 +43,7 @@ export const catalogDishes = [
   },
   {
     name: "Achari Soya Chaap",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Paneer_tikka.jpg/960px-Paneer_tikka.jpg",
+    image: "food_achari_chaap.jpg",
     price: 230,
     description: "Zesty soya chaap infused with pickled mustard seeds, fennel, and fiery kachha aam masala.",
     category: "Chaap",
@@ -56,7 +56,7 @@ export const catalogDishes = [
   },
   {
     name: "Haryali Soya Chaap",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Hariyali_Tikka.jpg/960px-Hariyali_Tikka.jpg",
+    image: "food_haryali_chaap.jpg",
     price: 235,
     description: "Tandoor-charred soya skewers marinated in fresh mint, coriander, and green chillies.",
     category: "Chaap",
@@ -69,7 +69,7 @@ export const catalogDishes = [
   },
   {
     name: "Soya Chaap Butter Masala Gravy",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Chicken_tikka_masala_%28cropped%29.jpg/960px-Chicken_tikka_masala_%28cropped%29.jpg",
+    image: "food_chaap_butter_masala.jpg",
     price: 270,
     description: "Succulent roasted soya chaap simmered in silky tomato-butter-cashew makhani gravy.",
     category: "Chaap",
@@ -82,7 +82,7 @@ export const catalogDishes = [
   },
   {
     name: "Kadhai Soya Chaap Gravy",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Punjabi_Chicken_Karahi.JPG/960px-Punjabi_Chicken_Karahi.JPG",
+    image: "food_chaap_kadhai.jpg",
     price: 260,
     description: "Wok-tossed soya chaap with crispy bell peppers, onions, and freshly crushed coriander spices.",
     category: "Chaap",
@@ -95,7 +95,7 @@ export const catalogDishes = [
   },
   {
     name: "Soya Chaap Rogan Josh (Veg Style)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rogan_Josh_Kashmiri.jpg/960px-Rogan_Josh_Kashmiri.jpg",
+    image: "food_chaap_rogan_josh.jpg",
     price: 280,
     description: "A slow-cooked Kashmiri spiced vegetarian delicacy cooked with aromatic ratan jot spices and yogurt.",
     category: "Chaap",
@@ -108,7 +108,7 @@ export const catalogDishes = [
   },
   {
     name: "Crispy Kurkure Soya Chaap",
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Fried_momos_of_Salem.jpg",
+    image: "food_kurkure_chaap.jpg",
     price: 210,
     description: "Deep-fried crunchy soya chaap coated in golden cornflakes batter served with mint dip.",
     category: "Chaap",
@@ -121,7 +121,7 @@ export const catalogDishes = [
   },
   {
     name: "Soya Chaap Kathi Roll",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chicken_Chilli.JPG/960px-Chicken_Chilli.JPG",
+    image: "food_chaap_roll.jpg",
     price: 180,
     description: "Flame-roasted spicy tandoori chaap wrapped in soft roomali roti with pickled laccha onions.",
     category: "Chaap",
@@ -136,7 +136,7 @@ export const catalogDishes = [
   // ================= CONTINENTAL (13 items - 7 Veg, 6 Non-Veg) =================
   {
     name: "Cheesy Garlic Bread",
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Garlic_bread_baguettes_2.jpg",
+    image: "food_cheesy_garlic_bread.jpg",
     price: 175,
     description: "Toasted artisan baguette slices smothered in garlic herb butter and bubbling melted mozzarella.",
     category: "Continental",
@@ -162,7 +162,7 @@ export const catalogDishes = [
   },
   {
     name: "Baked Vegetable Au Gratin",
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Gratin-Dauphinois.jpg",
+    image: "food_veg_au_gratin.jpg",
     price: 265,
     description: "Tender garden vegetables baked in creamy mornay sauce with bubbling parmesan cheese.",
     category: "Continental",
@@ -175,7 +175,7 @@ export const catalogDishes = [
   },
   {
     name: "Grilled Cottage Cheese Steak",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Paneer_tikka.jpg/960px-Paneer_tikka.jpg",
+    image: "food_paneer_steak.jpg",
     price: 295,
     description: "Char-grilled herb-marinated paneer slab served with sautéed vegetables and pepper mushroom sauce.",
     category: "Continental",
@@ -188,7 +188,7 @@ export const catalogDishes = [
   },
   {
     name: "Cream of Mushroom Soup",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cream_mushroom_soup_3.jpg/960px-Cream_mushroom_soup_3.jpg",
+    image: "food_mushroom_soup.jpg",
     price: 165,
     description: "Earthy roasted button mushrooms blended into velvety cream soup garnished with truffle oil.",
     category: "Continental",
@@ -201,7 +201,7 @@ export const catalogDishes = [
   },
   {
     name: "Crispy Jalapeño Cheese Poppers",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Cooking-food-stuffed-jalapenos-peppers.jpg",
+    image: "food_jalapeno_poppers.jpg",
     price: 195,
     description: "Golden crumbed melted cheese bites stuffed with fiery diced jalapeño peppers.",
     category: "Continental",
@@ -214,7 +214,7 @@ export const catalogDishes = [
   },
   {
     name: "Herb Grilled Chicken Breast",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Grilled_chicken_breast.jpg/960px-Grilled_chicken_breast.jpg",
+    image: "food_grilled_chicken_breast.jpg",
     price: 345,
     description: "Succulent chicken breast grilled with rosemary and thyme, served with garlic mash and pepper jus.",
     category: "Continental",
@@ -227,7 +227,7 @@ export const catalogDishes = [
   },
   {
     name: "Chicken Stroganoff with Buttered Rice",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Moscow_%288351271825%29.jpg/960px-Moscow_%288351271825%29.jpg",
+    image: "food_chicken_stroganoff.jpg",
     price: 375,
     description: "Tender chicken strips and button mushrooms in rich sour cream sauce served over seasoned butter rice.",
     category: "Continental",
@@ -240,7 +240,7 @@ export const catalogDishes = [
   },
   {
     name: "Crispy Fish & Chips",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Fish_and_chips_blackpool.jpg/960px-Fish_and_chips_blackpool.jpg",
+    image: "food_fish_and_chips.jpg",
     price: 360,
     description: "Golden crispy battered river sole fillet served with salted crinkle fries and homemade tartar sauce.",
     category: "Continental",
@@ -253,7 +253,7 @@ export const catalogDishes = [
   },
   {
     name: "Grilled Lemon Butter Fish",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pan-fried_fish_fillet.jpg/960px-Pan-fried_fish_fillet.jpg",
+    image: "food_lemon_butter_fish.jpg",
     price: 390,
     description: "Pan-seared fish fillet basted in zesty lemon garlic butter sauce with sautéed asparagus.",
     category: "Continental",
@@ -266,7 +266,7 @@ export const catalogDishes = [
   },
   {
     name: "Roasted Chicken Caesar Wrap",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Chicken_wrap.jpg/960px-Chicken_wrap.jpg",
+    image: "food_chicken_caesar_wrap.jpg",
     price: 230,
     description: "Sliced grilled chicken, crisp romaine, parmesan shavings, and Caesar dressing wrapped in tortilla.",
     category: "Continental",
@@ -279,7 +279,7 @@ export const catalogDishes = [
   },
   {
     name: "Peri Peri Grilled Chicken Skewers",
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Chickentandoori.jpg",
+    image: "food_peri_peri_skewers.jpg",
     price: 285,
     description: "Fiery peri peri spiced chicken skewers served with lemon wedges and cooling garlic aioli.",
     category: "Continental",
@@ -292,7 +292,7 @@ export const catalogDishes = [
   },
   {
     name: "Spinach & Corn Quesadilla",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Empanada_flor_de_Calabaza.jpg/960px-Empanada_flor_de_Calabaza.jpg",
+    image: "food_spinach_corn_quesadilla.jpg",
     price: 220,
     description: "Grilled Mexican-style flour tortilla folded with sweet corn, sauteed baby spinach, and Monterey Jack.",
     category: "Continental",
@@ -307,7 +307,7 @@ export const catalogDishes = [
   // ================= ITALIAN (14 items - 10 Veg, 4 Non-Veg) =================
   {
     name: "Classic Margherita Pizza",
-    image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Margherita_Originale.JPG",
+    image: "food_margherita_pizza.jpg",
     price: 280,
     description: "Wood-fired thin crust pizza with San Marzano tomato sauce, fresh mozzarella, and sweet basil leaves.",
     category: "Italian",
@@ -320,7 +320,7 @@ export const catalogDishes = [
   },
   {
     name: "Farmhouse Garden Fresh Pizza",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Vegetarian_Pizza.jpg",
+    image: "food_farmhouse_pizza.jpg",
     price: 320,
     description: "Loaded with crunchy bell peppers, red onions, ripe tomatoes, mushrooms, and golden sweet corn.",
     category: "Italian",
@@ -333,7 +333,7 @@ export const catalogDishes = [
   },
   {
     name: "Quattro Formaggi (Four Cheese) Pizza",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/960px-Pizza-3007395.jpg",
+    image: "food_four_cheese_pizza.jpg",
     price: 360,
     description: "Decadent blend of mozzarella, cheddar, gorgonzola, and shaved parmesan on crispy crust.",
     category: "Italian",
@@ -346,7 +346,7 @@ export const catalogDishes = [
   },
   {
     name: "Paneer Makhani Fusion Pizza",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/960px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+    image: "food_paneer_makhani_pizza.jpg",
     price: 340,
     description: "Fusion pizza topped with marinated tandoori paneer cubes, capsicum, and makhani drizzle.",
     category: "Italian",
@@ -372,7 +372,7 @@ export const catalogDishes = [
   },
   {
     name: "Fettuccine Alfredo Cream",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Fettuccine_Alfredo_originals.jpg/960px-Fettuccine_Alfredo_originals.jpg",
+    image: "food_fettuccine_alfredo.jpg",
     price: 260,
     description: "Silky fettuccine ribbons smothered in rich parmesan butter garlic cream sauce.",
     category: "Italian",
@@ -411,7 +411,7 @@ export const catalogDishes = [
   },
   {
     name: "Wild Mushroom & Parmesan Risotto",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Risotto_with_speck_and_goat_cheese_%286101067436%29.jpg/960px-Risotto_with_speck_and_goat_cheese_%286101067436%29.jpg",
+    image: "food_mushroom_risotto.jpg",
     price: 310,
     description: "Slow-simmered arborio rice with porcini and cremini mushrooms, butter, and grana padano.",
     category: "Italian",
@@ -424,7 +424,7 @@ export const catalogDishes = [
   },
   {
     name: "BBQ Chicken Fiesta Pizza",
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Chicken_BBQ_Pizza.jpg",
+    image: "food_bbq_chicken_pizza.jpg",
     price: 380,
     description: "Smoky barbecue glazed chicken chunks, red onions, bell peppers, and bubbling mozzarella.",
     category: "Italian",
@@ -437,7 +437,7 @@ export const catalogDishes = [
   },
   {
     name: "Peri Peri Chicken Pizza",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Supreme_pizza.jpg/960px-Supreme_pizza.jpg",
+    image: "food_peri_peri_chicken_pizza.jpg",
     price: 395,
     description: "Spicy shredded chicken, jalapeños, red paprika, and peri peri seasoned cheese crust.",
     category: "Italian",
@@ -463,7 +463,7 @@ export const catalogDishes = [
   },
   {
     name: "Chicken Carbonara Spaghetti",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Espaguetis_carbonara.jpg/960px-Espaguetis_carbonara.jpg",
+    image: "food_chicken_carbonara.jpg",
     price: 340,
     description: "Spaghetti tossed with crispy cured chicken bits, egg yolk cream, black pepper, and parmesan.",
     category: "Italian",
@@ -476,7 +476,7 @@ export const catalogDishes = [
   },
   {
     name: "Classic Venetian Tiramisu",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Tiramisu_-_Raffaele_Diomede.jpg/960px-Tiramisu_-_Raffaele_Diomede.jpg",
+    image: "food_tiramisu.jpg",
     price: 220,
     description: "Espresso-soaked ladyfinger biscuits layered with whipped mascarpone cream and dusted with dark cocoa.",
     category: "Italian",
@@ -491,7 +491,7 @@ export const catalogDishes = [
   // ================= BIRYANI (12 items - 5 Veg, 7 Non-Veg) =================
   {
     name: "Hyderabadi Dum Veg Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Vegetable_Biryani%2C_Hyderabad.jpg/960px-Vegetable_Biryani%2C_Hyderabad.jpg",
+    image: "food_veg_biryani.jpg",
     price: 240,
     description: "Aromatic long grain basmati rice layered with garden veggies, mint, saffron, and slow-cooked in dum seal.",
     category: "Biryani",
@@ -504,7 +504,7 @@ export const catalogDishes = [
   },
   {
     name: "Awadhi Paneer Tikka Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Paneer_tikka.jpg/960px-Paneer_tikka.jpg",
+    image: "food_paneer_biryani.jpg",
     price: 275,
     description: "Royal Awadhi style biryani loaded with charcoal-grilled paneer tikka, caramelized onions, and kewra water.",
     category: "Biryani",
@@ -517,7 +517,7 @@ export const catalogDishes = [
   },
   {
     name: "Soya Chaap Dum Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Soya_Chaap_dish.jpg",
+    image: "food_chaap_biryani.jpg",
     price: 260,
     description: "Spicy marinated tandoori chaap pieces layered with saffron basmati rice and roasted cashews.",
     category: "Biryani",
@@ -530,7 +530,7 @@ export const catalogDishes = [
   },
   {
     name: "Kathal (Jackfruit) Dum Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/India_food.jpg/960px-India_food.jpg",
+    image: "food_jackfruit_biryani.jpg",
     price: 250,
     description: "Traditional Mughlai tender raw jackfruit cooked with royal biryani spices and mint.",
     category: "Biryani",
@@ -543,7 +543,7 @@ export const catalogDishes = [
   },
   {
     name: "Kolkata Royal Egg Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Egg_Biryani_in_a_restaurant.jpg",
+    image: "food_egg_biryani.jpg",
     price: 220,
     description: "Fragrant basmati rice served with boiled roasted eggs and golden fried spiced potato.",
     category: "Biryani",
@@ -556,7 +556,7 @@ export const catalogDishes = [
   },
   {
     name: "Hyderabadi Chicken Dum Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/%22Hyderabadi_Dum_Biryani%22.jpg/960px-%22Hyderabadi_Dum_Biryani%22.jpg",
+    image: "food_chicken_biryani.jpg",
     price: 310,
     description: "Authentic kacchi yakhni chicken marinated in spices and yogurt, slow-cooked on dum with saffron rice.",
     category: "Biryani",
@@ -569,7 +569,7 @@ export const catalogDishes = [
   },
   {
     name: "Lucknowi Murgh Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Chicken_Biriyani.jpg/960px-Chicken_Biriyani.jpg",
+    image: "food_lucknowi_chicken_biryani.jpg",
     price: 330,
     description: "Mild, fragrant Awadhi style chicken biryani infused with rose water, green cardamom, and ghee.",
     category: "Biryani",
@@ -582,7 +582,7 @@ export const catalogDishes = [
   },
   {
     name: "Chicken Tikka Boneless Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Chicken_tikka_masala_%28cropped%29.jpg/960px-Chicken_tikka_masala_%28cropped%29.jpg",
+    image: "food_chicken_tikka_biryani.jpg",
     price: 345,
     description: "Tender roasted boneless chicken tikka tossed in spicy masala and layered with saffron basmati rice.",
     category: "Biryani",
@@ -595,7 +595,7 @@ export const catalogDishes = [
   },
   {
     name: "Awadhi Mutton Dum Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/23/A_home_made_plate_of_mutton_biryani_served_with_chicken_kassa_cooked_in_the_bengali_style.jpg",
+    image: "food_mutton_biryani.jpg",
     price: 420,
     description: "Slow-cooked tender baby mutton pieces layered with royal saffron basmati rice and fried onions.",
     category: "Biryani",
@@ -608,7 +608,7 @@ export const catalogDishes = [
   },
   {
     name: "Mutton Keema Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Bengali_Mutton_Curry.JPG/960px-Bengali_Mutton_Curry.JPG",
+    image: "food_mutton_keema_biryani.jpg",
     price: 390,
     description: "Rich spiced minced mutton slow-simmered with aromatic long grain rice and whole spices.",
     category: "Biryani",
@@ -621,7 +621,7 @@ export const catalogDishes = [
   },
   {
     name: "Prawns Masala Biryani",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Prawn_Biryani%2C_Hyderabad.jpg",
+    image: "food_prawns_biryani.jpg",
     price: 430,
     description: "Coastal style juicy prawns cooked in coastal spices and layered with fragrant basmati rice.",
     category: "Biryani",
@@ -649,7 +649,7 @@ export const catalogDishes = [
   // ================= STREET FOOD (14 items - 8 Veg, 6 Non-Veg) =================
   {
     name: "Delhi Special Chhole Bhature",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Chhole_Bhature_served_in_North_India.jpg",
+    image: "food_chhole_bhature.jpg",
     price: 160,
     description: "Two fluffy golden fried bhature served with spicy pindi chhole, pickled chillies, and onion salad.",
     category: "Street Food",
@@ -662,7 +662,7 @@ export const catalogDishes = [
   },
   {
     name: "Mumbai Butter Pav Bhaji",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Bhaji_pav_2.jpg",
+    image: "food_pav_bhaji.jpg",
     price: 150,
     description: "Mashed spiced vegetable bhaji cooked in copious Amul butter served with two soft toasted pavs.",
     category: "Street Food",
@@ -675,7 +675,7 @@ export const catalogDishes = [
   },
   {
     name: "Crispy Aloo Tikki Chaat",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Aloo_Tikki_served_with_chutneys.jpg/960px-Aloo_Tikki_served_with_chutneys.jpg",
+    image: "food_aloo_tikki.jpg",
     price: 110,
     description: "Golden shallow-fried spiced potato patties topped with sweet tamarind chutney, green mint chutney, and curd.",
     category: "Street Food",
@@ -688,7 +688,7 @@ export const catalogDishes = [
   },
   {
     name: "Dahi Bhalla Papdi Chaat",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Dahi_bhalla_or_dahi_wada_or_dahi_bada.PNG",
+    image: "food_dahi_bhalla.jpg",
     price: 130,
     description: "Soft lentil dumplings and crispy papdis drenched in sweet spiced yogurt, pomegranate, and sev.",
     category: "Street Food",
@@ -701,7 +701,7 @@ export const catalogDishes = [
   },
   {
     name: "Steamed Veg Darjeeling Momos (6 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Steamed_Momos_-_KOLKATA.jpg",
+    image: "food_steamed_veg_momos.jpg",
     price: 120,
     description: "Delicate thin-wrapper dumplings filled with finely chopped cabbage, carrots, onions, and scallions.",
     category: "Street Food",
@@ -714,7 +714,7 @@ export const catalogDishes = [
   },
   {
     name: "Fried Veg Momos (6 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Fried_momos_of_Salem.jpg",
+    image: "food_fried_veg_momos.jpg",
     price: 135,
     description: "Crispy deep-fried vegetable dumplings served with fiery red chilli garlic dip and mayo.",
     category: "Street Food",
@@ -727,7 +727,7 @@ export const catalogDishes = [
   },
   {
     name: "Kurkure Paneer Momos (6 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/HK_SYP_%E8%A5%BF%E7%87%9F%E7%9B%A4_Sai_Ying_Pun_Kwan_Yick_Building_%E5%90%8D%E6%98%9F%E6%B5%B7%E9%AE%AE%E9%85%92%E5%AE%B6_Star_Seafood_Restaurant_food_%E5%90%9E%E9%BA%B5_Wonton_dim_sum_October_2020_SS2_01.jpg/960px-HK_SYP_%E8%A5%BF%E7%87%9F%E7%9B%A4_Sai_Ying_Pun_Kwan_Yick_Building_%E5%90%8D%E6%98%9F%E6%B5%B7%E9%AE%AE%E9%85%92%E5%AE%B6_Star_Seafood_Restaurant_food_%E5%90%9E%E9%BA%B5_Wonton_dim_sum_October_2020_SS2_01.jpg",
+    image: "food_kurkure_paneer_momos.jpg",
     price: 165,
     description: "Crunchy cornflake crusted paneer dumplings fried to golden perfection with spicy schezwan sauce.",
     category: "Street Food",
@@ -740,7 +740,7 @@ export const catalogDishes = [
   },
   {
     name: "Steamed Chicken Momos (6 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/05/Chicken_Momo_-_Howrah_2013-10-10_3254.JPG",
+    image: "food_steamed_chicken_momos.jpg",
     price: 155,
     description: "Juicy chicken mince seasoned with ginger, garlic, and coriander inside steamed dumplings.",
     category: "Street Food",
@@ -753,7 +753,7 @@ export const catalogDishes = [
   },
   {
     name: "Fried Chicken Momos (6 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Fried-Chicken-Set.jpg/960px-Fried-Chicken-Set.jpg",
+    image: "food_fried_chicken_momos.jpg",
     price: 170,
     description: "Crispy golden fried chicken dumplings served with spicy garlic tomato chutney.",
     category: "Street Food",
@@ -766,7 +766,7 @@ export const catalogDishes = [
   },
   {
     name: "Kurkure Chicken Momos (6 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chicken_Chilli.JPG/960px-Chicken_Chilli.JPG",
+    image: "food_kurkure_chicken_momos.jpg",
     price: 185,
     description: "Extra crispy crumb-coated chicken momos fried crunchy on the outside, juicy on the inside.",
     category: "Street Food",
@@ -792,7 +792,7 @@ export const catalogDishes = [
   },
   {
     name: "Double Egg Chicken Roll",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Chicken_wrap.jpg/960px-Chicken_wrap.jpg",
+    image: "food_egg_chicken_roll.jpg",
     price: 185,
     description: "Crispy paratha lined with two eggs and stuffed with spicy tandoori chicken chunks and pickled onions.",
     category: "Street Food",
@@ -805,7 +805,7 @@ export const catalogDishes = [
   },
   {
     name: "Mutton Seekh Kebab Roll",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Seekh_Kebab.JPG",
+    image: "food_seekh_kebab_roll.jpg",
     price: 220,
     description: "Tender minced lamb seekh kebab wrapped in hot rumali roti with lemon juice and chaat masala.",
     category: "Street Food",
@@ -818,7 +818,7 @@ export const catalogDishes = [
   },
   {
     name: "Amritsari Kulcha with Chhole",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Chole_Kulcha_Meal_-_Order_Food_Online_in_Mumbai_%2831013272937%29.jpg/960px-Chole_Kulcha_Meal_-_Order_Food_Online_in_Mumbai_%2831013272937%29.jpg",
+    image: "food_amritsari_kulcha.jpg",
     price: 175,
     description: "Stuffed tandoori aloo-onion kulcha baked crisp with butter and served with tangy Amritsari chhole.",
     category: "Street Food",
@@ -833,7 +833,7 @@ export const catalogDishes = [
   // ================= NON-VEG SPECIALS (14 items - 100% Non-Veg) =================
   {
     name: "Old Delhi Butter Chicken",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Butter_Chicken_%26_Butter_Naan_-_Home_-_Chandigarh_-_India_-_0006.jpg/960px-Butter_Chicken_%26_Butter_Naan_-_Home_-_Chandigarh_-_India_-_0006.jpg",
+    image: "food_butter_chicken.jpg",
     price: 340,
     description: "Tender tandoori chicken cooked in velvety, mildly sweet tomato-butter-cashew gravy with fenugreek.",
     category: "Non-Veg Specials",
@@ -846,7 +846,7 @@ export const catalogDishes = [
   },
   {
     name: "Chicken Tikka Masala",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Chicken_tikka_masala_%28cropped%29.jpg/960px-Chicken_tikka_masala_%28cropped%29.jpg",
+    image: "food_chicken_tikka_masala.jpg",
     price: 330,
     description: "Charcoal-roasted boneless chicken tikka cooked in spicy onion-tomato-capsicum gravy.",
     category: "Non-Veg Specials",
@@ -859,7 +859,7 @@ export const catalogDishes = [
   },
   {
     name: "Tandoori Murgh (Half)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Chickentandoori.jpg",
+    image: "food_tandoori_murgh_half.jpg",
     price: 290,
     description: "Classic bone-in chicken marinated in hung yogurt, Kashmiri red chilli, mustard oil, and tandoori spices.",
     category: "Non-Veg Specials",
@@ -872,7 +872,7 @@ export const catalogDishes = [
   },
   {
     name: "Tandoori Murgh (Full)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Tandoori_platter.jpg",
+    image: "food_tandoori_murgh_full.jpg",
     price: 490,
     description: "Whole tandoori chicken roasted to juicy perfection in clay oven served with mint dip and laccha onion.",
     category: "Non-Veg Specials",
@@ -885,7 +885,7 @@ export const catalogDishes = [
   },
   {
     name: "Kadhai Chicken",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Punjabi_Chicken_Karahi.JPG/960px-Punjabi_Chicken_Karahi.JPG",
+    image: "food_kadhai_chicken.jpg",
     price: 320,
     description: "Juicy chicken morsels tossed in high-heat wok with bell peppers, fresh tomatoes, and crushed coriander seeds.",
     category: "Non-Veg Specials",
@@ -898,7 +898,7 @@ export const catalogDishes = [
   },
   {
     name: "Mughlai Chicken Korma",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Chicken_Korma.JPG",
+    image: "food_chicken_korma.jpg",
     price: 350,
     description: "Slow-simmered chicken in rich white almond, cashew, and saffron gravy infused with green cardamom.",
     category: "Non-Veg Specials",
@@ -911,7 +911,7 @@ export const catalogDishes = [
   },
   {
     name: "Chicken Rara Punjabi",
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Chicken_rara_gravy.JPG",
+    image: "food_chicken_rara.jpg",
     price: 360,
     description: "Unique combination of succulent chicken pieces cooked in thick spicy minced chicken keema gravy.",
     category: "Non-Veg Specials",
@@ -924,7 +924,7 @@ export const catalogDishes = [
   },
   {
     name: "Kashmiri Mutton Rogan Josh",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rogan_Josh_Kashmiri.jpg/960px-Rogan_Josh_Kashmiri.jpg",
+    image: "food_mutton_rogan_josh.jpg",
     price: 430,
     description: "Prime mutton pieces braised in authentic Kashmiri gravy with brown onions, yogurt, and aromatic spices.",
     category: "Non-Veg Specials",
@@ -937,7 +937,7 @@ export const catalogDishes = [
   },
   {
     name: "Bhuna Gosht",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Bengali_Mutton_Curry.JPG/960px-Bengali_Mutton_Curry.JPG",
+    image: "food_bhuna_gosht.jpg",
     price: 440,
     description: "Tender mutton slow-cooked with roasted spices, onions, and ginger until thick and richly coated.",
     category: "Non-Veg Specials",
@@ -950,7 +950,7 @@ export const catalogDishes = [
   },
   {
     name: "Mutton Seekh Kebab (4 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Seekh_Kebab.JPG",
+    image: "food_mutton_seekh_kebab.jpg",
     price: 320,
     description: "Minced spiced lamb skewers grilled over charcoal embers, served with onion rings and lemon.",
     category: "Non-Veg Specials",
@@ -963,7 +963,7 @@ export const catalogDishes = [
   },
   {
     name: "Chicken Malai Tikka (6 pcs)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/31/Malai_chicken_tikka.JPG",
+    image: "food_chicken_malai_tikka.jpg",
     price: 295,
     description: "Boneless chicken cubes marinated in heavy cream, hung curd, cheese, and mild white pepper.",
     category: "Non-Veg Specials",
@@ -976,7 +976,7 @@ export const catalogDishes = [
   },
   {
     name: "Amritsari Crispy Fish Fry",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Fish_fry_%2890626%29.jpg",
+    image: "food_amritsari_fish_fry.jpg",
     price: 350,
     description: "Fish fillets coated in seasoned gram flour and carom seeds (ajwain), deep-fried crispy golden.",
     category: "Non-Veg Specials",
@@ -989,7 +989,7 @@ export const catalogDishes = [
   },
   {
     name: "Goan Fish Curry",
-    image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Goan_typical_meal_--_fish%2C_curry_and_rice.jpg",
+    image: "food_goan_fish_curry.jpg",
     price: 380,
     description: "Fresh fish simmered in tangy, spicy coconut-tamarind gravy with Kashmiri chillies and curry leaves.",
     category: "Non-Veg Specials",
@@ -1002,7 +1002,7 @@ export const catalogDishes = [
   },
   {
     name: "Masala Prawns Curry",
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/cc/King_prawn_curry_-_Sunoso.jpg",
+    image: "food_masala_prawns_curry.jpg",
     price: 420,
     description: "Plump juicy prawns cooked in coastal onion-tomato gravy with mustard seeds and fresh curry leaves.",
     category: "Non-Veg Specials",

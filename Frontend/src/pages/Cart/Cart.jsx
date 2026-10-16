@@ -256,9 +256,12 @@ const Cart = ({ setShowLogin }) => {
                         <img
                           src={item.image?.startsWith('http') ? item.image : `/images/${item.image}`}
                           onError={(e) => {
-                            e.target.onerror = null;
-                            if (url && !e.target.src.includes(url)) {
+                            if (!e.target.dataset.triedBackend && url && !item.image?.startsWith('http')) {
+                              e.target.dataset.triedBackend = "true";
                               e.target.src = `${url}/images/${item.image}`;
+                            } else if (!e.target.dataset.triedFallback) {
+                              e.target.dataset.triedFallback = "true";
+                              e.target.src = "/images/food_1.png";
                             }
                           }}
                           alt={item.name}
