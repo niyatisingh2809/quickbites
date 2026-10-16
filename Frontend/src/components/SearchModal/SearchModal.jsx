@@ -108,10 +108,15 @@ const SearchModal = ({ showSearch, setShowSearch }) => {
                     <img
                       src={item.image?.startsWith("http") ? item.image : `/images/${item.image}`}
                       onError={(e) => {
-                        e.target.onerror = null;
-                        if (url && !e.target.src.includes(url)) e.target.src = `${url}/images/${item.image}`;
+                        if (!e.target.dataset.triedBackend && url && !item.image?.startsWith("http")) {
+                          e.target.dataset.triedBackend = "true";
+                          e.target.src = `${url}/images/${item.image}`;
+                        } else if (!e.target.dataset.triedFallback) {
+                          e.target.dataset.triedFallback = "true";
+                          e.target.src = "/images/placeholder_dish.svg";
+                        }
                       }}
-                      alt={item.name}
+                      alt={item.name ? `${item.name}` : 'Recommended Dish'}
                     />
                     <div>
                       <p className="featured-name">{item.name}</p>
@@ -145,10 +150,15 @@ const SearchModal = ({ showSearch, setShowSearch }) => {
                         <img
                           src={item.image?.startsWith("http") ? item.image : `/images/${item.image}`}
                           onError={(e) => {
-                            e.target.onerror = null;
-                            if (url && !e.target.src.includes(url)) e.target.src = `${url}/images/${item.image}`;
+                            if (!e.target.dataset.triedBackend && url && !item.image?.startsWith("http")) {
+                              e.target.dataset.triedBackend = "true";
+                              e.target.src = `${url}/images/${item.image}`;
+                            } else if (!e.target.dataset.triedFallback) {
+                              e.target.dataset.triedFallback = "true";
+                              e.target.src = "/images/placeholder_dish.svg";
+                            }
                           }}
-                          alt={item.name}
+                          alt={item.name ? `${item.name}` : 'Search result dish'}
                         />
                         <span className="search-card-category">{item.category}</span>
                       </div>

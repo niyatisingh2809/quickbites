@@ -192,34 +192,44 @@
 
 /* Title & Description */
 .dish-title {
-    font-size: 16px;
+    font-size: 15.5px;
     font-weight: 800;
     color: #0f172a;
     margin: 0 0 6px 0;
     line-height: 1.35;
     letter-spacing: -0.2px;
+    min-height: 42px;
+    max-height: 42px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dish-description {
     font-size: 12.5px;
     color: #64748b;
     line-height: 1.5;
-    margin: 0 0 16px 0;
+    margin: 0 0 14px 0;
+    min-height: 38px;
+    max-height: 38px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    flex: 1;
+    text-overflow: ellipsis;
 }
 
 /* Footer Pricing & CTA */
 .dish-footer-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     padding-top: 12px;
     border-top: 1px dashed #e2e8f0;
     margin-top: auto;
+    min-height: 48px;
 }
 
 .dish-pricing-col {
@@ -339,13 +349,26 @@
         padding: 10px 12px;
     }
     .dish-title {
-        font-size: 13.5px;
+        font-size: 13px;
+        min-height: 36px;
+        max-height: 36px;
+        line-height: 1.35;
         margin-bottom: 4px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .dish-description {
         font-size: 11px;
-        -webkit-line-clamp: 2;
+        min-height: 30px;
+        max-height: 30px;
+        line-height: 1.35;
         margin-bottom: 8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .current-price {
         font-size: 15px;

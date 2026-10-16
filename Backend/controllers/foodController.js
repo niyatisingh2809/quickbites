@@ -122,7 +122,7 @@ const listFood = async (req, res) => {
     let query = foodModel
       .find(filter)
       .populate("restaurantId", "name slug address isOpen packagingFee rating")
-      .sort({ createdAt: -1 });
+      .sort({ featuredRank: 1, createdAt: -1 });
 
     if (limit && parseInt(limit) > 0) {
       const pageNum = parseInt(page) || 1;

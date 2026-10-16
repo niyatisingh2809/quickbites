@@ -200,23 +200,7 @@ export const runInitialMigrations = async () => {
       { $set: { mealType: "filling", spiceLevel: "medium" } }
     );
 
-    // 7. Explicitly classify dietary classification in foodModel (veg vs non-veg)
-    await foodModel.updateMany(
-      {
-        $or: [
-          { name: { $regex: /chicken|egg|fish|mutton|meat|prawn|keema/i } },
-          { description: { $regex: /chicken|egg|fish|mutton|meat|prawn|keema/i } }
-        ]
-      },
-      { $set: { isVeg: false } }
-    );
-    await foodModel.updateMany(
-      {
-        isVeg: { $ne: false },
-        name: { $not: { $regex: /chicken|egg|fish|mutton|meat|prawn|keema/i } }
-      },
-      { $set: { isVeg: true } }
-    );
+    // 7. Explicit dietary classification is handled authoritatively by seedMissingCatalogFoods
     console.log("✅ [Migration] Explicit dietary classification verified across all menu items");
     await seedThaliTemplateItems();
   } catch (error) {

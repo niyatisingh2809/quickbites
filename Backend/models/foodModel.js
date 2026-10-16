@@ -39,7 +39,8 @@ const foodSchema = new mongoose.Schema(
     },
     cuisine: { type: String, default: "North Indian", index: true },
     tags: [{ type: String }],
-    isAvailable: { type: Boolean, default: true, index: true }
+    isAvailable: { type: Boolean, default: true, index: true },
+    featuredRank: { type: Number, default: 999, index: true }
   },
   { timestamps: true }
 );

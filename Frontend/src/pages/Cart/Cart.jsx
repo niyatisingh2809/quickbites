@@ -261,10 +261,10 @@ const Cart = ({ setShowLogin }) => {
                               e.target.src = `${url}/images/${item.image}`;
                             } else if (!e.target.dataset.triedFallback) {
                               e.target.dataset.triedFallback = "true";
-                              e.target.src = "/images/food_1.png";
+                              e.target.src = "/images/placeholder_dish.svg";
                             }
                           }}
-                          alt={item.name}
+                          alt={item.name ? `${item.name} in cart` : 'Food item'}
                         />
                         <p>{item.name}</p>
                         <p>₹{item.price}</p>

@@ -55,6 +55,8 @@ const FoodDisplay = ({ category = 'All', setCategory }) => {
       result.sort((a, b) => b.price - a.price);
     } else if (sortBy === 'rating-high') {
       result.sort((a, b) => parseFloat(b.rating || 4.5) - parseFloat(a.rating || 4.5));
+    } else {
+      result.sort((a, b) => (a.featuredRank || 999) - (b.featuredRank || 999));
     }
 
     return result;

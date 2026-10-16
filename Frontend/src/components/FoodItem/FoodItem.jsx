@@ -26,10 +26,10 @@ const FoodItem = ({ id, name, price, description, image, rating, reviewsCount, c
               e.target.src = `${url}/images/${image}`;
             } else if (!e.target.dataset.triedFallback) {
               e.target.dataset.triedFallback = "true";
-              e.target.src = "/images/food_1.png";
+              e.target.src = "/images/placeholder_dish.svg";
             }
           }}
-          alt={name}
+          alt={name ? `${name} - QuickBites Fresh Dish` : 'QuickBites Delicious Food Dish'}
           loading="lazy"
         />
 
