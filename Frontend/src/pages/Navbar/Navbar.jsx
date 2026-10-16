@@ -84,6 +84,20 @@ const Navbar = ({ setShowLogin, setShowSearch }) => {
         }
     };
 
+    const handleInstallApp = async () => {
+        setGuestDropdownOpen(false);
+        setProfileDropdownOpen(false);
+        setMobileDrawerOpen(false);
+
+        if (window.deferredAppPrompt) {
+            window.deferredAppPrompt.prompt();
+            await window.deferredAppPrompt.userChoice;
+            window.deferredAppPrompt = null;
+        } else {
+            navigateToSection('app-download', 'mobile-app');
+        }
+    };
+
     const userInitial = user?.name ? user.name.trim()[0].toUpperCase() : "U";
     const totalItems = getTotalItemsCount();
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -348,6 +362,13 @@ const Navbar = ({ setShowLogin, setShowSearch }) => {
                                             <span className="dropdown-sub">{t('supportTitle')}</span>
                                         </div>
                                     </li>
+                                    <li onClick={handleInstallApp}>
+                                        <span className="dropdown-icon">📲</span>
+                                        <div>
+                                            <p className="dropdown-title">Install QuickBites App</p>
+                                            <span className="dropdown-sub">Add to Home Screen / Desktop</span>
+                                        </div>
+                                    </li>
                                 </>
                             )}
                         </div>
@@ -453,7 +474,14 @@ const Navbar = ({ setShowLogin, setShowSearch }) => {
                                         <span className="dropdown-icon">🍽️</span>
                                         <div>
                                             <p className="dropdown-title">{t('exploreMenu')}</p>
-                                            <span className="dropdown-sub">Explore 120+ dishes</span>
+                                            <span className="dropdown-sub">Explore 200+ dishes</span>
+                                        </div>
+                                    </li>
+                                    <li onClick={handleInstallApp}>
+                                        <span className="dropdown-icon">📲</span>
+                                        <div>
+                                            <p className="dropdown-title">Install QuickBites App</p>
+                                            <span className="dropdown-sub">Add to Home Screen / Desktop</span>
                                         </div>
                                     </li>
                                     <li onClick={() => { setProfileDropdownOpen(false); navigate('/order'); }}>
@@ -574,8 +602,8 @@ const Navbar = ({ setShowLogin, setShowSearch }) => {
                             <li onClick={() => { setMobileDrawerOpen(false); navigate('/cart'); }}>
                                 <span>🛒 {t('navCart')} ({totalItems})</span>
                             </li>
-                            <li onClick={() => { setMobileDrawerOpen(false); navigateToSection('app-download', 'mobile-app'); }}>
-                                <span>📱 {t('navApp')}</span>
+                            <li onClick={handleInstallApp} className="drawer-install-app-btn">
+                                <span>📲 Install QuickBites App</span>
                             </li>
                             <li onClick={() => { setMobileDrawerOpen(false); navigateToSection('footer', 'contact-us'); }}>
                                 <span>📞 {t('navContact')}</span>

@@ -1,0 +1,61 @@
+{
+  "name": "QuickBites — 10-Min Fast Food Delivery",
+  "short_name": "QuickBites",
+  "description": "Order hot, fresh food delivered in 10 minutes. Thalis, Rolls, Chaap, Biryani, Italian, Continental & Desserts.",
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fafbfc",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["food", "shopping", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Explore Menu",
+      "short_name": "Menu",
+      "description": "Browse 200+ dishes across 18 cuisines",
+      "url": "/#explore-menu",
+      "icons": [{ "src": "/pwa-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Build Your Own Thali",
+      "short_name": "Thali Builder",
+      "description": "Customize your royal or student homestyle thali",
+      "url": "/thali",
+      "icons": [{ "src": "/pwa-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Track My Order",
+      "short_name": "Track",
+      "description": "Live GPS delivery tracking",
+      "url": "/myorders",
+      "icons": [{ "src": "/pwa-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

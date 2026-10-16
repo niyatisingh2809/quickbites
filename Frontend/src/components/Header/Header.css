@@ -311,8 +311,8 @@
 }
 
 .chip-promo {
-    top: -16px;
-    left: -20px;
+    top: -8px;
+    left: -4px;
     border-left: 3px solid #2563eb;
     animation-delay: 0s;
 }
@@ -322,8 +322,8 @@
 }
 
 .chip-rider {
-    bottom: -18px;
-    right: -10px;
+    bottom: -8px;
+    right: -4px;
     border-left: 3px solid #10b981;
     animation-delay: 1.5s;
 }
@@ -334,7 +334,7 @@
 
 .chip-rating {
     top: 50%;
-    right: -24px;
+    right: -6px;
     transform: translateY(-50%);
     border-left: 3px solid #f59e0b;
     animation-delay: 0.8s;

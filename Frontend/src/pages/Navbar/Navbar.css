@@ -988,6 +988,18 @@
     transform: translateX(4px);
 }
 
+.drawer-nav-list li.drawer-install-app-btn {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    font-weight: 800;
+}
+
+.drawer-nav-list li.drawer-install-app-btn:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
 .drawer-auth-box {
     padding-top: 16px;
     border-top: 1px solid #f1f5f9;
