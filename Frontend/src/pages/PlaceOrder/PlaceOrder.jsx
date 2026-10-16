@@ -12,6 +12,8 @@ const PlaceOrder = ({ setShowLogin }) => {
     user,
     food_list,
     cartItems,
+    customThalis,
+    clearCart,
     url,
     setCartItems,
     discount,
@@ -26,6 +28,21 @@ const PlaceOrder = ({ setShowLogin }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [pendingOrderPayload, setPendingOrderPayload] = useState(null);
+  const [deliveryInstructions, setDeliveryInstructions] = useState({
+    landmark: "",
+    gateNotes: "",
+    preferences: []
+  });
+
+  const togglePreference = (pref) => {
+    setDeliveryInstructions(prev => {
+      const exists = prev.preferences.includes(pref);
+      return {
+        ...prev,
+        preferences: exists ? prev.preferences.filter(p => p !== pref) : [...prev.preferences, pref]
+      };
+    });
+  };
 
   const [data, setData] = useState(() => {
     const addr = deliveryAddress || {};
@@ -120,6 +137,27 @@ const PlaceOrder = ({ setShowLogin }) => {
       }
     });
 
+    (customThalis || []).forEach((thali) => {
+      if (thali.quantity > 0) {
+        orderItems.push({
+          isThali: true,
+          thaliTemplateId: thali.templateId,
+          name: thali.templateName,
+          price: thali.unitPriceRupees,
+          quantity: thali.quantity,
+          isVeg: thali.isVeg !== false,
+          thaliConfiguration: {
+            templateId: thali.templateId,
+            templateName: thali.templateName,
+            basePriceRupees: thali.basePriceRupees,
+            components: thali.components || [],
+            preparationInstructions: thali.preparationInstructions || "",
+            unitPriceRupees: thali.unitPriceRupees
+          }
+        });
+      }
+    });
+
     if (orderItems.length === 0) {
       alert("Your cart is empty!");
       return;
@@ -131,7 +169,18 @@ const PlaceOrder = ({ setShowLogin }) => {
     }
 
     let orderData = {
-      address: data,
+      address: {
+        ...data,
+        latitude: currentLocation?.latitude || 28.6139,
+        longitude: currentLocation?.longitude || 77.2090,
+        hubName: currentLocation?.hubName || `QuickBites ${data.city || 'Express'} Kitchen`,
+        isGPSDetected: Boolean(currentLocation?.isGPSDetected)
+      },
+      deliveryInstructions: {
+        landmark: deliveryInstructions.landmark,
+        gateNotes: deliveryInstructions.gateNotes,
+        preferences: deliveryInstructions.preferences
+      },
       items: orderItems,
       amount: finalAmount,
       paymentMethod: paymentMethod,
@@ -146,6 +195,13 @@ const PlaceOrder = ({ setShowLogin }) => {
     };
 
     setPendingOrderPayload(orderData);
+
+    // If Cash on Delivery, place order directly like Swiggy / Zomato!
+    if (paymentMethod === "cod") {
+      handlePaymentSuccess({ paymentMethod: "cod", transactionId: "" });
+      return;
+    }
+
     setShowPaymentModal(true);
   };
 
@@ -156,6 +212,11 @@ const PlaceOrder = ({ setShowLogin }) => {
       const finalPayload = {
         ...(pendingOrderPayload || {
           address: data,
+          deliveryInstructions: {
+            landmark: deliveryInstructions.landmark,
+            gateNotes: deliveryInstructions.gateNotes,
+            preferences: deliveryInstructions.preferences
+          },
           items: food_list.filter(i => cartItems[i._id] > 0).map(i => ({ ...i, quantity: cartItems[i._id] })),
           amount: finalAmount,
           promoCode: promoCode || undefined,
@@ -200,10 +261,8 @@ const PlaceOrder = ({ setShowLogin }) => {
         localStorage.setItem("quickbites_orders", JSON.stringify(existingOrders));
       } catch (e) {}
 
-      if (setCartItems) setCartItems({});
-      try {
-        localStorage.removeItem("quickbites_cart");
-      } catch (e) {}
+      if (clearCart) clearCart();
+      else if (setCartItems) setCartItems({});
 
       setShowPaymentModal(false);
       navigate(`/track/${orderId}`);
@@ -234,7 +293,7 @@ const PlaceOrder = ({ setShowLogin }) => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b' }}>Fulfilling Cloud Kitchen:</span>
-              <span style={{ fontSize: '11px', fontWeight: '800', background: '#fee2e2', color: '#e23744', padding: '1px 6px', borderRadius: '4px' }}>
+              <span style={{ fontSize: '11px', fontWeight: '800', background: '#eff6ff', color: '#2563eb', padding: '1px 6px', borderRadius: '4px' }}>
                 {currentLocation?.city || data.city || "Delhi NCR"} Hub
               </span>
             </div>
@@ -268,6 +327,66 @@ const PlaceOrder = ({ setShowLogin }) => {
           <input required name='country' onChange={onChangeHandler} value={data.country} type="text" placeholder='Country' />
         </div>
         <input required name='phone' onChange={onChangeHandler} value={data.phone} type="text" placeholder='Phone Number (+91)' />
+
+        {/* Phase 5: Delivery Instructions & Contact Preferences */}
+        <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '16px', marginTop: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+            <span style={{ fontSize: '18px' }}>🛵</span>
+            <div>
+              <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#0f172a' }}>Delivery Instructions & Preferences</h4>
+              <p style={{ margin: '2px 0 0', fontSize: '11.5px', color: '#64748b' }}>Help our delivery rider reach your doorstep smoothly</p>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px' }}>
+            {[
+              { id: "Don't ring bell 🔕", label: "Don't ring bell 🔕" },
+              { id: "Leave at door 🚪", label: "Leave at door 🚪" },
+              { id: "Leave with guard 👮", label: "Leave with guard 👮" },
+              { id: "Call before arrival 📞", label: "Call before arrival 📞" }
+            ].map(p => {
+              const active = deliveryInstructions.preferences.includes(p.id);
+              return (
+                <button
+                  key={p.id}
+                  type="button"
+                  onClick={() => togglePreference(p.id)}
+                  style={{
+                    background: active ? '#eff6ff' : '#ffffff',
+                    border: active ? '1.5px solid #2563eb' : '1px solid #cbd5e1',
+                    color: active ? '#1d4ed8' : '#475569',
+                    fontWeight: 700,
+                    fontSize: '11.5px',
+                    padding: '6px 12px',
+                    borderRadius: '20px',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease'
+                  }}
+                >
+                  {active ? '✓ ' : '+ '}{p.label}
+                </button>
+              );
+            })}
+          </div>
+
+          <input
+            name="landmark"
+            type="text"
+            placeholder="📍 Landmark (e.g. Near Blue Water Tank / Opp SBI ATM)"
+            value={deliveryInstructions.landmark}
+            onChange={(e) => setDeliveryInstructions({ ...deliveryInstructions, landmark: e.target.value })}
+            style={{ marginBottom: '8px', fontSize: '12.5px', background: '#ffffff' }}
+          />
+
+          <input
+            name="gateNotes"
+            type="text"
+            placeholder="🚪 Gate code, tower/flat directions, or rider note"
+            value={deliveryInstructions.gateNotes}
+            onChange={(e) => setDeliveryInstructions({ ...deliveryInstructions, gateNotes: e.target.value })}
+            style={{ marginBottom: 0, fontSize: '12.5px', background: '#ffffff' }}
+          />
+        </div>
       </div>
 
       <div className="place-order-right">
@@ -379,9 +498,30 @@ const PlaceOrder = ({ setShowLogin }) => {
             )}
           </div>
 
-          <button type='submit' disabled={isSubmitting} style={{ marginTop: "24px" }}>
-            {isSubmitting ? "Processing Payment..." : `PROCEED TO PAY (₹${finalAmount}) 🔒`}
-          </button>
+          <div className="place-order-actions">
+            <button
+              type="button"
+              className="btn-cancel-pay"
+              onClick={() => {
+                if (isSubmitting) return;
+                setShowPaymentModal(false);
+                setPendingOrderPayload(null);
+                navigate('/cart');
+              }}
+              disabled={isSubmitting}
+              aria-label="Cancel payment and return to cart"
+            >
+              Cancel
+            </button>
+            <button
+              type='submit'
+              className="btn-proceed-pay"
+              disabled={isSubmitting}
+              aria-label={`Proceed to pay ₹${finalAmount}`}
+            >
+              {isSubmitting ? "Processing Payment..." : `PROCEED TO PAY (₹${finalAmount}) 🔒`}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -393,6 +533,7 @@ const PlaceOrder = ({ setShowLogin }) => {
         initialMethod={paymentMethod}
         orderDetails={pendingOrderPayload}
         onPaymentSuccess={handlePaymentSuccess}
+        url={url}
       />
     </form>
   );

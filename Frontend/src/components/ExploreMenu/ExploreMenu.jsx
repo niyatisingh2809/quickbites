@@ -1,9 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import "./ExploreMenu.css";
 import { menu_list } from "../../assets/assets";
+import { LanguageContext } from "../../Context/LanguageContext";
 
 const ExploreMenu = ({ category, setCategory }) => {
     const listRef = useRef(null);
+    const langCtx = useContext(LanguageContext);
+    const t = langCtx?.t || ((k) => k);
 
     const scroll = (direction) => {
         if (listRef.current) {
@@ -17,9 +20,9 @@ const ExploreMenu = ({ category, setCategory }) => {
             <div className="explore-menu-header-row">
                 <div className="explore-header-left">
                     <span className="explore-eyebrow">🍽️ WHAT'S ON YOUR MIND?</span>
-                    <h2 className="explore-title">Explore Our Curated Menu</h2>
+                    <h2 className="explore-title">{t('exploreMenu')}</h2>
                     <p className="explore-subtext">
-                        Aapki har craving ka tasty ilaaj! Choose from 12+ mouthwatering categories crafted with fresh ingredients and top culinary craft.
+                        {t('exploreSubtitle')}
                     </p>
                 </div>
 
@@ -46,7 +49,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                         <span className="all-icon-emoji">✨</span>
                         {category === "All" && <span className="active-badge-tick">✓</span>}
                     </div>
-                    <p className="menu-category-name">All Dishes</p>
+                    <p className="menu-category-name">{t('allDishes')}</p>
                 </div>
 
                 {/* DYNAMIC CATEGORIES */}
@@ -70,9 +73,16 @@ const ExploreMenu = ({ category, setCategory }) => {
                                     src={item.menu_image}
                                     alt={displayName}
                                 />
-                                {isActive && <span className="active-badge-tick">✓</span>}
+                                {isActive && (
+                                    <span className="active-badge-tick active-badge-cross" title="Click to clear filter">
+                                        ✕
+                                    </span>
+                                )}
                             </div>
-                            <p className="menu-category-name">{displayName}</p>
+                            <p className="menu-category-name">
+                                {displayName}
+                                {isActive && <span className="category-cross-tag" title="Click to clear"> ✕</span>}
+                            </p>
                         </div>
                     );
                 })}

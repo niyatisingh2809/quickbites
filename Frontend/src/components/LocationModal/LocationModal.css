@@ -53,7 +53,7 @@
 
 .header-icon {
   font-size: 26px;
-  filter: drop-shadow(0 2px 4px rgba(226, 55, 68, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.3));
 }
 
 .header-title-box h3 {
@@ -86,8 +86,8 @@
 }
 
 .location-modal-close:hover {
-  background: #fee2e2;
-  color: #ef4444;
+  background: #eff6ff;
+  color: #2563eb;
 }
 
 /* Hyperlocal explanation banner */
@@ -123,8 +123,8 @@
 /* GPS card */
 .gps-detect-card {
   margin: 8px 24px 12px 24px;
-  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-  border: 1.5px solid #fed7aa;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1.5px solid #bfdbfe;
   border-radius: 14px;
   padding: 14px 16px;
   display: flex;
@@ -135,17 +135,17 @@
 }
 
 .gps-detect-card:hover {
-  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
-  border-color: #fb923c;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-color: #60a5fa;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(251, 146, 60, 0.2);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 .gps-icon-wrapper {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #ea580c;
+  background: #2563eb;
   color: white;
   display: flex;
   align-items: center;
@@ -177,22 +177,22 @@
 .gps-card-text b {
   display: block;
   font-size: 14px;
-  color: #9a3412;
+  color: #1e3a8a;
 }
 
 .gps-card-text span {
   font-size: 11.5px;
-  color: #c2410c;
+  color: #1d4ed8;
 }
 
 .gps-arrow-btn {
   font-size: 13px;
   font-weight: 700;
-  color: #ea580c;
+  color: #2563eb;
   background: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.15);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
 }
 
 /* Search wrap */
@@ -224,8 +224,8 @@
 
 .location-search-wrap input:focus {
   background: #ffffff;
-  border-color: #e23744;
-  box-shadow: 0 0 0 3px rgba(226, 55, 68, 0.1);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .clear-search-btn {
@@ -258,7 +258,7 @@
 }
 
 .active-hub-indicator b {
-  color: #e23744;
+  color: #2563eb;
 }
 
 .hubs-grid {
@@ -277,15 +277,15 @@
 }
 
 .hub-card:hover {
-  border-color: #fca5a5;
-  background: #fffafa;
+  border-color: #93c5fd;
+  background: #f8fafc;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(226, 55, 68, 0.08);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
 }
 
 .hub-card.selected {
-  border-color: #e23744;
-  background: #fef2f2;
+  border-color: #2563eb;
+  background: #eff6ff;
 }
 
 .hub-card-top {
@@ -339,8 +339,8 @@
 .hub-active-badge {
   font-size: 11.5px;
   font-weight: 700;
-  color: #e23744;
-  background: #fee2e2;
+  color: #2563eb;
+  background: #dbeafe;
   padding: 3px 8px;
   border-radius: 6px;
 }
@@ -353,7 +353,7 @@
 }
 
 .hub-card:hover .hub-select-btn {
-  color: #e23744;
+  color: #2563eb;
 }
 
 /* Modal Footer */
@@ -366,6 +366,92 @@
   text-align: center;
 }
 
+/* Service-Area Waitlist Box */
+.waitlist-card-box {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border: 1.5px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 18px;
+}
+
+.waitlist-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.waitlist-icon {
+  font-size: 22px;
+}
+
+.waitlist-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.waitlist-subtitle {
+  font-size: 12px;
+  color: #475569;
+  margin: 2px 0 0;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.waitlist-inputs-row, .waitlist-submit-row {
+  display: flex;
+  gap: 8px;
+}
+
+.waitlist-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 12.5px;
+  background: #ffffff;
+  outline: none;
+}
+
+.waitlist-input:focus {
+  border-color: #2563eb;
+}
+
+.waitlist-submit-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.waitlist-submit-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.waitlist-success-banner {
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .location-modal-container {
     max-height: 94vh;
@@ -374,5 +460,8 @@
   .location-modal-overlay {
     padding: 0;
     align-items: flex-end;
+  }
+  .waitlist-inputs-row, .waitlist-submit-row {
+    flex-direction: column;
   }
 }

@@ -3,7 +3,7 @@ import './FoodItem.css';
 import { StoreContext } from '../../Context/StoreContext';
 
 const FoodItem = ({ id, name, price, description, image, rating, reviewsCount, category, isNonVeg }) => {
-  const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url, toggleFavoriteFood, isFoodFavorite } = useContext(StoreContext);
 
   // Compute a realistic deterministic rating & review count if not provided
   const displayRating = (rating || (4.2 + ((name.charCodeAt(0) * 7) % 8) / 10)).toFixed(1);
@@ -11,6 +11,7 @@ const FoodItem = ({ id, name, price, description, image, rating, reviewsCount, c
   const isBestseller = parseFloat(displayRating) >= 4.7;
   const originalMrp = price + (price > 200 ? 50 : 35);
   const currentQuantity = cartItems[id] || 0;
+  const isFavorite = isFoodFavorite ? isFoodFavorite(id) : false;
 
   return (
     <div className='food-item-card'>
@@ -33,6 +34,19 @@ const FoodItem = ({ id, name, price, description, image, rating, reviewsCount, c
         <div className={`diet-indicator-badge ${isNonVeg ? 'non-veg' : 'veg'}`} title={isNonVeg ? 'Non-Vegetarian' : 'Pure Vegetarian'}>
           <div className='diet-symbol-shape'></div>
         </div>
+
+        {/* Favorite Heart Button */}
+        <button
+          type="button"
+          className={`favorite-heart-btn ${isFavorite ? 'active' : ''}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (toggleFavoriteFood) toggleFavoriteFood(id);
+          }}
+          title={isFavorite ? 'Remove from favorites' : 'Save to favorites'}
+        >
+          {isFavorite ? '❤️' : '🤍'}
+        </button>
 
         {/* Delivery Time Pill */}
         <div className='prep-time-pill'>

@@ -20,29 +20,75 @@
     padding: 10px;
     border: 1px solid #c5c5c5;
     border-radius: 4px;
-    outline-color: #ff5722;
+    outline-color: #2563eb;
 }
 .place-order-left .multi-fields{
     display: flex;
     gap: 10px;
 }
-.place-order .cart-total button{
-    margin-top: 30px;
-    border: none;
-    color: white;
-    background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+.place-order-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     width: 100%;
-    padding: 14px 0px;
+    margin-top: 24px;
+}
+
+.place-order-actions .btn-cancel-pay {
+    border: 1.5px solid #cbd5e1;
+    color: #475569;
+    background: transparent;
+    flex: 1;
+    min-width: 110px;
+    height: 50px;
+    padding: 0 16px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
-    box-shadow: 0 4px 14px rgba(255, 87, 34, 0.35);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
-.place-order .cart-total button:hover{
+
+.place-order-actions .btn-cancel-pay:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #1e293b;
+}
+
+.place-order-actions .btn-proceed-pay {
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    flex: 2;
+    min-width: 180px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.place-order-actions .btn-proceed-pay:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.45);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+.place-order-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 .payment-options {
@@ -70,14 +116,14 @@
 }
 
 .payment-option:hover {
-    border-color: #ff5722;
-    background-color: #fff9f6;
+    border-color: #2563eb;
+    background-color: #eff6ff;
 }
 
 .payment-option.selected {
-    border-color: #ff5722;
-    background-color: #fff3ee;
-    box-shadow: 0 2px 8px rgba(255, 87, 34, 0.15);
+    border-color: #2563eb;
+    background-color: #eff6ff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
 }
 
 .payment-option label {
@@ -88,8 +134,57 @@
 
 .payment-option input {
     cursor: pointer;
-    accent-color: #ff5722;
+    accent-color: #2563eb;
     width: 18px;
     height: 18px;
     margin: 0;
+}
+
+@media (max-width: 900px) {
+    .place-order {
+        flex-direction: column;
+        gap: 36px;
+        margin-top: 30px;
+        padding: 0 10px;
+    }
+    .place-order-left {
+        max-width: 100%;
+    }
+    .place-order .place-order-right {
+        width: 100%;
+    }
+    .place-order-left .title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .place-order {
+        margin-top: 20px;
+        padding: 0 4px;
+    }
+    .place-order-left .multi-fields {
+        flex-direction: column;
+        gap: 0;
+    }
+    .place-order-left input {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+    .payment-option {
+        padding: 12px 14px;
+    }
+    .place-order-actions {
+        gap: 10px;
+    }
+    .place-order-actions .btn-cancel-pay {
+        flex: 1;
+        min-width: unset;
+    }
+    .place-order-actions .btn-proceed-pay {
+        flex: 1.8;
+        min-width: unset;
+    }
 }

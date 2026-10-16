@@ -74,7 +74,7 @@
 }
 
 .orders-login-btn {
-    background: linear-gradient(135deg, #e23744 0%, #ff5722 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     color: #ffffff;
     border: none;
     padding: 12px 28px;
@@ -82,13 +82,13 @@
     font-weight: 800;
     font-size: 15px;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(226, 55, 68, 0.35);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
     transition: all 0.2s ease;
 }
 
 .orders-login-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(226, 55, 68, 0.5);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.5);
 }
 
 .orders-card-list {
@@ -305,7 +305,7 @@
 .order-amount-val {
     font-size: 22px;
     font-weight: 900;
-    color: #e23744;
+    color: #2563eb;
 }
 
 .order-action-btns {
@@ -356,7 +356,7 @@
 }
 
 .btn-track-order {
-    background: linear-gradient(135deg, #e23744 0%, #ff5722 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     color: #ffffff;
     border: none;
     padding: 9px 20px;
@@ -364,7 +364,7 @@
     font-weight: 700;
     font-size: 13.5px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(226, 55, 68, 0.35);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
     transition: all 0.2s ease;
 }
 
@@ -416,7 +416,7 @@
 .modal-eyebrow {
     font-size: 12px;
     font-weight: 700;
-    color: #e23744;
+    color: #2563eb;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     display: block;
@@ -565,7 +565,7 @@
 }
 
 .rider-floating-tag {
-    background: #e23744;
+    background: #2563eb;
     color: white;
     font-size: 10.5px;
     font-weight: 800;
@@ -771,8 +771,8 @@
 
 /* Modal Control Row (Advance / Complete) */
 .modal-control-row {
-    background: #fff7ed;
-    border: 1px dashed #fdba74;
+    background: #eff6ff;
+    border: 1px dashed #93c5fd;
     border-radius: 14px;
     padding: 14px 18px;
     margin-bottom: 24px;
@@ -781,7 +781,7 @@
 .modal-control-title {
     font-size: 12.5px;
     font-weight: 700;
-    color: #c2410c;
+    color: #1e40af;
     margin: 0 0 10px 0;
 }
 
@@ -793,8 +793,8 @@
 
 .btn-state-toggle {
     background: #ffffff;
-    border: 1.5px solid #fed7aa;
-    color: #9a3412;
+    border: 1.5px solid #bfdbfe;
+    color: #1e40af;
     padding: 7px 14px;
     border-radius: 8px;
     font-size: 12.5px;
@@ -804,13 +804,13 @@
 }
 
 .btn-state-toggle:hover {
-    background: #ffedd5;
+    background: #dbeafe;
 }
 
 .btn-state-toggle.active {
-    background: #ea580c;
+    background: #2563eb;
     color: #ffffff;
-    border-color: #ea580c;
+    border-color: #2563eb;
 }
 
 .btn-state-toggle.btn-complete-highlight {

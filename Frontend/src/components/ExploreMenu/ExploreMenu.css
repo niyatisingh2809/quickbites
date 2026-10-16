@@ -24,7 +24,7 @@
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 0.8px;
-    color: #ea580c;
+    color: #2563eb;
     display: block;
     margin-bottom: 6px;
 }
@@ -83,10 +83,10 @@
 }
 
 .nav-arrow-btn:hover {
-    background: #ea580c;
+    background: #2563eb;
     color: #ffffff;
-    border-color: #ea580c;
-    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     transform: translateY(-1px);
 }
 
@@ -98,7 +98,7 @@
     scroll-behavior: smooth;
     padding: 12px 6px 20px 6px;
     scrollbar-width: thin;
-    scrollbar-color: #fed7aa transparent;
+    scrollbar-color: #bfdbfe transparent;
 }
 
 .explore-menu-list::-webkit-scrollbar {
@@ -110,7 +110,7 @@
 }
 
 .explore-menu-list::-webkit-scrollbar-thumb {
-    background: #fed7aa;
+    background: #bfdbfe;
     border-radius: 10px;
 }
 
@@ -159,8 +159,8 @@
 
 /* "All Dishes" Custom Circle */
 .all-circle-frame {
-    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-    border-color: #fed7aa;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-color: #bfdbfe;
 }
 
 .all-icon-emoji {
@@ -169,16 +169,16 @@
 
 /* Active State */
 .explore-menu-item.active .menu-circle-frame {
-    border-color: #ea580c;
-    box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.18), 0 8px 20px rgba(234, 88, 12, 0.25);
-    background: #fff7ed;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18), 0 8px 20px rgba(37, 99, 235, 0.25);
+    background: #eff6ff;
 }
 
 .active-badge-tick {
     position: absolute;
     bottom: -2px;
     right: -2px;
-    background: #ea580c;
+    background: #2563eb;
     color: #ffffff;
     font-size: 11px;
     font-weight: 900;
@@ -208,8 +208,25 @@
 }
 
 .explore-menu-item.active .menu-category-name {
-    color: #ea580c;
+    color: #2563eb;
     font-weight: 800;
+}
+
+.active-badge-cross {
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.explore-menu-item:hover .active-badge-cross {
+    background: #dc2626;
+    transform: scale(1.15);
+}
+
+.category-cross-tag {
+    color: #ef4444;
+    font-weight: 900;
+    font-size: 11px;
+    margin-left: 2px;
 }
 
 .explore-bottom-divider {

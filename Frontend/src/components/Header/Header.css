@@ -3,18 +3,18 @@
    ============================================================ */
 
 .hero-banner-wrap {
-    margin: 20px 0 45px 0;
+    margin: 20px 0 25px 0;
     width: 100%;
 }
 
 .hero-card {
-    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 45%, #fee2e2 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 45%, #e0e7ff 100%);
     border-radius: 28px;
     padding: 42px 48px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(254, 215, 170, 0.6);
-    box-shadow: 0 20px 45px -10px rgba(234, 88, 12, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(191, 219, 254, 0.7);
+    box-shadow: 0 20px 45px -10px rgba(37, 99, 235, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 /* Ambient glow accents behind the card */
@@ -29,7 +29,7 @@
 .hero-glow-1 {
     width: 320px;
     height: 320px;
-    background: rgba(251, 146, 60, 0.22);
+    background: rgba(59, 130, 246, 0.22);
     top: -80px;
     right: 10%;
 }
@@ -37,7 +37,7 @@
 .hero-glow-2 {
     width: 250px;
     height: 250px;
-    background: rgba(239, 68, 68, 0.15);
+    background: rgba(14, 165, 233, 0.15);
     bottom: -60px;
     left: 20%;
 }
@@ -69,9 +69,9 @@
     border-radius: 30px;
     font-size: 13px;
     font-weight: 800;
-    color: #ea580c;
-    border: 1px solid #fed7aa;
-    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
     margin-bottom: 20px;
     letter-spacing: -0.2px;
 }
@@ -80,7 +80,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #ea580c;
+    background: #2563eb;
     animation: heroPulse 1.4s infinite;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .hero-accent-text {
-    background: linear-gradient(90deg, #ea580c, #dc2626);
+    background: linear-gradient(90deg, #2563eb, #0284c7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -123,7 +123,7 @@
     border-radius: 16px;
     padding: 6px 8px 6px 18px;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-    border: 1.5px solid #fed7aa;
+    border: 1.5px solid #bfdbfe;
     width: 100%;
     max-width: 520px;
     margin-bottom: 18px;
@@ -131,8 +131,8 @@
 }
 
 .hero-search-box:focus-within {
-    border-color: #ea580c;
-    box-shadow: 0 8px 28px rgba(234, 88, 12, 0.2);
+    border-color: #2563eb;
+    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.2);
 }
 
 .hero-search-icon {
@@ -156,7 +156,7 @@
 }
 
 .btn-hero-search {
-    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: #ffffff;
     border: none;
     padding: 11px 22px;
@@ -164,14 +164,14 @@
     font-size: 14px;
     font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
     transition: all 0.2s ease;
     white-space: nowrap;
 }
 
 .btn-hero-search:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(234, 88, 12, 0.45);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
 }
 
 /* Quick Filter Tags */
@@ -192,7 +192,7 @@
 
 .quick-tag-pill {
     background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #fed7aa;
+    border: 1px solid #bfdbfe;
     color: #334155;
     font-size: 12.5px;
     font-weight: 700;
@@ -203,11 +203,11 @@
 }
 
 .quick-tag-pill:hover {
-    background: #ea580c;
+    background: #2563eb;
     color: #ffffff;
-    border-color: #ea580c;
+    border-color: #2563eb;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(234, 88, 12, 0.25);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
 }
 
 /* Trust Stats Bar */
@@ -216,7 +216,7 @@
     align-items: center;
     gap: 20px;
     padding-top: 18px;
-    border-top: 1px solid rgba(234, 88, 12, 0.15);
+    border-top: 1px solid rgba(37, 99, 235, 0.15);
     width: 100%;
 }
 
@@ -240,7 +240,7 @@
 .stat-divider {
     width: 1px;
     height: 24px;
-    background: #fed7aa;
+    background: #bfdbfe;
 }
 
 /* RIGHT VISUAL SHOWCASE */
@@ -313,12 +313,12 @@
 .chip-promo {
     top: -16px;
     left: -20px;
-    border-left: 3px solid #ea580c;
+    border-left: 3px solid #2563eb;
     animation-delay: 0s;
 }
 
 .chip-promo .chip-title {
-    color: #ea580c;
+    color: #2563eb;
 }
 
 .chip-rider {
@@ -404,4 +404,19 @@
         gap: 12px;
     }
     .stat-divider { display: none; }
+}
+
+@media (max-width: 400px) {
+    .hero-card {
+        padding: 16px 12px;
+    }
+    .hero-headline {
+        font-size: 23px;
+    }
+    .hero-main-dish-img {
+        height: 190px;
+    }
+    .floating-chip {
+        display: none;
+    }
 }

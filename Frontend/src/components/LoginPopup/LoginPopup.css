@@ -44,22 +44,22 @@
     transition: border-color 0.2s ease;
 }
 .login-popup-inputs input:focus{
-    border-color: #ff5722;
+    border-color: #2563eb;
 }
 .login-popup-container button{
     border: none;
     padding: 12px;
     border-radius: 6px;
     color: white;
-    background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     transition: all 0.3s ease;
 }
 .login-popup-container button:hover{
-    box-shadow: 0 6px 18px rgba(255, 87, 34, 0.45);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
     transform: translateY(-1px);
 }
 .login-popup-condition{
@@ -70,10 +70,10 @@
 }
 .login-popup-condition input{
     margin-top: 5px;
-    accent-color: #ff5722;
+    accent-color: #2563eb;
 }
 .login-popup p span{
-    color: #ff5722;
+    color: #2563eb;
     font-weight: 600;
     cursor: pointer;
 }

@@ -7,11 +7,22 @@ const userSchema = new mongoose.Schema(
     password: { type: String, required: true },
     role: {
       type: String,
-      enum: ["customer", "admin", "rider"],
-      default: "customer"
+      enum: ["customer", "restaurant_owner", "delivery_partner", "rider", "admin"],
+      default: "customer",
+      index: true
+    },
+    status: {
+      type: String,
+      enum: ["active", "suspended"],
+      default: "active",
+      index: true
     },
     phone: { type: String, default: "" },
-    cartData: { type: Object, default: {} }
+    restaurantId: { type: mongoose.Schema.Types.ObjectId, ref: "restaurant", default: null },
+    deliveryPartnerId: { type: mongoose.Schema.Types.ObjectId, ref: "delivery_partner", default: null },
+    cartData: { type: Object, default: {} },
+    favoriteFoods: [{ type: mongoose.Schema.Types.ObjectId, ref: "food" }],
+    favoriteRestaurants: [{ type: mongoose.Schema.Types.ObjectId, ref: "restaurant" }]
   },
   { minimize: false, timestamps: true }
 );

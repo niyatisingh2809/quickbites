@@ -3,6 +3,7 @@ import './TrackOrder.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
 import axios from 'axios';
+import ReportIssueModal from '../Support/ReportIssueModal';
 
 const TrackOrder = () => {
   const { orderId } = useParams();
@@ -15,6 +16,7 @@ const TrackOrder = () => {
   const [countdown, setCountdown] = useState(600); // 10 minutes countdown in seconds
   const [riderDistance, setRiderDistance] = useState(1.4);
   const [updatingStatus, setUpdatingStatus] = useState(false);
+  const [showReportModal, setShowReportModal] = useState(false);
 
   // Fetch order data
   const fetchOrderData = async (quiet = false) => {
@@ -473,6 +475,12 @@ const TrackOrder = () => {
                     <div>
                       <p className="receipt-item-name">{item.name}</p>
                       <span className="receipt-item-qty">Qty: {item.quantity}</span>
+                      {item.isThali && item.thaliConfiguration && (
+                        <div style={{ fontSize: '11.5px', color: '#0284c7', marginTop: '3px', lineHeight: '1.4' }}>
+                          🍱 {(item.thaliConfiguration.components || []).map(c => `${c.name}${c.quantity > 1 ? ` x${c.quantity}` : ''}`).join(', ')}
+                          {item.thaliConfiguration.preparationInstructions && ` • 👨‍🍳 Note: ${item.thaliConfiguration.preparationInstructions}`}
+                        </div>
+                      )}
                     </div>
                   </div>
                   <span className="receipt-item-price">₹{item.price * item.quantity}</span>
@@ -512,19 +520,38 @@ const TrackOrder = () => {
               )}
             </div>
 
-            {/* Support Help */}
+            {/* Support Help & Dispute Resolution */}
             <div className="receipt-support-box">
-              <p>Need help with this order?</p>
+              <p>Need help or something missing?</p>
               <button 
                 className="btn-support-call"
-                onClick={() => alert('📞 QuickBites 24x7 Customer Care: +91 98765 43210\nOur support team is ready to assist you!')}
+                style={{ background: '#dc2626', color: '#ffffff', border: 'none', marginBottom: '8px', cursor: 'pointer', fontWeight: '800' }}
+                onClick={() => setShowReportModal(true)}
               >
-                📞 Contact 24/7 Support
+                🚨 Report Issue / Missing Items
+              </button>
+              <button 
+                className="btn-support-call"
+                style={{ background: '#f1f5f9', color: '#334155', border: '1px solid #cbd5e1', cursor: 'pointer' }}
+                onClick={() => navigate('/support/tickets')}
+              >
+                💬 View My Support Tickets
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      <ReportIssueModal
+        isOpen={showReportModal}
+        onClose={() => setShowReportModal(false)}
+        order={order}
+        url={url}
+        token={token}
+        onTicketCreated={() => {
+          fetchOrderData(true);
+        }}
+      />
     </div>
   );
 };

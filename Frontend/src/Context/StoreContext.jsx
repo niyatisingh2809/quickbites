@@ -14,6 +14,33 @@ const StoreContextProvider = (props) => {
             return {};
         }
     });
+    const [cartRestaurant, setCartRestaurant] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem("quickbites_cart_restaurant")) || null;
+        } catch (e) {
+            return null;
+        }
+    });
+
+    const [customThalis, setCustomThalis] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem("quickbites_thalis")) || [];
+        } catch (e) {
+            return [];
+        }
+    });
+
+    const [cartConflict, setCartConflict] = useState({
+        isOpen: false,
+        pendingItemId: null,
+        pendingThali: null,
+        oldName: "",
+        newName: ""
+    });
+
+    const [restaurants, setRestaurants] = useState([]);
+    const [favorites, setFavorites] = useState({ foods: [], restaurants: [] });
+
     const [token, setToken] = useState(() => localStorage.getItem("token") || "");
     const [user, setUser] = useState(() => {
         try {
@@ -92,9 +119,12 @@ const StoreContextProvider = (props) => {
     };
 
     // Live GPS Detection via HTML5 Geolocation API
-    const detectGPSLocation = async () => {
+    const detectGPSLocation = async (opts = {}) => {
+        const { isAuto = false, silent = false } = opts;
         if (!navigator.geolocation) {
-            alert("⚠️ Geolocation is not supported by your browser. Please select your city manually.");
+            if (!silent && !isAuto) {
+                alert("⚠️ Geolocation is not supported by your browser. Please select your city manually.");
+            }
             return;
         }
 
@@ -117,7 +147,7 @@ const StoreContextProvider = (props) => {
                     if (res.data && res.data.address) {
                         const addr = res.data.address;
                         detectedCity = addr.city || addr.town || addr.village || addr.county || addr.state_district || "Delhi NCR";
-                        detectedArea = addr.suburb || addr.neighbourhood || addr.road || "Live Location";
+                        detectedArea = addr.suburb || addr.neighbourhood || addr.road || addr.residential || "Live Location";
                         detectedState = addr.state || "India";
                         detectedPincode = addr.postcode || "110001";
                     }
@@ -136,7 +166,8 @@ const StoreContextProvider = (props) => {
                         deliveryTime: "12-18 mins",
                         latitude: latitude,
                         longitude: longitude,
-                        isGPSDetected: true
+                        isGPSDetected: true,
+                        detectedAt: Date.now()
                     };
 
                     selectLocation(newHub);
@@ -157,7 +188,8 @@ const StoreContextProvider = (props) => {
                             deliveryTime: "15-20 mins",
                             latitude: latitude,
                             longitude: longitude,
-                            isGPSDetected: true
+                            isGPSDetected: true,
+                            detectedAt: Date.now()
                         });
                     } else {
                         selectLocation({
@@ -170,7 +202,8 @@ const StoreContextProvider = (props) => {
                             deliveryTime: "10-15 mins",
                             latitude: latitude,
                             longitude: longitude,
-                            isGPSDetected: true
+                            isGPSDetected: true,
+                            detectedAt: Date.now()
                         });
                     }
                 } finally {
@@ -179,8 +212,10 @@ const StoreContextProvider = (props) => {
             },
             (error) => {
                 setIsDetectingGPS(false);
-                console.warn("GPS Geolocation error:", error.message);
-                alert("📍 Location permission was denied or unavailable. Please pick your city from the list.");
+                console.warn("GPS Geolocation notice:", error.message);
+                if (!silent && !isAuto) {
+                    alert("📍 Location permission was denied or unavailable. Please pick your city from the list.");
+                }
             },
             { timeout: 7000, enableHighAccuracy: true }
         );
@@ -209,28 +244,79 @@ const StoreContextProvider = (props) => {
                 });
             }
         }
+        fetchFavorites(userToken);
     };
 
     useEffect(() => {
         try {
             localStorage.setItem("quickbites_cart", JSON.stringify(cartItems));
+            localStorage.setItem("quickbites_thalis", JSON.stringify(customThalis));
+            if (cartRestaurant) {
+                localStorage.setItem("quickbites_cart_restaurant", JSON.stringify(cartRestaurant));
+            } else {
+                localStorage.removeItem("quickbites_cart_restaurant");
+            }
         } catch (e) {}
-    }, [cartItems]);
+    }, [cartItems, customThalis, cartRestaurant]);
 
     const logoutUser = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("quickbites_user");
         localStorage.removeItem("quickbites_cart");
+        localStorage.removeItem("quickbites_thalis");
+        localStorage.removeItem("quickbites_cart_restaurant");
         setToken("");
         setUser(null);
         setCartItems({});
+        setCustomThalis([]);
+        setCartRestaurant(null);
+        setFavorites({ foods: [], restaurants: [] });
     };
 
-    const addToCart = async (itemId) => {
-        setCartItems((prev) => ({
-            ...prev,
-            [itemId]: (prev[itemId] || 0) + 1
-        }));
+    const clearCart = () => {
+        setCartItems({});
+        setCustomThalis([]);
+        setCartRestaurant(null);
+        localStorage.removeItem("quickbites_cart");
+        localStorage.removeItem("quickbites_thalis");
+        localStorage.removeItem("quickbites_cart_restaurant");
+    };
+
+    const addToCart = async (itemId, forceClear = false) => {
+        const item = food_list.find((f) => f._id === itemId);
+        const itemRestId = item?.restaurantId?._id || item?.restaurantId || "central";
+        const itemRestName = item?.restaurantId?.name || "QuickBites Central Kitchen";
+        const itemPackagingFee = item?.restaurantId?.packagingFee || 20;
+
+        const hasExistingItems =
+            Object.values(cartItems).some((qty) => qty > 0) ||
+            customThalis.some((t) => t.quantity > 0);
+
+        if (hasExistingItems && cartRestaurant && cartRestaurant.id && cartRestaurant.id !== itemRestId && !forceClear) {
+            setCartConflict({
+                isOpen: true,
+                pendingItemId: itemId,
+                pendingThali: null,
+                oldName: cartRestaurant.name || "Previous Restaurant",
+                newName: itemRestName
+            });
+            return;
+        }
+
+        if (forceClear) {
+            setCartItems({ [itemId]: 1 });
+            setCustomThalis([]);
+            setCartRestaurant({ id: itemRestId, name: itemRestName, packagingFee: itemPackagingFee });
+        } else {
+            setCartItems((prev) => ({
+                ...prev,
+                [itemId]: (prev[itemId] || 0) + 1
+            }));
+            if (!cartRestaurant || !hasExistingItems) {
+                setCartRestaurant({ id: itemRestId, name: itemRestName, packagingFee: itemPackagingFee });
+            }
+        }
+
         if (token && url && !token.startsWith("quickbites_local_")) {
             try {
                 await axios.post(url + "/api/cart/add", { itemId }, { headers: { token } });
@@ -240,6 +326,133 @@ const StoreContextProvider = (props) => {
         }
     };
 
+    const addThaliToCart = (thaliConfig, forceClear = false) => {
+        const thaliRestId = thaliConfig.restaurantId?._id || thaliConfig.restaurantId || "central";
+        const thaliRestName = thaliConfig.restaurantName || "QuickBites Restaurant";
+        const thaliPackagingFee = thaliConfig.packagingFee || 20;
+
+        const hasExistingItems =
+            Object.values(cartItems).some((qty) => qty > 0) ||
+            customThalis.some((t) => t.quantity > 0);
+
+        if (hasExistingItems && cartRestaurant && cartRestaurant.id && cartRestaurant.id !== thaliRestId && !forceClear) {
+            setCartConflict({
+                isOpen: true,
+                pendingItemId: null,
+                pendingThali: thaliConfig,
+                oldName: cartRestaurant.name || "Previous Restaurant",
+                newName: thaliRestName
+            });
+            return;
+        }
+
+        // Generate deterministic signature based on templateId + sorted selections + prepNotes
+        const compSig = (thaliConfig.components || [])
+            .map((c) => `${c.groupId || c.groupName}_${c.componentId || c.name}_${c.quantity || 1}`)
+            .sort()
+            .join("|");
+        const prepSig = (thaliConfig.preparationInstructions || "").trim().toLowerCase();
+        const configSignature = `thali_${thaliConfig.templateId}_${compSig}_${prepSig}`;
+
+        if (forceClear) {
+            setCartItems({});
+            setCustomThalis([
+                {
+                    ...thaliConfig,
+                    cartItemId: configSignature,
+                    quantity: 1
+                }
+            ]);
+            setCartRestaurant({ id: thaliRestId, name: thaliRestName, packagingFee: thaliPackagingFee });
+        } else {
+            setCustomThalis((prev) => {
+                const existingIdx = prev.findIndex((t) => t.cartItemId === configSignature);
+                if (existingIdx >= 0) {
+                    const copy = [...prev];
+                    copy[existingIdx] = { ...copy[existingIdx], quantity: copy[existingIdx].quantity + 1 };
+                    return copy;
+                } else {
+                    return [
+                        ...prev,
+                        {
+                            ...thaliConfig,
+                            cartItemId: configSignature,
+                            quantity: 1
+                        }
+                    ];
+                }
+            });
+            if (!cartRestaurant || !hasExistingItems) {
+                setCartRestaurant({ id: thaliRestId, name: thaliRestName, packagingFee: thaliPackagingFee });
+            }
+        }
+    };
+
+    const removeThaliFromCart = (cartItemId) => {
+        setCustomThalis((prev) => {
+            const next = [];
+            for (const item of prev) {
+                if (item.cartItemId === cartItemId) {
+                    if (item.quantity > 1) {
+                        next.push({ ...item, quantity: item.quantity - 1 });
+                    }
+                } else {
+                    next.push(item);
+                }
+            }
+            const hasRegular = Object.values(cartItems).some((q) => q > 0);
+            if (!hasRegular && next.length === 0) {
+                setCartRestaurant(null);
+            }
+            return next;
+        });
+    };
+
+    const deleteThaliFromCart = (cartItemId) => {
+        setCustomThalis((prev) => {
+            const next = prev.filter((item) => item.cartItemId !== cartItemId);
+            const hasRegular = Object.values(cartItems).some((q) => q > 0);
+            if (!hasRegular && next.length === 0) {
+                setCartRestaurant(null);
+            }
+            return next;
+        });
+    };
+
+    const updateThaliInCart = (oldCartItemId, newThaliConfig) => {
+        const compSig = (newThaliConfig.components || [])
+            .map((c) => `${c.groupId || c.groupName}_${c.componentId || c.name}_${c.quantity || 1}`)
+            .sort()
+            .join("|");
+        const prepSig = (newThaliConfig.preparationInstructions || "").trim().toLowerCase();
+        const newSignature = `thali_${newThaliConfig.templateId}_${compSig}_${prepSig}`;
+
+        setCustomThalis((prev) => {
+            const oldItem = prev.find((t) => t.cartItemId === oldCartItemId);
+            const preservedQty = oldItem ? oldItem.quantity : 1;
+            const filtered = prev.filter((t) => t.cartItemId !== oldCartItemId);
+            return [
+                ...filtered,
+                {
+                    ...newThaliConfig,
+                    cartItemId: newSignature,
+                    quantity: preservedQty
+                }
+            ];
+        });
+    };
+
+    const resolveCartConflict = (shouldClear) => {
+        if (shouldClear) {
+            if (cartConflict.pendingThali) {
+                addThaliToCart(cartConflict.pendingThali, true);
+            } else if (cartConflict.pendingItemId) {
+                addToCart(cartConflict.pendingItemId, true);
+            }
+        }
+        setCartConflict({ isOpen: false, pendingItemId: null, pendingThali: null, oldName: "", newName: "" });
+    };
+
     const removeFromCart = async (itemId) => {
         setCartItems((prev) => {
             const next = { ...prev };
@@ -247,6 +460,10 @@ const StoreContextProvider = (props) => {
                 next[itemId] -= 1;
             } else {
                 delete next[itemId];
+            }
+            const hasThalis = customThalis.some((t) => t.quantity > 0);
+            if ((Object.keys(next).length === 0 || Object.values(next).every((q) => q <= 0)) && !hasThalis) {
+                setCartRestaurant(null);
             }
             return next;
         });
@@ -269,6 +486,11 @@ const StoreContextProvider = (props) => {
                 }
             }
         }
+        for (const thali of customThalis) {
+            if (thali.quantity > 0 && thali.unitPriceRupees) {
+                totalAmount += thali.unitPriceRupees * thali.quantity;
+            }
+        }
         return totalAmount;
     };
 
@@ -277,6 +499,11 @@ const StoreContextProvider = (props) => {
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 count += cartItems[item];
+            }
+        }
+        for (const thali of customThalis) {
+            if (thali.quantity > 0) {
+                count += thali.quantity;
             }
         }
         return count;
@@ -317,6 +544,38 @@ const StoreContextProvider = (props) => {
         setPromoCode("");
     };
 
+    const getPricingBreakdown = () => {
+        const subtotal = getTotalCartAmount();
+        const packagingFee = subtotal > 0 ? (cartRestaurant?.packagingFee || 20) : 0;
+        const deliveryFee = subtotal === 0 ? 0 : (discount === 40 && promoCode === "FREESHIP" ? 0 : 40);
+        const platformFee = subtotal > 0 ? 5 : 0;
+        const gstTax = Math.round(subtotal * 0.05); // 5% GST on restaurant food
+        const promoDiscount = promoCode === "FREESHIP" ? 0 : discount;
+        const total = Math.max(0, subtotal + packagingFee + deliveryFee + platformFee + gstTax - promoDiscount);
+
+        return {
+            subtotal,
+            packagingFee,
+            deliveryFee,
+            platformFee,
+            gstTax,
+            discount: promoDiscount,
+            total
+        };
+    };
+
+    const fetchRestaurants = async (cityName = "") => {
+        try {
+            const targetCity = cityName || currentLocation?.city || "";
+            const response = await axios.get(`${url}/api/restaurant/list?city=${encodeURIComponent(targetCity)}`);
+            if (response.data && response.data.success) {
+                setRestaurants(response.data.restaurants || []);
+            }
+        } catch (e) {
+            console.warn("Could not fetch restaurants from API:", e.message);
+        }
+    };
+
     const fetchFoodList = async () => {
         try {
             const response = await axios.get(url + "/api/food/list");
@@ -339,13 +598,84 @@ const StoreContextProvider = (props) => {
         }
     };
 
+    const fetchFavorites = async (authToken = token) => {
+        if (!authToken) return;
+        try {
+            const res = await axios.get(url + "/api/user/favorites", {
+                headers: { token: authToken }
+            });
+            if (res.data && res.data.success) {
+                setFavorites({
+                    foods: res.data.favoriteFoods || [],
+                    restaurants: res.data.favoriteRestaurants || []
+                });
+            }
+        } catch (err) {
+            console.warn("Could not fetch favorites:", err.message);
+        }
+    };
+
+    const toggleFavoriteFood = async (foodId) => {
+        if (!token) {
+            alert("Please login to save your favorite dishes!");
+            return;
+        }
+        try {
+            const res = await axios.post(
+                url + "/api/user/favorites/food/toggle",
+                { foodId },
+                { headers: { token } }
+            );
+            if (res.data && res.data.success) {
+                await fetchFavorites(token);
+            }
+        } catch (err) {
+            console.error("Toggle favorite food error:", err);
+        }
+    };
+
+    const toggleFavoriteRestaurant = async (restaurantId) => {
+        if (!token) {
+            alert("Please login to save your favorite restaurants!");
+            return;
+        }
+        try {
+            const res = await axios.post(
+                url + "/api/user/favorites/restaurant/toggle",
+                { restaurantId },
+                { headers: { token } }
+            );
+            if (res.data && res.data.success) {
+                await fetchFavorites(token);
+            }
+        } catch (err) {
+            console.error("Toggle favorite restaurant error:", err);
+        }
+    };
+
+    const isFoodFavorite = (foodId) => {
+        if (!foodId) return false;
+        return (favorites.foods || []).some(f => (f._id || f).toString() === foodId.toString());
+    };
+
+    const isRestaurantFavorite = (restId) => {
+        if (!restId) return false;
+        return (favorites.restaurants || []).some(r => (r._id || r).toString() === restId.toString());
+    };
+
     useEffect(() => {
         async function loadData() {
             await fetchFoodList();
+            await fetchRestaurants();
+            
+            // Auto-detect user's real live location on app open (no stale location)
+            detectGPSLocation({ isAuto: true, silent: true });
+
             const savedToken = localStorage.getItem("token");
             if (savedToken) {
                 setToken(savedToken);
                 await loadCartData(savedToken);
+                await fetchFavorites(savedToken);
                 // Refresh profile data in background
                 try {
                     const profileRes = await axios.get(url + "/api/user/profile", { headers: { token: savedToken } });
@@ -365,10 +695,23 @@ const StoreContextProvider = (props) => {
         food_list,
         cartItems,
         setCartItems,
+        customThalis,
+        setCustomThalis,
+        cartRestaurant,
+        cartConflict,
+        resolveCartConflict,
+        clearCart,
+        restaurants,
+        fetchRestaurants,
         addToCart,
         removeFromCart,
+        addThaliToCart,
+        removeThaliFromCart,
+        deleteThaliFromCart,
+        updateThaliInCart,
         getTotalCartAmount,
         getTotalItemsCount,
+        getPricingBreakdown,
         url,
         token,
         setToken,
@@ -386,7 +729,13 @@ const StoreContextProvider = (props) => {
         setCurrentLocation,
         selectLocation,
         detectGPSLocation,
-        isDetectingGPS
+        isDetectingGPS,
+        favorites,
+        fetchFavorites,
+        toggleFavoriteFood,
+        toggleFavoriteRestaurant,
+        isFoodFavorite,
+        isRestaurantFavorite
     };
 
     return (

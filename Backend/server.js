@@ -10,6 +10,18 @@ import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import restaurantRouter from "./routes/restaurantRoute.js";
+import deliveryPartnerRouter from "./routes/deliveryPartnerRoute.js";
+import thaliRouter from "./routes/thaliRoute.js";
+import mealPickerRouter from "./routes/mealPickerRoute.js";
+import supportRouter from "./routes/supportRoute.js";
+import analyticsRouter from "./routes/analyticsRoute.js";
+import waitlistRouter from "./routes/waitlistRoute.js";
+import budgetMealRouter from "./routes/budgetMealRoute.js";
+import groupOrderRouter from "./routes/groupOrderRoute.js";
+import tiffinRouter from "./routes/tiffinRoute.js";
+import { startTiffinScheduler } from "./services/tiffinScheduler.js";
+import { runInitialMigrations } from "./config/migration.js";
 
 // App & HTTP server config
 const app = express();
@@ -42,8 +54,11 @@ const apiLimiter = rateLimit({
 });
 app.use("/api", apiLimiter);
 
-// Database connection
-connectDB();
+// Database connection & migrations
+connectDB().then(() => {
+  runInitialMigrations();
+  startTiffinScheduler();
+});
 
 // Static asset delivery for uploads with Cloudinary redirect support
 app.use("/images", (req, res, next) => {
@@ -63,6 +78,16 @@ app.use("/api/food", foodRouter);
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
+app.use("/api/restaurant", restaurantRouter);
+app.use("/api/delivery", deliveryPartnerRouter);
+app.use("/api/thali", thaliRouter);
+app.use("/api/meal-picker", mealPickerRouter);
+app.use("/api/support", supportRouter);
+app.use("/api/analytics", analyticsRouter);
+app.use("/api/waitlist", waitlistRouter);
+app.use("/api/budget-meal", budgetMealRouter);
+app.use("/api/group-order", groupOrderRouter);
+app.use("/api/tiffin", tiffinRouter);
 
 app.get("/", (req, res) => {
   res.json({ success: true, message: "QuickBites API v2.0 — Live & Running 🚀", version: "2.0.0" });

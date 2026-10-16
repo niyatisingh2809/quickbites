@@ -3,6 +3,7 @@ import { StoreContext } from '../../Context/StoreContext.jsx';
 import axios from 'axios';
 import { assets } from '../../assets/assets';
 import { useNavigate } from 'react-router-dom';
+import ReportIssueModal from '../Support/ReportIssueModal';
 import './MyOrders.css';
 
 const MyOrders = ({ setShowLogin }) => {
@@ -10,8 +11,11 @@ const MyOrders = ({ setShowLogin }) => {
     const [loading, setLoading] = useState(true);
     const [activeTrackingOrder, setActiveTrackingOrder] = useState(null);
     const [updatingId, setUpdatingId] = useState(null);
+    const [reportOrder, setReportOrder] = useState(null);
+    const [reorderModalData, setReorderModalData] = useState(null);
+    const [reorderLoadingId, setReorderLoadingId] = useState(null);
 
-    const { url, token, addToCart } = useContext(StoreContext);
+    const { url, token, addToCart, addThaliToCart } = useContext(StoreContext);
     const navigate = useNavigate();
 
     const fetchOrders = async (isQuiet = false) => {
@@ -56,15 +60,62 @@ const MyOrders = ({ setShowLogin }) => {
 
     const activeToken = token || localStorage.getItem("token");
 
-    const handleReorder = (order) => {
-        if (order.items && order.items.length > 0) {
-            order.items.forEach(item => {
-                for (let i = 0; i < (item.quantity || 1); i++) {
-                    addToCart(item._id);
+    const executeReorderItems = (items) => {
+        let addedCount = 0;
+        items.forEach(item => {
+            if (item.isAvailable) {
+                if (item.isThali && item.thaliConfiguration) {
+                    addThaliToCart(item.thaliConfiguration);
+                    addedCount += (item.quantity || 1);
+                } else if (item.foodId || item._id) {
+                    for (let i = 0; i < (item.quantity || 1); i++) {
+                        addToCart(item.foodId || item._id);
+                    }
+                    addedCount += (item.quantity || 1);
                 }
-            });
-            alert("🛍️ Items re-added to your cart!");
+            }
+        });
+        setReorderModalData(null);
+        if (addedCount > 0) {
             navigate('/cart');
+        } else {
+            alert("No available items could be added to the cart.");
+        }
+    };
+
+    const handleReorder = async (order) => {
+        setReorderLoadingId(order._id);
+        try {
+            const response = await axios.post(
+                url + "/api/order/reorder-check",
+                { orderId: order._id },
+                { headers: { token: activeToken } }
+            );
+            if (response.data && response.data.success) {
+                const checkData = response.data;
+                if (checkData.restaurant?.isRushModePaused) {
+                    alert(`⏳ ${checkData.restaurant.name || "Kitchen"} is currently in Kitchen Rush Mode and pausing new orders. Please try again in a few minutes!`);
+                    return;
+                }
+                if (checkData.restaurant?.isOpen === false) {
+                    alert(`🏪 ${checkData.restaurant.name || "Kitchen"} is currently closed for new orders.`);
+                    return;
+                }
+                if (!checkData.allAvailable || checkData.priceChanged) {
+                    setReorderModalData(checkData);
+                } else {
+                    executeReorderItems(checkData.items);
+                }
+            } else {
+                // Fallback direct reorder
+                executeReorderItems(order.items.map(it => ({ ...it, foodId: it._id, isAvailable: true })));
+            }
+        } catch (err) {
+            console.error("Reorder check error:", err);
+            // Fallback direct reorder
+            executeReorderItems(order.items.map(it => ({ ...it, foodId: it._id, isAvailable: true })));
+        } finally {
+            setReorderLoadingId(null);
         }
     };
 
@@ -230,8 +281,15 @@ const MyOrders = ({ setShowLogin }) => {
                                 <div className="order-items-summary">
                                     <p className="order-items-text">
                                         <b>Items:</b> {order.items.map((item, idx) => (
-                                            <span key={idx}>
-                                                {item.name} × {item.quantity}{idx < order.items.length - 1 ? ', ' : ''}
+                                            <span key={idx} style={{ display: 'inline-block', marginRight: '6px' }}>
+                                                <strong>{item.name}</strong> × {item.quantity}
+                                                {item.isThali && item.thaliConfiguration && (
+                                                    <span style={{ display: 'block', fontSize: '12px', color: '#0284c7', background: '#f0f9ff', padding: '4px 8px', borderRadius: '6px', margin: '3px 0' }}>
+                                                        🍱 <em>Includes:</em> {(item.thaliConfiguration.components || []).map(c => `${c.name}${c.portion ? ` (${c.portion})` : ''}${c.quantity > 1 ? ` x${c.quantity}` : ''}`).join(', ')}
+                                                        {item.thaliConfiguration.preparationInstructions && ` | 👨‍🍳 Note: ${item.thaliConfiguration.preparationInstructions}`}
+                                                    </span>
+                                                )}
+                                                {idx < order.items.length - 1 ? ', ' : ''}
                                             </span>
                                         ))}
                                     </p>
@@ -249,8 +307,12 @@ const MyOrders = ({ setShowLogin }) => {
                                     </div>
                                     
                                     <div className="order-action-btns">
-                                        <button onClick={() => handleReorder(order)} className="btn-reorder">
-                                            🛍️ Re-order
+                                        <button 
+                                            onClick={() => handleReorder(order)} 
+                                            disabled={reorderLoadingId === order._id}
+                                            className="btn-reorder"
+                                        >
+                                            {reorderLoadingId === order._id ? "Verifying..." : "🛍️ Re-order"}
                                         </button>
                                         
                                         {/* Status Advance Quick Button */}
@@ -272,6 +334,41 @@ const MyOrders = ({ setShowLogin }) => {
                                         >
                                             📍 Track Order
                                         </button>
+
+                                        {/* Support Dispute Button */}
+                                        {order.hasActiveSupportTicket ? (
+                                            <button
+                                                onClick={() => navigate('/support/tickets')}
+                                                style={{
+                                                    background: '#eff6ff',
+                                                    color: '#1d4ed8',
+                                                    border: '1px solid #bfdbfe',
+                                                    padding: '7px 12px',
+                                                    borderRadius: '8px',
+                                                    fontSize: '12px',
+                                                    fontWeight: '700',
+                                                    cursor: 'pointer'
+                                                }}
+                                            >
+                                                🎫 Ticket Active
+                                            </button>
+                                        ) : (
+                                            <button
+                                                onClick={() => setReportOrder(order)}
+                                                style={{
+                                                    background: '#fef2f2',
+                                                    color: '#b91c1c',
+                                                    border: '1px solid #fecaca',
+                                                    padding: '7px 12px',
+                                                    borderRadius: '8px',
+                                                    fontSize: '12px',
+                                                    fontWeight: '700',
+                                                    cursor: 'pointer'
+                                                }}
+                                            >
+                                                🚨 Report Issue
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -463,6 +560,111 @@ const MyOrders = ({ setShowLogin }) => {
                                         <span>₹{item.price * (item.quantity || 1)}</span>
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Smart Reorder Stock & Price Verification Modal */}
+            {reorderModalData && (
+                <div className="report-modal-overlay" onClick={() => setReorderModalData(null)}>
+                    <div className="report-modal-card" onClick={e => e.stopPropagation()} style={{ maxWidth: '520px' }}>
+                        <div className="report-modal-header">
+                            <div>
+                                <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 800 }}>
+                                    🛍️ Smart Reorder Verification
+                                </h3>
+                                <p style={{ margin: '4px 0 0', fontSize: '13px', color: '#64748b' }}>
+                                    {reorderModalData.restaurant?.name || "Kitchen"} • Live Stock & Price Check
+                                </p>
+                            </div>
+                            <button className="btn-close-modal" onClick={() => setReorderModalData(null)}>✕</button>
+                        </div>
+
+                        <div style={{ padding: '16px 20px' }}>
+                            <p style={{ fontSize: '13px', color: '#475569', margin: '0 0 14px' }}>
+                                Some items or prices from this past order have changed since your last order:
+                            </p>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', maxHeight: '260px', overflowY: 'auto' }}>
+                                {reorderModalData.items.map((item, idx) => (
+                                    <div
+                                        key={idx}
+                                        style={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center',
+                                            padding: '10px 12px',
+                                            borderRadius: '10px',
+                                            background: item.isAvailable ? '#f8fafc' : '#fef2f2',
+                                            border: item.isAvailable ? '1px solid #e2e8f0' : '1px solid #fecaca'
+                                        }}
+                                    >
+                                        <div>
+                                            <div style={{ fontWeight: 700, fontSize: '13.5px', color: item.isAvailable ? '#0f172a' : '#991b1b' }}>
+                                                {item.name} × {item.quantity}
+                                            </div>
+                                            {!item.isAvailable && (
+                                                <div style={{ fontSize: '11.5px', color: '#dc2626', fontWeight: 600, marginTop: '2px' }}>
+                                                    ⚠️ {item.reason || "Currently Out of Stock"}
+                                                </div>
+                                            )}
+                                            {item.isAvailable && item.oldPrice !== item.newPrice && (
+                                                <div style={{ fontSize: '11.5px', color: '#b45309', fontWeight: 600, marginTop: '2px' }}>
+                                                    Price updated: ₹{item.oldPrice} → ₹{item.newPrice}
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div>
+                                            {item.isAvailable ? (
+                                                <span style={{ fontSize: '11px', fontWeight: 700, color: '#166534', background: '#dcfce7', padding: '3px 8px', borderRadius: '6px' }}>
+                                                    Available ✓
+                                                </span>
+                                            ) : (
+                                                <span style={{ fontSize: '11px', fontWeight: 700, color: '#991b1b', background: '#fee2e2', padding: '3px 8px', borderRadius: '6px' }}>
+                                                    Skipped ✕
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+                                <button
+                                    type="button"
+                                    onClick={() => setReorderModalData(null)}
+                                    style={{
+                                        flex: 1,
+                                        padding: '10px',
+                                        borderRadius: '10px',
+                                        border: '1.5px solid #cbd5e1',
+                                        background: '#ffffff',
+                                        fontWeight: 700,
+                                        color: '#475569',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => executeReorderItems(reorderModalData.items)}
+                                    style={{
+                                        flex: 2,
+                                        padding: '10px',
+                                        borderRadius: '10px',
+                                        border: 'none',
+                                        background: 'linear-gradient(135deg, #ff6b00 0%, #ea580c 100%)',
+                                        color: '#ffffff',
+                                        fontWeight: 700,
+                                        cursor: 'pointer',
+                                        boxShadow: '0 4px 12px rgba(234, 88, 12, 0.3)'
+                                    }}
+                                >
+                                    Proceed with Available Items →
+                                </button>
                             </div>
                         </div>
                     </div>

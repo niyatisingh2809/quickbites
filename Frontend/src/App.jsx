@@ -11,6 +11,11 @@ import MyOrders from './pages/MyOrders/MyOrders';
 import FloatingCartBar from './components/FloatingCartBar/FloatingCartBar';
 import SearchModal from './components/SearchModal/SearchModal';
 import TrackOrder from './pages/TrackOrder/TrackOrder';
+import ThaliPage from './pages/Thali/ThaliPage';
+import MealPickerPage from './pages/MealPicker/MealPickerPage';
+import CustomerTicketsPage from './pages/Support/CustomerTicketsPage';
+import FavoritesPage from './pages/Favorites/FavoritesPage';
+import DailyPage from './pages/Daily/DailyPage';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -24,11 +29,17 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin} setShowSearch={setShowSearch} />  
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/daily' element={<DailyPage />} />
+          <Route path='/thali' element={<ThaliPage />} />
+          <Route path='/aaj-kya-khau' element={<MealPickerPage />} />
+          <Route path='/favorites' element={<FavoritesPage />} />
           <Route path='/cart' element={<Cart setShowLogin={setShowLogin} />} />
           <Route path='/order' element={<PlaceOrder setShowLogin={setShowLogin} />} />
           <Route path='/verify' element={<Verify />} />
           <Route path='/myorders' element={<MyOrders setShowLogin={setShowLogin} />} />
           <Route path='/track/:orderId' element={<TrackOrder />} />
+          <Route path='/support/tickets' element={<CustomerTicketsPage />} />
+          <Route path='/support/ticket/:ticketId' element={<CustomerTicketsPage />} />
         </Routes>
       </div>
       <FloatingCartBar setShowLogin={setShowLogin} />

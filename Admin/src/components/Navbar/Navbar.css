@@ -26,23 +26,74 @@
     letter-spacing: -0.5px;
 }
 .admin-brand-accent {
-    background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 900;
 }
 .admin-badge {
-    background: #fff2e8;
-    color: #d4380d;
-    border: 1px solid #ffbb96;
-    padding: 2px 8px;
+    padding: 3px 8px;
     border-radius: 6px;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+.badge-superadmin {
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+}
+.badge-partner {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.admin-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-profile-meta {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-welcome-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.user-welcome-email {
+    font-size: 11px;
+    color: #64748b;
+}
+
 .navbar .profile{
-    width: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
+    border: 1.5px solid #cbd5e1;
+}
+
+.btn-admin-logout {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-admin-logout:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
 }

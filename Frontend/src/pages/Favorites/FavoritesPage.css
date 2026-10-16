@@ -1,0 +1,251 @@
+.favorites-page {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px 60px;
+}
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.favorites-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.favorites-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 4px 0 0;
+}
+
+.favorites-tab-pills {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 6px;
+}
+
+.tab-pill {
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-pill.active {
+  background: #ffffff;
+  color: #ff6b00;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.favorites-empty-box {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1.5px dashed #cbd5e1;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.favorites-empty-box h3 {
+  font-size: 20px;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.favorites-empty-box p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0 0 22px;
+  line-height: 1.5;
+}
+
+.btn-explore-menu {
+  background: linear-gradient(135deg, #ff6b00 0%, #ea580c 100%);
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.btn-explore-menu:hover {
+  transform: translateY(-2px);
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Restaurants Grid */
+.fav-restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.fav-restaurant-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fav-restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.fav-rest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.fav-rest-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.fav-rest-cuisine {
+  font-size: 13px;
+  color: #64748b;
+  margin: 4px 0 0;
+}
+
+.fav-rest-remove-btn {
+  background: #fef2f2;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.15s ease;
+}
+
+.fav-rest-remove-btn:hover {
+  transform: scale(1.15);
+}
+
+.fav-rest-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #475569;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background: #f8fafc;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.fav-rest-address {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 0 0 16px;
+}
+
+.fav-rest-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+.fav-rest-status {
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.fav-rest-status.open {
+  color: #16a34a;
+}
+
+.fav-rest-status.closed {
+  color: #dc2626;
+}
+
+.btn-view-kitchen {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-view-kitchen:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Auth Gate */
+.favorites-auth-gate {
+  text-align: center;
+  padding: 60px 24px;
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 440px;
+  margin: 60px auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.auth-gate-icon {
+  font-size: 54px;
+  margin-bottom: 16px;
+}
+
+.favorites-auth-gate h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+
+.favorites-auth-gate p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}

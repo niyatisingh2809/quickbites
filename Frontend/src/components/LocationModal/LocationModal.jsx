@@ -1,8 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './LocationModal.css';
+import axios from 'axios';
+import { StoreContext } from '../../Context/StoreContext';
+import { LanguageContext } from '../../Context/LanguageContext';
 
 const LocationModal = ({ isOpen, onClose, currentLocation, onSelectLocation, onDetectGPS, isDetectingGPS }) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [waitlistEmail, setWaitlistEmail] = useState("");
+  const [waitlistPincode, setWaitlistPincode] = useState("");
+  const [waitlistCity, setWaitlistCity] = useState("");
+  const [waitlistSubmitting, setWaitlistSubmitting] = useState(false);
+  const [waitlistMessage, setWaitlistMessage] = useState("");
+
+  const { url, user } = useContext(StoreContext) || {};
+  const langCtx = useContext(LanguageContext);
+  const t = langCtx?.t || ((k) => k);
 
   if (!isOpen) return null;
 
@@ -104,6 +116,34 @@ const LocationModal = ({ isOpen, onClose, currentLocation, onSelectLocation, onD
     onClose();
   };
 
+  const handleJoinWaitlist = async (e) => {
+    e.preventDefault();
+    const activeUrl = url || import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+    if (!waitlistEmail || !waitlistPincode) {
+      alert("Please provide both email and 6-digit pincode.");
+      return;
+    }
+    setWaitlistSubmitting(true);
+    try {
+      const res = await axios.post(`${activeUrl}/api/waitlist/join`, {
+        email: waitlistEmail,
+        pincode: waitlistPincode,
+        city: waitlistCity || searchQuery || "Unserviced Area",
+        area: searchQuery || ""
+      });
+      if (res.data.success) {
+        setWaitlistMessage(res.data.message || "🎉 You're on the priority waitlist!");
+        setWaitlistEmail("");
+        setWaitlistPincode("");
+        setWaitlistCity("");
+      }
+    } catch (err) {
+      alert(err.response?.data?.message || "Failed to join waitlist. Please check inputs.");
+    } finally {
+      setWaitlistSubmitting(false);
+    }
+  };
+
   return (
     <div className="location-modal-overlay" onClick={onClose}>
       <div className="location-modal-container" onClick={(e) => e.stopPropagation()}>
@@ -112,7 +152,7 @@ const LocationModal = ({ isOpen, onClose, currentLocation, onSelectLocation, onD
           <div className="header-title-box">
             <span className="header-icon">📍</span>
             <div>
-              <h3>Select Delivery Location</h3>
+              <h3>{t('selectLocation')}</h3>
               <p>Choose your city or outlet to see live delivery time & menu</p>
             </div>
           </div>
@@ -140,7 +180,7 @@ const LocationModal = ({ isOpen, onClose, currentLocation, onSelectLocation, onD
             )}
           </div>
           <div className="gps-card-text">
-            <b>{isDetectingGPS ? "Detecting Live GPS Coordinates..." : "Use Current Live Location"}</b>
+            <b>{isDetectingGPS ? "Detecting Live GPS Coordinates..." : t('liveGps')}</b>
             <span>Using device GPS to auto-assign the nearest QuickBites dark store</span>
           </div>
           <span className="gps-arrow-btn">Detect ➔</span>
@@ -195,6 +235,67 @@ const LocationModal = ({ isOpen, onClose, currentLocation, onSelectLocation, onD
                 </div>
               );
             })}
+          </div>
+
+          {filteredHubs.length === 0 && (
+            <div style={{ textAlign: 'center', padding: '14px', background: '#fffbeb', border: '1px solid #fde68a', borderRadius: '12px', margin: '14px 0', color: '#92400e', fontSize: '13px', fontWeight: 600 }}>
+              ⚠️ No active QuickBites dark store outlet matching "{searchQuery}" yet.
+            </div>
+          )}
+
+          {/* Phase 7: Service-Area Waitlist Demand Capture Box */}
+          <div className="waitlist-card-box">
+            <div className="waitlist-header-row">
+              <span className="waitlist-icon">🏙️</span>
+              <div>
+                <h4 className="waitlist-title">{t('waitlistTitle')}</h4>
+                <p className="waitlist-subtitle">{t('waitlistSub')}</p>
+              </div>
+            </div>
+
+            {waitlistMessage ? (
+              <div className="waitlist-success-banner">
+                {waitlistMessage}
+              </div>
+            ) : (
+              <form onSubmit={handleJoinWaitlist} className="waitlist-form">
+                <div className="waitlist-inputs-row">
+                  <input
+                    type="text"
+                    placeholder="6-Digit Pincode (e.g. 231304)"
+                    maxLength={6}
+                    value={waitlistPincode}
+                    onChange={(e) => setWaitlistPincode(e.target.value)}
+                    required
+                    className="waitlist-input"
+                  />
+                  <input
+                    type="text"
+                    placeholder="City / Area"
+                    value={waitlistCity}
+                    onChange={(e) => setWaitlistCity(e.target.value)}
+                    className="waitlist-input"
+                  />
+                </div>
+                <div className="waitlist-submit-row">
+                  <input
+                    type="email"
+                    placeholder="Email for ₹100 launch voucher"
+                    value={waitlistEmail}
+                    onChange={(e) => setWaitlistEmail(e.target.value)}
+                    required
+                    className="waitlist-input"
+                  />
+                  <button
+                    type="submit"
+                    disabled={waitlistSubmitting}
+                    className="waitlist-submit-btn"
+                  >
+                    {waitlistSubmitting ? "..." : t('waitlistBtn')}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
 

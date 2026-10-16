@@ -17,7 +17,7 @@
 
 .food-item-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(234, 88, 12, 0.15);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.15);
 }
 
 /* Media / Image Container */
@@ -55,6 +55,34 @@
     justify-content: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     z-index: 2;
+}
+
+.favorite-heart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 4;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
+}
+
+.favorite-heart-btn:hover {
+    transform: scale(1.18);
+    background: #ffffff;
+}
+
+.favorite-heart-btn.active {
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
 }
 
 .diet-indicator-badge.veg {
@@ -130,8 +158,8 @@
 .dish-category-tag {
     font-size: 11px;
     font-weight: 800;
-    color: #ea580c;
-    background: #fff7ed;
+    color: #2563eb;
+    background: #eff6ff;
     padding: 2px 8px;
     border-radius: 6px;
     text-transform: uppercase;
@@ -298,4 +326,38 @@
     padding: 0 4px;
     min-width: 20px;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    .food-item-card {
+        border-radius: 16px;
+    }
+    .food-item-media {
+        height: 145px;
+    }
+    .food-item-content {
+        padding: 10px 12px;
+    }
+    .dish-title {
+        font-size: 13.5px;
+        margin-bottom: 4px;
+    }
+    .dish-description {
+        font-size: 11px;
+        -webkit-line-clamp: 2;
+        margin-bottom: 8px;
+    }
+    .current-price {
+        font-size: 15px;
+    }
+    .btn-add-dish, .dish-stepper-counter {
+        height: 30px;
+        min-width: 72px;
+        font-size: 12px;
+        padding: 0 10px;
+    }
+    .stepper-btn {
+        padding: 0 8px;
+        font-size: 14px;
+    }
 }

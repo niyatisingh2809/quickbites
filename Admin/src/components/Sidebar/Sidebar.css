@@ -24,8 +24,15 @@ gap: 20px;
     cursor: pointer;
 }
 .sidebar-option.active{
-    background-color: #fff0ed;
-    border-color: tomato;
+    background-color: #eff6ff;
+    border-color: #2563eb;
+    color: #2563eb;
+}
+.sidebar-emoji {
+    font-size: 20px;
+    width: 24px;
+    display: inline-block;
+    text-align: center;
 }
 @media (max-width:900px) {
     .sidebar-option p{

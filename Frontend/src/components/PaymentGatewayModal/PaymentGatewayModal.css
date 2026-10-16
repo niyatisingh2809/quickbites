@@ -94,7 +94,7 @@
 }
 
 .pg-close-btn:hover {
-    background: #e23744;
+    background: #2563eb;
     color: #ffffff;
 }
 
@@ -204,12 +204,12 @@
 }
 
 .pg-tab-btn.active {
-    background: #fef2f2;
-    border-left: 3px solid #e23744;
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
 }
 
 .pg-tab-btn.active .tab-text b {
-    color: #e23744;
+    color: #2563eb;
 }
 
 /* Right Main Content Pane */
@@ -253,6 +253,345 @@
     border-radius: 20px;
 }
 
+/* Food Delivery App 1-Click UPI Selector (Swiggy / Zomato Style) */
+.upi-app-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.upi-select-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.upi-select-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.upi-select-card.active {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.18);
+}
+
+.app-badge-icon {
+    font-size: 24px;
+}
+
+.app-select-meta b {
+    display: block;
+    font-size: 13.5px;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.app-select-meta span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* Primary Food App Pay Card */
+.food-app-pay-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.food-app-pay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.food-app-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.food-app-icon {
+    font-size: 28px;
+}
+
+.food-app-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.food-app-desc {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.food-app-amount-pill {
+    font-size: 18px;
+    font-weight: 900;
+    color: #2563eb;
+    background: #dbeafe;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.food-app-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-food-app-pay {
+    width: 100%;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-food-app-pay:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.45);
+}
+
+.btn-food-app-mobile {
+    width: 100%;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #1e293b;
+    padding: 11px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-food-app-mobile:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+/* Custom UPI Collect Card */
+.custom-upi-collect-card {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.custom-upi-title {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.custom-upi-row {
+    display: flex;
+    gap: 10px;
+}
+
+.custom-upi-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13.5px;
+    outline: none;
+    background: #ffffff;
+}
+
+.custom-upi-input:focus {
+    border-color: #2563eb;
+}
+
+.btn-custom-upi-submit {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-custom-upi-submit:hover {
+    opacity: 0.9;
+}
+
+/* Collapsible QR Section */
+.collapsible-qr-wrap {
+    margin-top: 14px;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 14px;
+}
+
+.btn-toggle-qr-accordion {
+    width: 100%;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-toggle-qr-accordion:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.accordion-arrow {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.qr-accordion-body {
+    margin-top: 14px;
+    animation: paneIn 0.2s ease;
+}
+
+/* Receiver Account Box */
+.receiver-account-box {
+    background: #f1f5f9;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.receiver-badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #475569;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.receiver-details b {
+    display: block;
+    font-size: 14px;
+    color: #0f172a;
+    font-family: monospace;
+}
+
+.receiver-sub {
+    font-size: 11.5px;
+    color: #64748b;
+}
+
+.btn-edit-receiver {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-receiver:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+}
+
+/* Edit Receiver Form */
+.edit-receiver-form {
+    background: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    animation: paneIn 0.2s ease;
+}
+
+.edit-form-notice {
+    font-size: 12px;
+    color: #9f1239;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.edit-inputs-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.edit-input {
+    padding: 9px 12px;
+    border: 1.5px solid #fda4af;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    background: #ffffff;
+}
+
+.edit-input:focus {
+    border-color: #e11d48;
+}
+
+.btn-save-receiver {
+    background: #e11d48;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn-save-receiver:hover {
+    opacity: 0.9;
+}
+
+/* UPI QR Code Card */
 .upi-qr-card {
     background: #f8fafc;
     border: 1.5px solid #e2e8f0;
@@ -261,196 +600,344 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .qr-code-frame {
     background: #ffffff;
-    padding: 8px;
+    padding: 10px;
     border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     border: 1px solid #e2e8f0;
     position: relative;
-    overflow: hidden;
     flex-shrink: 0;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.qr-code-frame:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 18px rgba(226, 55, 68, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dynamic-qr-image {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     display: block;
     border-radius: 8px;
     background: #ffffff;
 }
 
-.btn-pay-qr-quick {
-    margin-top: 10px;
-    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
-    color: #ffffff;
-    border: none;
-    font-size: 12px;
+.qr-ready-badge {
+    margin-top: 6px;
+    font-size: 11px;
     font-weight: 800;
-    padding: 7px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.btn-pay-qr-quick:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
-}
-
-.qr-scan-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #e23744, transparent);
-    animation: qrScan 2.2s infinite ease-in-out;
-}
-
-@keyframes qrScan {
-    0% { top: 4px; opacity: 0; }
-    30% { opacity: 1; }
-    70% { opacity: 1; }
-    100% { top: calc(100% - 4px); opacity: 0; }
+    color: #16a34a;
+    background: #dcfce7;
+    padding: 2px 8px;
+    border-radius: 10px;
 }
 
 .upi-qr-meta {
     flex: 1;
 }
 
+.qr-meta-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
 .qr-scan-title {
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 800;
     color: #0f172a;
-    margin: 0 0 8px 0;
+    margin: 0;
+}
+
+.qr-amount-tag {
+    font-size: 16px;
+    font-weight: 900;
+    color: #2563eb;
+    background: #dbeafe;
+    padding: 2px 10px;
+    border-radius: 20px;
 }
 
 .upi-supported-badges {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .upi-badge-pill {
     background: #e2e8f0;
     color: #475569;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
-    padding: 3px 8px;
+    padding: 2px 7px;
     border-radius: 6px;
 }
 
+.qr-vpa-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
 .qr-vpa-text {
-    font-size: 12.5px;
-    color: #64748b;
-    margin: 0;
+    font-size: 12px;
+    color: #475569;
 }
 
 .qr-vpa-text b {
     color: #0f172a;
+    font-family: monospace;
+    font-size: 12.5px;
 }
 
-/* Instant UPI Apps Selector */
-.instant-apps-section {
-    margin-bottom: 20px;
-}
-
-.section-small-title {
-    font-size: 12px;
+.btn-copy-vpa {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
     font-weight: 700;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 0 10px 0;
+    color: #334155;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-.instant-apps-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+.btn-copy-vpa:hover {
+    background: #cbd5e1;
 }
 
-.upi-app-btn {
-    background: #ffffff;
-    border: 1.5px solid #e2e8f0;
-    padding: 10px;
-    border-radius: 12px;
+.btn-open-upi-app {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.btn-open-upi-app:hover {
+    opacity: 0.95;
+}
+
+.mobile-upi-intent-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.primary-upi-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border: none;
+    padding: 11px 14px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    cursor: pointer;
-    font-size: 13px;
+}
+
+.primary-upi-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+    opacity: 0.98;
+}
+
+.primary-upi-btn:active {
+    transform: translateY(0);
+}
+
+.quick-upi-chips-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.upi-app-chip {
+    flex: 1;
+    min-width: 70px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #1e293b;
-    transition: all 0.2s ease;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
 
-.upi-app-btn:hover {
-    border-color: #cbd5e1;
+.upi-app-chip:hover {
+    background: #e0e7ff;
+    border-color: #93c5fd;
+    color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.upi-app-chip:active {
+    transform: scale(0.97);
+}
+
+
+/* Step 2: Manual User UTR Verification Section */
+.upi-manual-verify-section {
     background: #f8fafc;
-    transform: translateY(-2px);
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 16px;
 }
 
-.upi-app-btn.selected {
-    border-color: #e23744;
-    background: #fef2f2;
-    color: #e23744;
-    box-shadow: 0 2px 8px rgba(226, 55, 68, 0.15);
+.verify-instructions-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
 }
 
-/* Custom UPI VPA Input */
-.custom-upi-input-box {
+.step-num-pill {
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.verify-instructions-header b {
+    font-size: 13.5px;
+    color: #0f172a;
+}
+
+.verify-instructions-sub {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.utr-submit-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.utr-input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.utr-text-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14.5px;
+    font-family: monospace;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #ffffff;
+}
+
+.utr-text-input:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.utr-text-input.input-error {
+    border-color: #ef4444;
+}
+
+.utr-error-text {
+    font-size: 11.5px;
+    color: #dc2626;
+    margin: 2px 0 0 0;
+    font-weight: 600;
+}
+
+.utr-actions-row {
     display: flex;
     gap: 10px;
 }
 
-.upi-text-input {
-    flex: 1;
-    padding: 12px 16px;
-    border: 1.5px solid #cbd5e1;
-    border-radius: 12px;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.upi-text-input:focus {
-    border-color: #e23744;
-}
-
-.btn-pay-upi {
-    background: #e23744;
+.btn-confirm-order-utr {
+    flex: 1.2;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
     color: #ffffff;
     border: none;
-    padding: 12px 20px;
-    border-radius: 12px;
-    font-weight: 800;
+    padding: 12px 18px;
+    border-radius: 10px;
     font-size: 13.5px;
+    font-weight: 800;
     cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn-pay-upi:hover {
-    background: #cb202d;
-    box-shadow: 0 4px 14px rgba(226, 55, 68, 0.35);
+.btn-confirm-order-utr:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4);
+}
+
+.btn-instant-confirm-alt {
+    flex: 1;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #334155;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-instant-confirm-alt:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+.test-simulator-row {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.btn-demo-test-link {
+    background: none;
+    border: none;
+    font-size: 11.5px;
+    color: #94a3b8;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-demo-test-link:hover {
+    color: #64748b;
 }
 
 /* ----------------- TAB 2: CREDIT / DEBIT CARDS ----------------- */
@@ -555,7 +1042,7 @@
 }
 
 .field-group input:focus {
-    border-color: #e23744;
+    border-color: #2563eb;
 }
 
 .card-rbi-notice {
@@ -569,7 +1056,7 @@
 
 .btn-pay-action {
     width: 100%;
-    background: #e23744;
+    background: #2563eb;
     color: #ffffff;
     border: none;
     padding: 14px;
@@ -619,8 +1106,8 @@
 }
 
 .bank-item-card.active {
-    border-color: #e23744;
-    background: #fef2f2;
+    border-color: #2563eb;
+    background: #eff6ff;
 }
 
 .bank-icon {
@@ -635,7 +1122,7 @@
 }
 
 .bank-check {
-    color: #e23744;
+    color: #2563eb;
     font-weight: 900;
 }
 
@@ -1084,6 +1571,29 @@
 
 /* Responsive */
 @media (max-width: 640px) {
+    .pg-modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .pg-modal-container {
+        width: 100%;
+        max-width: 100%;
+        max-height: 92vh;
+        border-radius: 24px 24px 0 0;
+        animation: slideUpMobile 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes slideUpMobile {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+    }
+
+    .pg-tab-content {
+        max-height: 62vh;
+        padding: 18px 16px;
+    }
+
     .pg-body-layout {
         grid-template-columns: 1fr;
     }
@@ -1093,18 +1603,20 @@
         overflow-x: auto;
         border-right: none;
         border-bottom: 1px solid #e2e8f0;
+        padding: 4px;
     }
 
     .pg-tab-btn {
         flex-direction: column;
         text-align: center;
-        padding: 8px;
+        padding: 8px 10px;
         min-width: 80px;
+        border-radius: 8px;
     }
 
     .pg-tab-btn.active {
         border-left: none;
-        border-bottom: 3px solid #e23744;
+        border-bottom: 3px solid #2563eb;
     }
 
     .upi-qr-card {
@@ -1119,4 +1631,133 @@
     .custom-upi-input-box {
         flex-direction: column;
     }
+}
+
+/* Razorpay Key Setup Modal */
+.rzp-key-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: pgFadeIn 0.2s ease;
+}
+
+.rzp-key-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    max-width: 440px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.rzp-key-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rzp-key-top h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.btn-close-rzp-modal {
+    background: #f1f5f9;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.btn-close-rzp-modal:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.rzp-key-p {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+}
+
+.rzp-key-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rzp-key-input-field {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: monospace;
+    font-weight: 700;
+    outline: none;
+}
+
+.rzp-key-input-field:focus {
+    border-color: #2563eb;
+}
+
+.rzp-key-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-save-rzp-key {
+    flex: 1.5;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn-cancel-rzp-key {
+    flex: 1;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 11px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.rzp-key-help {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #e2e8f0;
+    font-size: 11.5px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.rzp-key-help a {
+    color: #2563eb;
+    font-weight: 700;
+    text-decoration: underline;
 }

@@ -144,6 +144,7 @@ export const food_list = [
         price: 180,
         description: "Traditional Mediterranean salad with plump Kalamata olives, juicy tomatoes, crisp cucumber, and crumbly Greek feta.",
         category: "Salad",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 380
     },
@@ -154,6 +155,7 @@ export const food_list = [
         price: 145,
         description: "Crispy garden-fresh cucumbers, ripe tomatoes, carrots, and sweet bell peppers drizzled with extra virgin lemon olive oil.",
         category: "Salad",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 420
     },
@@ -164,6 +166,7 @@ export const food_list = [
         price: 166,
         description: "Tender clover sprouts, baby spinach, tossed walnuts, and feta cheese drizzled with honey balsamic dressing.",
         category: "Salad",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 520
     },
@@ -174,6 +177,7 @@ export const food_list = [
         price: 240,
         description: "Tender grilled herb chicken breast slices tossed with organic greens, sweet corn, and creamy honey mustard dressing.",
         category: "Salad",
+        isVeg: false,
         rating: 4.6,
         reviewsCount: 290
     },
@@ -184,6 +188,7 @@ export const food_list = [
         price: 175,
         description: "Nutritious organic sprouted moong beans tossed with chopped onions, tomatoes, green chilies, cilantro, and lemon juice.",
         category: "Salad",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 240
     },
@@ -194,6 +199,7 @@ export const food_list = [
         price: 199,
         description: "Fluffy Peruvian quinoa, sweet yellow corn, black beans, diced bell peppers, and zesty lime coriander dressing.",
         category: "Salad",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 690
     },
@@ -204,6 +210,7 @@ export const food_list = [
         price: 216,
         description: "Crisp romaine hearts, toasted garlic herb croutons, parmesan shavings, and creamy Italian Caesar dressing.",
         category: "Salad",
+        isVeg: true,
         rating: 4.5,
         reviewsCount: 185
     },
@@ -214,6 +221,7 @@ export const food_list = [
         price: 225,
         description: "Wholesome boiled kabuli chana with diced English cucumbers, juicy cherry tomatoes, kalamata olives, and fresh herbs.",
         category: "Salad",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 430
     },
@@ -224,6 +232,7 @@ export const food_list = [
         price: 242,
         description: "Chilled medley of sweet melons, crisp apples, juicy pomegranate arils, and toasted almonds with mint honey glaze.",
         category: "Salad",
+        isVeg: true,
         rating: 4.4,
         reviewsCount: 750
     },
@@ -234,6 +243,7 @@ export const food_list = [
         price: 275,
         description: "Vibrant garden bowl layered with ripe Hass avocado slices, crisp greens, beetroot, cherry tomatoes, and citrus vinaigrette.",
         category: "Salad",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 610
     },
@@ -244,6 +254,7 @@ export const food_list = [
         price: 199,
         description: "Tender pasta sheet rolled with ricotta, parmesan, spinach, and Italian herb tomato marinara.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 310
     },
@@ -254,6 +265,7 @@ export const food_list = [
         price: 175,
         description: "Spicy zesty peri-peri seasoned vegetables rolled in flaky multi-grain paratha with mint mayo.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 450
     },
@@ -264,6 +276,7 @@ export const food_list = [
         price: 220,
         description: "Succulent smoked chicken tikka chunks rolled with pickled onions, bell peppers, and chipotle dip.",
         category: "Rolls",
+        isVeg: false,
         rating: 4.9,
         reviewsCount: 580
     },
@@ -274,6 +287,7 @@ export const food_list = [
         price: 149,
         description: "Classic street-style crunchy shredded cabbage, carrots, capsicum, and paneer roll with sweet chili sauce.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 390
     },
@@ -284,6 +298,7 @@ export const food_list = [
         price: 129,
         description: "Iconic street-style spicy mashed potato frankie seasoned with special chaat masala, tangy onions, and green chili vinegar.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 480
     },
@@ -294,6 +309,7 @@ export const food_list = [
         price: 169,
         description: "Sweet golden corn and melted mozzarella enveloped in a crisp wrap with creamy herb spread.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 360
     },
@@ -304,6 +320,7 @@ export const food_list = [
         price: 185,
         description: "Golden crispy fried rolls stuffed with glass noodles, cabbage, carrots, and sweet chili dip.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 620
     },
@@ -314,6 +331,7 @@ export const food_list = [
         price: 195,
         description: "Char-grilled spiced cottage cheese cubes wrapped in rumali roti with mint chutney and crunchy salad.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 510
     },
@@ -324,6 +342,7 @@ export const food_list = [
         price: 205,
         description: "Fiery Schezwan tossed paneer strips wrapped in butter toasted paratha with sesame garnish.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 290
     },
@@ -334,6 +353,7 @@ export const food_list = [
         price: 199,
         description: "Earthy button mushrooms marinated in aromatic tandoori spices and rolled with mint garlic mayo.",
         category: "Rolls",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 330
     },
@@ -344,6 +364,7 @@ export const food_list = [
         price: 120,
         description: "Creamy vanilla gelato swirled with rich raspberry syrup and dark chocolate fudge ripples.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 620
     },
@@ -354,6 +375,7 @@ export const food_list = [
         price: 135,
         description: "Velvety fresh cream ice cream loaded with real chunks of strawberries, kiwi, and tender mango.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 480
     },
@@ -364,6 +386,7 @@ export const food_list = [
         price: 160,
         description: "Artisanal Belgian chocolate layered cake and gelato dessert packed in an elegant reusable glass jar.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 710
     },
@@ -374,6 +397,7 @@ export const food_list = [
         price: 110,
         description: "Classic aromatic Bourbon Madagascar vanilla bean double-churned ice cream scoop.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 540
     },
@@ -384,6 +408,7 @@ export const food_list = [
         price: 99,
         description: "Soft khoya dumplings deep fried and steeped in fragrant cardamom saffron sugar syrup.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 890
     },
@@ -394,6 +419,7 @@ export const food_list = [
         price: 139,
         description: "Delicate chenna patties soaked in chilled thick saffron milk garnished with slivered pistachios.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 780
     },
@@ -404,6 +430,7 @@ export const food_list = [
         price: 149,
         description: "Warm moist chocolate cake with a molten chocolate center that flows luxuriously at first bite.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 670
     },
@@ -414,6 +441,7 @@ export const food_list = [
         price: 165,
         description: "Decadent dark chocolate brownie served with hot chocolate fudge drizzle and crushed walnuts.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 540
     },
@@ -424,6 +452,7 @@ export const food_list = [
         price: 145,
         description: "Authentic kesar pista kulfi served with rose syrup, basil seeds, and slippery falooda sev.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 410
     },
@@ -434,6 +463,7 @@ export const food_list = [
         price: 155,
         description: "Silky smooth Italian sweet cream set pudding topped with fresh Alphonso mango coulis.",
         category: "Deserts",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 320
     },
@@ -444,6 +474,7 @@ export const food_list = [
         price: 195,
         description: "Herb roasted chicken breast, crisp lettuce, cheddar slice, and garlic aioli between toasted sourdough.",
         category: "Sandwich",
+        isVeg: false,
         rating: 4.8,
         reviewsCount: 490
     },
@@ -454,6 +485,7 @@ export const food_list = [
         price: 155,
         description: "Avocado mash, heirloom tomatoes, alfalfa sprouts, and dairy-free pesto on whole wheat multi-seed bread.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 360
     },
@@ -464,6 +496,7 @@ export const food_list = [
         price: 169,
         description: "Golden butter-toasted sandwich stuffed with spiced potatoes, green peppers, melted cheese, and green chutney.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 680
     },
@@ -474,6 +507,7 @@ export const food_list = [
         price: 139,
         description: "Traditional Bombay triple-decker cucumber and butter sandwich sprinkled with special sandwich masala.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.5,
         reviewsCount: 290
     },
@@ -484,6 +518,7 @@ export const food_list = [
         price: 149,
         description: "Creamy garlic sauteed spinach and sweet corn gratin on toasted artisanal sourdough.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 420
     },
@@ -494,6 +529,7 @@ export const food_list = [
         price: 165,
         description: "Loaded with sweet American corn and gooey melted mozzarella between buttered grill-marked bread.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 560
     },
@@ -504,6 +540,7 @@ export const food_list = [
         price: 175,
         description: "Zesty Mexican salsa, pickled jalapenos, black beans, and Monterey Jack cheese pressed to crisp perfection.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 310
     },
@@ -514,6 +551,7 @@ export const food_list = [
         price: 185,
         description: "Three-tiered street delight packed with beetroot, boiled potato, cucumber, tomato, cheese, and spicy mint dip.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 840
     },
@@ -524,6 +562,7 @@ export const food_list = [
         price: 189,
         description: "Tandoori marinated cottage cheese slabs layered with mint chutney and crunchy capsicum.",
         category: "Sandwich",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 610
     },
@@ -534,6 +573,7 @@ export const food_list = [
         price: 169,
         description: "Fluffy hard-boiled eggs mashed with Dijon mustard, Japanese mayo, and cracked black pepper.",
         category: "Sandwich",
+        isVeg: false,
         rating: 4.7,
         reviewsCount: 390
     },
@@ -544,6 +584,7 @@ export const food_list = [
         price: 99,
         description: "Moist red velvet cupcake topped with silky swirls of Philadelphia cream cheese frosting and gold pearls.",
         category: "Cake",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 820
     },
@@ -554,6 +595,7 @@ export const food_list = [
         price: 185,
         description: "Rich plant-based dark chocolate sponge layered with organic coconut ganache and roasted almonds.",
         category: "Cake",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 340
     },
@@ -564,6 +606,7 @@ export const food_list = [
         price: 199,
         description: "Fluffy vanilla sponge smothered with caramel butterscotch mousse, crunchy praline nuggets, and drizzle.",
         category: "Cake",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 590
     },
@@ -574,6 +617,7 @@ export const food_list = [
         price: 140,
         description: "Traditional British tea-time loaf slice infused with golden candied citrus peel, raisins, and aromatic spices.",
         category: "Cake",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 270
     },
@@ -584,6 +628,7 @@ export const food_list = [
         price: 110,
         description: "Light airy sponge cake layered with sweet crushed pineapple chunks and freshly whipped dairy cream.",
         category: "Cake",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 460
     },
@@ -594,6 +639,7 @@ export const food_list = [
         price: 125,
         description: "German classic chocolate sponge infused with cherry liqueur syrup, sour cherries, and chocolate shavings.",
         category: "Cake",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 630
     },
@@ -604,6 +650,7 @@ export const food_list = [
         price: 219,
         description: "Nutty roasted hazelnut gianduja mousse on a crunchy feuilletine base coated in chocolate mirror glaze.",
         category: "Cake",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 710
     },
@@ -614,6 +661,7 @@ export const food_list = [
         price: 235,
         description: "Dense, ultra-creamy baked cream cheese filling resting on a sweet cinnamon graham cracker crust.",
         category: "Cake",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 870
     },
@@ -624,6 +672,7 @@ export const food_list = [
         price: 199,
         description: "Velvety crimson cocoa sponge layered with tangy Madagascar vanilla cream cheese frosting.",
         category: "Cake",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 520
     },
@@ -634,6 +683,7 @@ export const food_list = [
         price: 220,
         description: "Decadent Dutch chocolate sponge saturated with 70% dark chocolate ganache and chocolate curls.",
         category: "Cake",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 940
     },
@@ -644,6 +694,7 @@ export const food_list = [
         price: 210,
         description: "Fresh button mushrooms tossed in butter, burnt garlic flakes, cracked pepper, and Italian parsley.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 430
     },
@@ -654,6 +705,7 @@ export const food_list = [
         price: 185,
         description: "Crispy battered cauliflower florets tossed in sweet and tangy chili garlic glaze with spring onions.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 510
     },
@@ -664,6 +716,7 @@ export const food_list = [
         price: 220,
         description: "Fragrant long-grain aged basmati rice cooked with whole spices, carrots, green peas, and paneer cubes.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 670
     },
@@ -674,6 +727,7 @@ export const food_list = [
         price: 235,
         description: "Herb infused Italian arborio rice risotto simmered with tender green zucchini ribbons and parmesan.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 310
     },
@@ -684,6 +738,7 @@ export const food_list = [
         price: 245,
         description: "Fresh cottage cheese cubes cooked in a smooth, mildly spiced organic spinach puree tempered with garlic and cumin.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 520
     },
@@ -694,6 +749,7 @@ export const food_list = [
         price: 260,
         description: "Cubes of malai paneer, bell peppers, and red onions marinated in curd and tandoori spices, char-grilled.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 780
     },
@@ -704,6 +760,7 @@ export const food_list = [
         price: 255,
         description: "Cottage cheese simmered in spicy onion-tomato gravy with freshly ground coriander seeds and crunchy bell peppers.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 610
     },
@@ -714,6 +771,7 @@ export const food_list = [
         price: 270,
         description: "Rich, velvety tomato and cashew nut makhani gravy infused with kasuri methi and finished with white butter.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 890
     },
@@ -724,6 +782,7 @@ export const food_list = [
         price: 230,
         description: "Slow-cooked black lentils and kidney beans simmered overnight on tandoor with fresh cream and butter.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 920
     },
@@ -734,6 +793,7 @@ export const food_list = [
         price: 299,
         description: "Complete feast with Dal Makhani, Shahi Paneer, Mix Veg, Pulao, 2 Butter Naan, Raita, and Gulab Jamun.",
         category: "Pure Veg",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 1100
     },
@@ -744,6 +804,7 @@ export const food_list = [
         price: 210,
         description: "Gooey four-cheese macaroni pasta baked to bubbly golden perfection with an herb panko crust.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 780
     },
@@ -754,6 +815,7 @@ export const food_list = [
         price: 195,
         description: "Penne tossed in slow-simmered San Marzano plum tomato pomodoro sauce with torn fresh sweet basil.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 460
     },
@@ -764,6 +826,7 @@ export const food_list = [
         price: 225,
         description: "Silky fettuccine enrobed in garlic parmesan cream sauce with sauteed broccoli and sweet bell peppers.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 610
     },
@@ -774,6 +837,7 @@ export const food_list = [
         price: 260,
         description: "Tender rosemary grilled chicken tossed with fusilli in rich pink Aurora sauce and black olives.",
         category: "Pasta",
+        isVeg: false,
         rating: 4.9,
         reviewsCount: 530
     },
@@ -784,6 +848,7 @@ export const food_list = [
         price: 220,
         description: "Classic spaghetti tossed in extra virgin olive oil, toasted garlic slivers, red pepper flakes, and parsley.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 380
     },
@@ -794,6 +859,7 @@ export const food_list = [
         price: 215,
         description: "Al dente penne in fiery spicy garlic tomato sauce with black olives and fresh parmesan shavings.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 490
     },
@@ -804,6 +870,7 @@ export const food_list = [
         price: 235,
         description: "Penne coated in rich, velvety butter parmesan cream sauce with sauteed button mushrooms.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 720
     },
@@ -814,6 +881,7 @@ export const food_list = [
         price: 225,
         description: "Elbow macaroni enveloped in sharp yellow cheddar and gruyere sauce with crispy golden breadcrumbs.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 610
     },
@@ -824,6 +892,7 @@ export const food_list = [
         price: 240,
         description: "Fusilli pasta tossed in creamy spicy African peri-peri cheese sauce with crunchy bell peppers.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 340
     },
@@ -834,6 +903,7 @@ export const food_list = [
         price: 250,
         description: "Penne tossed in freshly pounded Genoa sweet basil, pine nut, parmesan, and extra virgin olive oil pesto.",
         category: "Pasta",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 580
     },
@@ -844,6 +914,7 @@ export const food_list = [
         price: 165,
         description: "Delicate egg noodles tossed in melted French butter, fresh cracked sea salt, and toasted garlic chives.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 340
     },
@@ -854,6 +925,7 @@ export const food_list = [
         price: 175,
         description: "Wok-tossed noodles with julienned cabbage, capsicum, carrots, and scallions in light soy dressing.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 720
     },
@@ -864,6 +936,7 @@ export const food_list = [
         price: 195,
         description: "Delicate Japanese wheat noodles served chilled or warm with fragrant tsuyu broth and sesame garnish.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 290
     },
@@ -874,6 +947,7 @@ export const food_list = [
         price: 180,
         description: "Steaming hot street-style stir-fried hakka noodles with crunchy vegetables and spicy schezwan splash.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 550
     },
@@ -884,6 +958,7 @@ export const food_list = [
         price: 185,
         description: "Classic Chinese wok-tossed long wheat noodles with cabbage, carrots, capsicum, and spring onions.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 840
     },
@@ -894,6 +969,7 @@ export const food_list = [
         price: 210,
         description: "Crisp golden fried noodles topped with sweet and sour exotic vegetable gravy and baby corn.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 420
     },
@@ -904,6 +980,7 @@ export const food_list = [
         price: 195,
         description: "Fiery wok-tossed spicy noodles loaded with charred crushed garlic cloves and red chili oil paste.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 660
     },
@@ -914,6 +991,7 @@ export const food_list = [
         price: 200,
         description: "Spicy noodles tossed in authentic in-house fermented Schezwan pepper sauce with crunchy celery.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 590
     },
@@ -924,6 +1002,7 @@ export const food_list = [
         price: 215,
         description: "Pan-crisped noodle nest crowned with hot Hunan vegetable stir-fry and toasted sesame seeds.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 310
     },
@@ -934,6 +1013,7 @@ export const food_list = [
         price: 235,
         description: "Broad flat rice noodles stir-fried with tofu, bean sprouts, tamarind sauce, and crushed peanuts.",
         category: "Noodles",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 750
     },
@@ -944,6 +1024,7 @@ export const food_list = [
         price: 120,
         description: "Steaming soft and fluffy fermented rice cakes served with aromatic drumstick sambar and fresh coconut chutney.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 920
     },
@@ -954,6 +1035,7 @@ export const food_list = [
         price: 130,
         description: "Golden crispy fried lentil fritters spiced with peppercorns, curry leaves, and ginger.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 680
     },
@@ -964,6 +1046,7 @@ export const food_list = [
         price: 110,
         description: "Wholesome roasted semolina cooked with mustard seeds, curry leaves, ginger, cashews, and garden vegetables.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 340
     },
@@ -974,6 +1057,7 @@ export const food_list = [
         price: 140,
         description: "Paper-thin, golden, crisp crepe made from fermented rice and lentil batter served with trio of chutneys.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 510
     },
@@ -984,6 +1068,7 @@ export const food_list = [
         price: 165,
         description: "Crispy dosa smeared generously with pure desi ghee and aromatic spicy gunpowder lentil podi.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 840
     },
@@ -994,6 +1079,7 @@ export const food_list = [
         price: 160,
         description: "Iconic crisp golden dosa folded over aromatic turmeric spiced mashed potato and onion filling.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 1150
     },
@@ -1004,6 +1090,7 @@ export const food_list = [
         price: 170,
         description: "Crispy lace-patterned semolina and rice crepe studded with cumin, finely chopped onions, and green chilies.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 460
     },
@@ -1014,6 +1101,7 @@ export const food_list = [
         price: 175,
         description: "Thick, soft savory pancake topped with caramelized red onions, juicy diced tomatoes, and fresh cilantro.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 580
     },
@@ -1024,6 +1112,7 @@ export const food_list = [
         price: 180,
         description: "Crispy dosa with internal spicy red garlic chutney lining and traditional spiced potato stuffing.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 890
     },
@@ -1034,6 +1123,7 @@ export const food_list = [
         price: 195,
         description: "Fusion favorite stuffed with spiced grated paneer and melted mozzarella cheese.",
         category: "South Indian",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 620
     },
@@ -1044,6 +1134,7 @@ export const food_list = [
         price: 110,
         description: "Intense, concentrated 30ml double shot of dark roasted Arabica coffee with thick golden crema.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 310
     },
@@ -1054,6 +1145,7 @@ export const food_list = [
         price: 90,
         description: "Traditional chicory-infused decoction brewed with frothy boiling milk served in brass davara tumbler.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 1420
     },
@@ -1064,6 +1156,7 @@ export const food_list = [
         price: 130,
         description: "Bold double espresso poured over chilled mineral water and crystalline ice cubes.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.6,
         reviewsCount: 280
     },
@@ -1074,6 +1167,7 @@ export const food_list = [
         price: 160,
         description: "Velvety micro-foamed steamed milk poured over a rich ristretto espresso shot.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 410
     },
@@ -1084,6 +1178,7 @@ export const food_list = [
         price: 150,
         description: "Balanced espresso with equal parts steamed milk and dense creamy foam dusted with cocoa powder.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 980
     },
@@ -1094,6 +1189,7 @@ export const food_list = [
         price: 165,
         description: "Creamy classic blended cold coffee with chilled milk, sugar, espresso, and vanilla ice cream scoop.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 1250
     },
@@ -1104,6 +1200,7 @@ export const food_list = [
         price: 175,
         description: "18-hour slow cold-steeped coarse ground Arabica coffee with natural chocolate and caramel notes.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 520
     },
@@ -1114,6 +1211,7 @@ export const food_list = [
         price: 175,
         description: "Espresso and chilled milk flavored with pure French vanilla syrup served over ice.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 390
     },
@@ -1124,6 +1222,7 @@ export const food_list = [
         price: 180,
         description: "Espresso combined with bittersweet Dutch cocoa, steamed milk, and whipped cream swirl.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 640
     },
@@ -1134,6 +1233,7 @@ export const food_list = [
         price: 190,
         description: "Steamed vanilla milk marked with bold espresso and crosshatched with rich buttery caramel sauce.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 870
     },
@@ -1144,6 +1244,7 @@ export const food_list = [
         price: 195,
         description: "Blended ice frappe flavored with roasted hazelnut praline syrup and whipped cream topping.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 560
     },
@@ -1154,6 +1255,7 @@ export const food_list = [
         price: 170,
         description: "Hot freshly extracted espresso shot poured directly over a cold scoop of artisanal vanilla bean gelato.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 430
     },
@@ -1164,6 +1266,7 @@ export const food_list = [
         price: 210,
         description: "Hot brewed dark roast coffee with brown sugar and Irish cream essence topped with thick heavy cream.",
         category: "Coffee",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 310
     },
@@ -1174,6 +1277,7 @@ export const food_list = [
         price: 150,
         description: "Thick creamy shake blended with double scoops of Madagascar vanilla ice cream and whole milk.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 420
     },
@@ -1184,6 +1288,7 @@ export const food_list = [
         price: 165,
         description: "Fresh strawberry puree churned with strawberry ice cream and topped with strawberry drizzle.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 650
     },
@@ -1194,6 +1299,7 @@ export const food_list = [
         price: 175,
         description: "Ripe bananas blended with creamy organic peanut butter, honey, and chia seeds for a high-protein boost.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 480
     },
@@ -1204,6 +1310,7 @@ export const food_list = [
         price: 170,
         description: "Butterscotch ice cream blended with golden butterscotch crunchies and salty caramel sauce.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 390
     },
@@ -1214,6 +1321,7 @@ export const food_list = [
         price: 180,
         description: "Seasonal specialty made with 100% Ratnagiri Alphonso mango pulp and vanilla ice cream.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 940
     },
@@ -1224,6 +1332,7 @@ export const food_list = [
         price: 195,
         description: "Wild Canadian blueberries blended with Greek yogurt, ice cream, and blueberry compote.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 520
     },
@@ -1234,6 +1343,7 @@ export const food_list = [
         price: 185,
         description: "Crisp KitKat chocolate wafer bars crushed and blended into rich chocolate milkshake with waffle stick.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 1120
     },
@@ -1244,6 +1354,7 @@ export const food_list = [
         price: 180,
         description: "Crunchy Oreo cookies blended with chocolate ice cream and topped with cookie crumbs.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 1280
     },
@@ -1254,6 +1365,7 @@ export const food_list = [
         price: 210,
         description: "Generous swirl of Italian Nutella spread blended with chocolate ice cream and roasted hazelnuts.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 1350
     },
@@ -1264,6 +1376,7 @@ export const food_list = [
         price: 199,
         description: "Intense 70% dark Belgian cocoa blended into an ultra-thick ganache shake for pure chocoholics.",
         category: "Shakes",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 860
     },
@@ -1274,6 +1387,7 @@ export const food_list = [
         price: 90,
         description: "Naturally electrolyte-rich tender coconut water served chilled and fresh from the shell.",
         category: "Juice",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 780
     },
@@ -1284,6 +1398,7 @@ export const food_list = [
         price: 110,
         description: "Fresh cold-pressed sweet watermelon juice with a hint of garden mint and black salt.",
         category: "Juice",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 650
     },
@@ -1294,6 +1409,7 @@ export const food_list = [
         price: 120,
         description: "Pure sweet lime juice freshly squeezed without added water or artificial sugar.",
         category: "Juice",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 490
     },
@@ -1304,6 +1420,7 @@ export const food_list = [
         price: 130,
         description: "Pulpy Nagpur orange juice packed with natural Vitamin C, cold-pressed to preserve nutrition.",
         category: "Juice",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 710
     },
@@ -1314,6 +1431,7 @@ export const food_list = [
         price: 80,
         description: "Tangy Indian shikanji with fresh lemon, crushed mint leaves, roasted cumin, and black salt.",
         category: "Juice",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 540
     },
@@ -1324,6 +1442,7 @@ export const food_list = [
         price: 125,
         description: "Tropical sweet and tart pineapple juice with a squeeze of fresh key lime.",
         category: "Juice",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 380
     },
@@ -1334,6 +1453,7 @@ export const food_list = [
         price: 140,
         description: "Thick luscious nectar extracted from naturally ripened Alphonso mangoes.",
         category: "Juice",
+        isVeg: true,
         rating: 4.9,
         reviewsCount: 820
     },
@@ -1344,6 +1464,7 @@ export const food_list = [
         price: 145,
         description: "The ultimate miracle detox juice: crunchy apples, sweet beetroot, and fresh carrots.",
         category: "Juice",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 610
     },
@@ -1354,6 +1475,7 @@ export const food_list = [
         price: 155,
         description: "Nutrient powerhouse with tangy kiwi, green apple, cucumber, spinach, and lemon.",
         category: "Juice",
+        isVeg: true,
         rating: 4.7,
         reviewsCount: 390
     },
@@ -1364,6 +1486,7 @@ export const food_list = [
         price: 188,
         description: "100% pure ruby red pomegranate juice packed with powerful natural antioxidants and sweetness.",
         category: "Juice",
+        isVeg: true,
         rating: 4.8,
         reviewsCount: 480
     }

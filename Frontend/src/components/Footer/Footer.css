@@ -8,7 +8,7 @@
     padding: 30px 8vw;  
     padding-top: 80px;  
     margin-top: 100px;
-    border-top: 3px solid #ff5722;
+    border-top: 3px solid #2563eb;
 } 
 .footer-brand-container {
     display: flex;
@@ -25,7 +25,7 @@
     letter-spacing: -0.5px;
 }
 .footer-brand-accent {
-    background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -55,7 +55,7 @@
     font-size: 14px;
 }
 .footer-content-left li:hover, .footer-content-right li:hover, .footer-content-center li:hover {
-    color: #ff5722;
+    color: #2563eb;
 }
 .footer-content-right h2   ,.footer-content-center h2 {
     color: white;

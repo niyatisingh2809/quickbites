@@ -1,0 +1,312 @@
+.partner-status-banner {
+  border-radius: 16px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.banner-approved {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+}
+
+.banner-pending {
+  background: #fefce8;
+  border: 1.5px solid #fde047;
+}
+
+.banner-rejected {
+  background: #fef2f2;
+  border: 1.5px solid #fecaca;
+}
+
+.banner-suspended {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+}
+
+.banner-left-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.banner-icon {
+  font-size: 32px;
+}
+
+.banner-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.banner-desc {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: #475569;
+}
+
+.kitchen-controls-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.kitchen-switch-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rush-mode-box {
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 260px;
+}
+
+.rush-mode-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rush-title {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.rush-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.rush-badge.active {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.rush-badge.idle {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.rush-action-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-rush-pause {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-rush-pause:hover {
+  background: #fef2f2;
+  border-color: #f87171;
+  color: #dc2626;
+}
+
+.btn-rush-resume {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  background: #16a34a;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.switch-lbl {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.btn-kitchen-toggle {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-kitchen-toggle.open {
+  background: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.btn-kitchen-toggle.closed {
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.my-restaurant-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+.rest-panel-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  margin-bottom: 24px;
+}
+
+.rest-panel-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.rest-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rest-form textarea {
+  padding: 10px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 13.5px;
+  outline: none;
+  font-family: inherit;
+}
+
+.rest-form textarea:focus {
+  border-color: #2563eb;
+}
+
+.input-disabled {
+  background: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.form-hint {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.commercials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.commercial-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #e2e8f0;
+  font-size: 13px;
+  color: #334155;
+}
+
+.doc-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.doc-upload-form select {
+  padding: 10px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 13px;
+  outline: none;
+  background: #ffffff;
+}
+
+.btn-doc-upload {
+  background: #eff6ff;
+  border: 1.5px solid #93c5fd;
+  color: #1d4ed8;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.uploaded-docs-list {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.uploaded-docs-list h4 {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: #334155;
+}
+
+.doc-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 12.5px;
+  margin-bottom: 6px;
+}
+
+.doc-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.doc-tag.verified {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.doc-tag.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+@media (max-width: 900px) {
+  .my-restaurant-layout {
+    grid-template-columns: 1fr;
+  }
+}
