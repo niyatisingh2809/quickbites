@@ -1,6 +1,14 @@
 {
+  "name": "quickbites-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd Frontend && npm install && npm run build",
+    "start": "cd Backend && npm start",
+    "backend": "cd Backend && npm start",
+    "frontend": "cd Frontend && npm run dev"
+  },
   "dependencies": {
-    "dom": "^0.0.3",
-    "react-router": "^8.4.0"
+    "react-router-dom": "^6.23.1"
   }
 }
