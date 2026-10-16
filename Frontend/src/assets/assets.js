@@ -14,6 +14,12 @@ import menu_coffee from './food_coffee_latte.jpg'
 import menu_shakes from './food_chocolate_shake.jpg'
 import menu_juice from './food_fresh_juice.jpg'
 import menu_south_indian from './food_masala_dosa.jpg'
+import menu_chaap from './food_paneer_tikka.jpg'
+import menu_continental from './food_mac_and_cheese.jpg'
+import menu_italian from './food_penne_arrabbiata.jpg'
+import menu_biryani from './food_jeera_rice.jpg'
+import menu_street_food from './food_spring_rolls.jpg'
+import menu_non_veg from './food_4.png'
 
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
@@ -134,6 +140,30 @@ export const menu_list = [
     {
         menu_name: "Juice",
         menu_image: menu_juice
+    },
+    {
+        menu_name: "Chaap",
+        menu_image: menu_chaap
+    },
+    {
+        menu_name: "Continental",
+        menu_image: menu_continental
+    },
+    {
+        menu_name: "Italian",
+        menu_image: menu_italian
+    },
+    {
+        menu_name: "Biryani",
+        menu_image: menu_biryani
+    },
+    {
+        menu_name: "Street Food",
+        menu_image: menu_street_food
+    },
+    {
+        menu_name: "Non-Veg Specials",
+        menu_image: menu_non_veg
     }]
 
 export const food_list = [
@@ -1489,5 +1519,853 @@ export const food_list = [
         isVeg: true,
         rating: 4.8,
         reviewsCount: 480
+    },
+    {
+        _id: "124",
+        name: "Soya Malai Chaap",
+        image: "food_paneer_tikka.jpg",
+        price: 240,
+        description: "Tender soya chaap chunks marinated in rich cream, cashew paste, green cardamom, and grilled in tandoor.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 780
+    },
+    {
+        _id: "125",
+        name: "Tandoori Masala Chaap",
+        image: "food_paneer_tikka.jpg",
+        price: 220,
+        description: "Spicy roasted soya chaap skewers coated with Punjabi tandoori masala and basted in lemon butter.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 650
+    },
+    {
+        _id: "126",
+        name: "Afghani Soya Chaap",
+        image: "food_paneer_tikka.jpg",
+        price: 250,
+        description: "Mild and aromatic soya chaap grilled with white pepper, fresh hung curd, and rich garlic marinade.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 520
+    },
+    {
+        _id: "127",
+        name: "Achari Soya Chaap",
+        image: "food_paneer_tikka.jpg",
+        price: 230,
+        description: "Zesty soya chaap infused with pickled mustard seeds, fennel, and fiery kachha aam masala.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 430
+    },
+    {
+        _id: "128",
+        name: "Haryali Soya Chaap",
+        image: "food_paneer_tikka.jpg",
+        price: 235,
+        description: "Tandoor-charred soya skewers marinated in fresh mint, coriander, and green chillies.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 390
+    },
+    {
+        _id: "129",
+        name: "Soya Chaap Butter Masala Gravy",
+        image: "food_paneer_butter_masala.jpg",
+        price: 270,
+        description: "Succulent roasted soya chaap simmered in silky tomato-butter-cashew makhani gravy.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 840
+    },
+    {
+        _id: "130",
+        name: "Kadhai Soya Chaap Gravy",
+        image: "food_kadhai_paneer.jpg",
+        price: 260,
+        description: "Wok-tossed soya chaap with crispy bell peppers, onions, and freshly crushed coriander spices.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 590
+    },
+    {
+        _id: "131",
+        name: "Soya Chaap Rogan Josh (Veg Style)",
+        image: "food_dal_makhani.jpg",
+        price: 280,
+        description: "A slow-cooked Kashmiri spiced vegetarian delicacy cooked with aromatic ratan jot spices and yogurt.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 460
+    },
+    {
+        _id: "132",
+        name: "Crispy Kurkure Soya Chaap",
+        image: "food_spring_rolls.jpg",
+        price: 210,
+        description: "Deep-fried crunchy soya chaap coated in golden cornflakes batter served with mint dip.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 510
+    },
+    {
+        _id: "133",
+        name: "Soya Chaap Kathi Roll",
+        image: "food_paneer_roll.jpg",
+        price: 180,
+        description: "Flame-roasted spicy tandoori chaap wrapped in soft roomali roti with pickled laccha onions.",
+        category: "Chaap",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 720
+    },
+    {
+        _id: "134",
+        name: "Cheesy Garlic Bread",
+        image: "food_corn_cheese_sandwich.jpg",
+        price: 175,
+        description: "Toasted artisan baguette slices smothered in garlic herb butter and bubbling melted mozzarella.",
+        category: "Continental",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 680
+    },
+    {
+        _id: "135",
+        name: "Classic Mac & Cheese",
+        image: "food_mac_and_cheese.jpg",
+        price: 240,
+        description: "Elbow macaroni baked in rich three-cheese cheddar béchamel sauce with a crispy golden crust.",
+        category: "Continental",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 910
+    },
+    {
+        _id: "136",
+        name: "Baked Vegetable Au Gratin",
+        image: "food_mac_and_cheese.jpg",
+        price: 265,
+        description: "Tender garden vegetables baked in creamy mornay sauce with bubbling parmesan cheese.",
+        category: "Continental",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 380
+    },
+    {
+        _id: "137",
+        name: "Grilled Cottage Cheese Steak",
+        image: "food_paneer_tikka.jpg",
+        price: 295,
+        description: "Char-grilled herb-marinated paneer slab served with sautéed vegetables and pepper mushroom sauce.",
+        category: "Continental",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 440
+    },
+    {
+        _id: "138",
+        name: "Cream of Mushroom Soup",
+        image: "food_penne_arrabbiata.jpg",
+        price: 165,
+        description: "Earthy roasted button mushrooms blended into velvety cream soup garnished with truffle oil.",
+        category: "Continental",
+        isVeg: true,
+        rating: 4.6,
+        reviewsCount: 290
+    },
+    {
+        _id: "139",
+        name: "Crispy Jalapeño Cheese Poppers",
+        image: "food_spring_rolls.jpg",
+        price: 195,
+        description: "Golden crumbed melted cheese bites stuffed with fiery diced jalapeño peppers.",
+        category: "Continental",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 610
+    },
+    {
+        _id: "140",
+        name: "Herb Grilled Chicken Breast",
+        image: "food_4.png",
+        price: 345,
+        description: "Succulent chicken breast grilled with rosemary and thyme, served with garlic mash and pepper jus.",
+        category: "Continental",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 820
+    },
+    {
+        _id: "141",
+        name: "Chicken Stroganoff with Buttered Rice",
+        image: "food_4.png",
+        price: 375,
+        description: "Tender chicken strips and button mushrooms in rich sour cream sauce served over seasoned butter rice.",
+        category: "Continental",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 510
+    },
+    {
+        _id: "142",
+        name: "Crispy Fish & Chips",
+        image: "food_4.png",
+        price: 360,
+        description: "Golden crispy battered river sole fillet served with salted crinkle fries and homemade tartar sauce.",
+        category: "Continental",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 670
+    },
+    {
+        _id: "143",
+        name: "Grilled Lemon Butter Fish",
+        image: "food_4.png",
+        price: 390,
+        description: "Pan-seared fish fillet basted in zesty lemon garlic butter sauce with sautéed asparagus.",
+        category: "Continental",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 490
+    },
+    {
+        _id: "144",
+        name: "Roasted Chicken Caesar Wrap",
+        image: "food_paneer_roll.jpg",
+        price: 230,
+        description: "Sliced grilled chicken, crisp romaine, parmesan shavings, and Caesar dressing wrapped in tortilla.",
+        category: "Continental",
+        isVeg: false,
+        rating: 4.7,
+        reviewsCount: 380
+    },
+    {
+        _id: "145",
+        name: "Peri Peri Grilled Chicken Skewers",
+        image: "food_4.png",
+        price: 285,
+        description: "Fiery peri peri spiced chicken skewers served with lemon wedges and cooling garlic aioli.",
+        category: "Continental",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 560
+    },
+    {
+        _id: "146",
+        name: "Spinach & Corn Quesadilla",
+        image: "food_spinach_corn_toast.jpg",
+        price: 220,
+        description: "Grilled Mexican-style flour tortilla folded with sweet corn, sauteed baby spinach, and Monterey Jack.",
+        category: "Continental",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 420
+    },
+    {
+        _id: "147",
+        name: "Classic Margherita Pizza",
+        image: "food_penne_arrabbiata.jpg",
+        price: 280,
+        description: "Wood-fired thin crust pizza with San Marzano tomato sauce, fresh mozzarella, and sweet basil leaves.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 950
+    },
+    {
+        _id: "148",
+        name: "Farmhouse Garden Fresh Pizza",
+        image: "food_penne_arrabbiata.jpg",
+        price: 320,
+        description: "Loaded with crunchy bell peppers, red onions, ripe tomatoes, mushrooms, and golden sweet corn.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 780
+    },
+    {
+        _id: "149",
+        name: "Quattro Formaggi (Four Cheese) Pizza",
+        image: "food_penne_arrabbiata.jpg",
+        price: 360,
+        description: "Decadent blend of mozzarella, cheddar, gorgonzola, and shaved parmesan on crispy crust.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 620
+    },
+    {
+        _id: "150",
+        name: "Paneer Makhani Fusion Pizza",
+        image: "food_penne_arrabbiata.jpg",
+        price: 340,
+        description: "Fusion pizza topped with marinated tandoori paneer cubes, capsicum, and makhani drizzle.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 840
+    },
+    {
+        _id: "151",
+        name: "Classic Penne Arrabbiata",
+        image: "food_penne_arrabbiata.jpg",
+        price: 240,
+        description: "Al dente penne pasta tossed in spicy fiery garlic, red chilli flakes, and crushed tomato sauce.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 710
+    },
+    {
+        _id: "152",
+        name: "Fettuccine Alfredo Cream",
+        image: "food_alfredo_pasta.jpg",
+        price: 260,
+        description: "Silky fettuccine ribbons smothered in rich parmesan butter garlic cream sauce.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 830
+    },
+    {
+        _id: "153",
+        name: "Spaghetti Aglio Olio e Peperoncino",
+        image: "food_aglio_olio.jpg",
+        price: 250,
+        description: "Classic Roman spaghetti tossed with extra virgin olive oil, sliced golden garlic, and fresh parsley.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 520
+    },
+    {
+        _id: "154",
+        name: "Genovese Creamy Pesto Penne",
+        image: "food_pesto_pasta.jpg",
+        price: 275,
+        description: "Fragrant basil pine nut pesto sauce tossed with al dente penne and cherry tomatoes.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 460
+    },
+    {
+        _id: "155",
+        name: "Wild Mushroom & Parmesan Risotto",
+        image: "food_mac_and_cheese.jpg",
+        price: 310,
+        description: "Slow-simmered arborio rice with porcini and cremini mushrooms, butter, and grana padano.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 340
+    },
+    {
+        _id: "156",
+        name: "BBQ Chicken Fiesta Pizza",
+        image: "food_penne_arrabbiata.jpg",
+        price: 380,
+        description: "Smoky barbecue glazed chicken chunks, red onions, bell peppers, and bubbling mozzarella.",
+        category: "Italian",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 890
+    },
+    {
+        _id: "157",
+        name: "Peri Peri Chicken Pizza",
+        image: "food_penne_arrabbiata.jpg",
+        price: 395,
+        description: "Spicy shredded chicken, jalapeños, red paprika, and peri peri seasoned cheese crust.",
+        category: "Italian",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 760
+    },
+    {
+        _id: "158",
+        name: "Creamy Chicken Alfredo Penne",
+        image: "food_alfredo_pasta.jpg",
+        price: 320,
+        description: "Penne tossed with tender grilled chicken strips in rich garlic parmesan cream sauce.",
+        category: "Italian",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 810
+    },
+    {
+        _id: "159",
+        name: "Chicken Carbonara Spaghetti",
+        image: "food_aglio_olio.jpg",
+        price: 340,
+        description: "Spaghetti tossed with crispy cured chicken bits, egg yolk cream, black pepper, and parmesan.",
+        category: "Italian",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 470
+    },
+    {
+        _id: "160",
+        name: "Classic Venetian Tiramisu",
+        image: "food_red_velvet_cake.jpg",
+        price: 220,
+        description: "Espresso-soaked ladyfinger biscuits layered with whipped mascarpone cream and dusted with dark cocoa.",
+        category: "Italian",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 930
+    },
+    {
+        _id: "161",
+        name: "Hyderabadi Dum Veg Biryani",
+        image: "food_jeera_rice.jpg",
+        price: 240,
+        description: "Aromatic long grain basmati rice layered with garden veggies, mint, saffron, and slow-cooked in dum seal.",
+        category: "Biryani",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 1120
+    },
+    {
+        _id: "162",
+        name: "Awadhi Paneer Tikka Biryani",
+        image: "food_jeera_rice.jpg",
+        price: 275,
+        description: "Royal Awadhi style biryani loaded with charcoal-grilled paneer tikka, caramelized onions, and kewra water.",
+        category: "Biryani",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 840
+    },
+    {
+        _id: "163",
+        name: "Soya Chaap Dum Biryani",
+        image: "food_jeera_rice.jpg",
+        price: 260,
+        description: "Spicy marinated tandoori chaap pieces layered with saffron basmati rice and roasted cashews.",
+        category: "Biryani",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 690
+    },
+    {
+        _id: "164",
+        name: "Kathal (Jackfruit) Dum Biryani",
+        image: "food_jeera_rice.jpg",
+        price: 250,
+        description: "Traditional Mughlai tender raw jackfruit cooked with royal biryani spices and mint.",
+        category: "Biryani",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 390
+    },
+    {
+        _id: "165",
+        name: "Kolkata Royal Egg Biryani",
+        image: "food_jeera_rice.jpg",
+        price: 220,
+        description: "Fragrant basmati rice served with boiled roasted eggs and golden fried spiced potato.",
+        category: "Biryani",
+        isVeg: false,
+        rating: 4.7,
+        reviewsCount: 580
+    },
+    {
+        _id: "166",
+        name: "Hyderabadi Chicken Dum Biryani",
+        image: "food_4.png",
+        price: 310,
+        description: "Authentic kacchi yakhni chicken marinated in spices and yogurt, slow-cooked on dum with saffron rice.",
+        category: "Biryani",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1650
+    },
+    {
+        _id: "167",
+        name: "Lucknowi Murgh Biryani",
+        image: "food_4.png",
+        price: 330,
+        description: "Mild, fragrant Awadhi style chicken biryani infused with rose water, green cardamom, and ghee.",
+        category: "Biryani",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 820
+    },
+    {
+        _id: "168",
+        name: "Chicken Tikka Boneless Biryani",
+        image: "food_4.png",
+        price: 345,
+        description: "Tender roasted boneless chicken tikka tossed in spicy masala and layered with saffron basmati rice.",
+        category: "Biryani",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 970
+    },
+    {
+        _id: "169",
+        name: "Awadhi Mutton Dum Biryani",
+        image: "food_4.png",
+        price: 420,
+        description: "Slow-cooked tender baby mutton pieces layered with royal saffron basmati rice and fried onions.",
+        category: "Biryani",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1240
+    },
+    {
+        _id: "170",
+        name: "Mutton Keema Biryani",
+        image: "food_4.png",
+        price: 390,
+        description: "Rich spiced minced mutton slow-simmered with aromatic long grain rice and whole spices.",
+        category: "Biryani",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 540
+    },
+    {
+        _id: "171",
+        name: "Prawns Masala Biryani",
+        image: "food_4.png",
+        price: 430,
+        description: "Coastal style juicy prawns cooked in coastal spices and layered with fragrant basmati rice.",
+        category: "Biryani",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 460
+    },
+    {
+        _id: "172",
+        name: "Jeera Rice with Dal Tadka Combo",
+        image: "food_dal_tadka.jpg",
+        price: 180,
+        description: "Steamy cumin tempered basmati rice paired with yellow arhar dal tempered in desi ghee.",
+        category: "Biryani",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 790
+    },
+    {
+        _id: "173",
+        name: "Delhi Special Chhole Bhature",
+        image: "food_spring_rolls.jpg",
+        price: 160,
+        description: "Two fluffy golden fried bhature served with spicy pindi chhole, pickled chillies, and onion salad.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 1480
+    },
+    {
+        _id: "174",
+        name: "Mumbai Butter Pav Bhaji",
+        image: "food_corn_cheese_sandwich.jpg",
+        price: 150,
+        description: "Mashed spiced vegetable bhaji cooked in copious Amul butter served with two soft toasted pavs.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 1350
+    },
+    {
+        _id: "175",
+        name: "Crispy Aloo Tikki Chaat",
+        image: "food_spring_rolls.jpg",
+        price: 110,
+        description: "Golden shallow-fried spiced potato patties topped with sweet tamarind chutney, green mint chutney, and curd.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 920
+    },
+    {
+        _id: "176",
+        name: "Dahi Bhalla Papdi Chaat",
+        image: "food_fruit_salad.jpg",
+        price: 130,
+        description: "Soft lentil dumplings and crispy papdis drenched in sweet spiced yogurt, pomegranate, and sev.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 860
+    },
+    {
+        _id: "177",
+        name: "Steamed Veg Darjeeling Momos (6 pcs)",
+        image: "food_spring_rolls.jpg",
+        price: 120,
+        description: "Delicate thin-wrapper dumplings filled with finely chopped cabbage, carrots, onions, and scallions.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 1040
+    },
+    {
+        _id: "178",
+        name: "Fried Veg Momos (6 pcs)",
+        image: "food_spring_rolls.jpg",
+        price: 135,
+        description: "Crispy deep-fried vegetable dumplings served with fiery red chilli garlic dip and mayo.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.7,
+        reviewsCount: 780
+    },
+    {
+        _id: "179",
+        name: "Kurkure Paneer Momos (6 pcs)",
+        image: "food_spring_rolls.jpg",
+        price: 165,
+        description: "Crunchy cornflake crusted paneer dumplings fried to golden perfection with spicy schezwan sauce.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.9,
+        reviewsCount: 910
+    },
+    {
+        _id: "180",
+        name: "Steamed Chicken Momos (6 pcs)",
+        image: "food_4.png",
+        price: 155,
+        description: "Juicy chicken mince seasoned with ginger, garlic, and coriander inside steamed dumplings.",
+        category: "Street Food",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1210
+    },
+    {
+        _id: "181",
+        name: "Fried Chicken Momos (6 pcs)",
+        image: "food_4.png",
+        price: 170,
+        description: "Crispy golden fried chicken dumplings served with spicy garlic tomato chutney.",
+        category: "Street Food",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 890
+    },
+    {
+        _id: "182",
+        name: "Kurkure Chicken Momos (6 pcs)",
+        image: "food_4.png",
+        price: 185,
+        description: "Extra crispy crumb-coated chicken momos fried crunchy on the outside, juicy on the inside.",
+        category: "Street Food",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1140
+    },
+    {
+        _id: "183",
+        name: "Paneer Kathi Roll",
+        image: "food_paneer_roll.jpg",
+        price: 140,
+        description: "Soft layered paratha rolled with roasted spiced paneer, onions, capsicum, and mint mayonnaise.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 740
+    },
+    {
+        _id: "184",
+        name: "Double Egg Chicken Roll",
+        image: "food_paneer_roll.jpg",
+        price: 185,
+        description: "Crispy paratha lined with two eggs and stuffed with spicy tandoori chicken chunks and pickled onions.",
+        category: "Street Food",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1080
+    },
+    {
+        _id: "185",
+        name: "Mutton Seekh Kebab Roll",
+        image: "food_paneer_roll.jpg",
+        price: 220,
+        description: "Tender minced lamb seekh kebab wrapped in hot rumali roti with lemon juice and chaat masala.",
+        category: "Street Food",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 810
+    },
+    {
+        _id: "186",
+        name: "Amritsari Kulcha with Chhole",
+        image: "food_spring_rolls.jpg",
+        price: 175,
+        description: "Stuffed tandoori aloo-onion kulcha baked crisp with butter and served with tangy Amritsari chhole.",
+        category: "Street Food",
+        isVeg: true,
+        rating: 4.8,
+        reviewsCount: 960
+    },
+    {
+        _id: "187",
+        name: "Old Delhi Butter Chicken",
+        image: "food_4.png",
+        price: 340,
+        description: "Tender tandoori chicken cooked in velvety, mildly sweet tomato-butter-cashew gravy with fenugreek.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1820
+    },
+    {
+        _id: "188",
+        name: "Chicken Tikka Masala",
+        image: "food_4.png",
+        price: 330,
+        description: "Charcoal-roasted boneless chicken tikka cooked in spicy onion-tomato-capsicum gravy.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1420
+    },
+    {
+        _id: "189",
+        name: "Tandoori Murgh (Half)",
+        image: "food_4.png",
+        price: 290,
+        description: "Classic bone-in chicken marinated in hung yogurt, Kashmiri red chilli, mustard oil, and tandoori spices.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 980
+    },
+    {
+        _id: "190",
+        name: "Tandoori Murgh (Full)",
+        image: "food_4.png",
+        price: 490,
+        description: "Whole tandoori chicken roasted to juicy perfection in clay oven served with mint dip and laccha onion.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1250
+    },
+    {
+        _id: "191",
+        name: "Kadhai Chicken",
+        image: "food_4.png",
+        price: 320,
+        description: "Juicy chicken morsels tossed in high-heat wok with bell peppers, fresh tomatoes, and crushed coriander seeds.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 890
+    },
+    {
+        _id: "192",
+        name: "Mughlai Chicken Korma",
+        image: "food_4.png",
+        price: 350,
+        description: "Slow-simmered chicken in rich white almond, cashew, and saffron gravy infused with green cardamom.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 730
+    },
+    {
+        _id: "193",
+        name: "Chicken Rara Punjabi",
+        image: "food_4.png",
+        price: 360,
+        description: "Unique combination of succulent chicken pieces cooked in thick spicy minced chicken keema gravy.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 860
+    },
+    {
+        _id: "194",
+        name: "Kashmiri Mutton Rogan Josh",
+        image: "food_4.png",
+        price: 430,
+        description: "Prime mutton pieces braised in authentic Kashmiri gravy with brown onions, yogurt, and aromatic spices.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 1340
+    },
+    {
+        _id: "195",
+        name: "Bhuna Gosht",
+        image: "food_4.png",
+        price: 440,
+        description: "Tender mutton slow-cooked with roasted spices, onions, and ginger until thick and richly coated.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 680
+    },
+    {
+        _id: "196",
+        name: "Mutton Seekh Kebab (4 pcs)",
+        image: "food_4.png",
+        price: 320,
+        description: "Minced spiced lamb skewers grilled over charcoal embers, served with onion rings and lemon.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 920
+    },
+    {
+        _id: "197",
+        name: "Chicken Malai Tikka (6 pcs)",
+        image: "food_4.png",
+        price: 295,
+        description: "Boneless chicken cubes marinated in heavy cream, hung curd, cheese, and mild white pepper.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 790
+    },
+    {
+        _id: "198",
+        name: "Amritsari Crispy Fish Fry",
+        image: "food_4.png",
+        price: 350,
+        description: "Fish fillets coated in seasoned gram flour and carom seeds (ajwain), deep-fried crispy golden.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 870
+    },
+    {
+        _id: "199",
+        name: "Goan Fish Curry",
+        image: "food_4.png",
+        price: 380,
+        description: "Fresh fish simmered in tangy, spicy coconut-tamarind gravy with Kashmiri chillies and curry leaves.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.8,
+        reviewsCount: 640
+    },
+    {
+        _id: "200",
+        name: "Masala Prawns Curry",
+        image: "food_4.png",
+        price: 420,
+        description: "Plump juicy prawns cooked in coastal onion-tomato gravy with mustard seeds and fresh curry leaves.",
+        category: "Non-Veg Specials",
+        isVeg: false,
+        rating: 4.9,
+        reviewsCount: 710
     }
 ];
+

@@ -27,7 +27,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                 </div>
 
                 <div className="explore-header-controls">
-                    <span className="explore-category-pill">12 Categories • 120+ Items</span>
+                    <span className="explore-category-pill">{menu_list.length} Categories • 200+ Items</span>
                     <div className="explore-nav-arrows">
                         <button type="button" onClick={() => scroll('left')} className="nav-arrow-btn" title="Scroll Left">
                             ←

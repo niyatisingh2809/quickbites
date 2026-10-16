@@ -4,6 +4,7 @@ import userModel from "../models/userModel.js";
 import restaurantModel from "../models/restaurantModel.js";
 import foodModel from "../models/foodModel.js";
 import { seedThaliTemplateItems } from "./seedThaliItems.js";
+import { seedMissingCatalogFoods } from "./seedCatalog.js";
 
 export const runInitialMigrations = async () => {
   try {
@@ -59,6 +60,9 @@ export const runInitialMigrations = async () => {
       await centralRestaurant.save();
       console.log("✅ [Migration] Default Central Kitchen Restaurant registered and approved");
     }
+
+    // 2.1 Seed any missing catalog dishes (Chaap, Continental, Italian, Biryani, Street Food, Non-Veg Specials)
+    await seedMissingCatalogFoods(centralRestaurant._id);
 
     // 3. Migrate legacy food items without a restaurantId
     const unlinkedCount = await foodModel.countDocuments({

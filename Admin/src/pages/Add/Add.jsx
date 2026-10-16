@@ -169,6 +169,11 @@ const Add = ({ url, token, user }) => {
               <option value='Noodles'>Noodles</option>
               <option value='South Indian'>South Indian</option>
               <option value='Biryani'>Biryani</option>
+              <option value='Chaap'>Chaap</option>
+              <option value='Continental'>Continental</option>
+              <option value='Italian'>Italian</option>
+              <option value='Street Food'>Street Food</option>
+              <option value='Non-Veg Specials'>Non-Veg Specials</option>
               <option value='Coffee'>Coffee</option>
               <option value='Shakes'>Shakes</option>
               <option value='Juice'>Juice</option>
