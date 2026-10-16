@@ -66,8 +66,8 @@ const dishes = [
   {
     name: "Soya Chaap Kathi Roll",
     file: "food_soya_chaap_roll.jpg",
-    url: "https://upload.wikimedia.org/wikipedia/commons/4/45/Chicken_Chilli.JPG",
-    backup: "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&auto=format&fit=crop&q=80"
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Achari_chaap_roll_from_Manoj_Naan_Wala%2C_IP_Extension%2C_Delhi_%28July_2025%29.jpg/1280px-Achari_chaap_roll_from_Manoj_Naan_Wala%2C_IP_Extension%2C_Delhi_%28July_2025%29.jpg",
+    backup: "https://upload.wikimedia.org/wikipedia/commons/0/04/Achari_chaap_roll_from_Manoj_Naan_Wala%2C_IP_Extension%2C_Delhi_%28July_2025%29.jpg"
   },
 
   // CONTINENTAL (13 dishes)

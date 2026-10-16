@@ -17,7 +17,7 @@ const dishImageMap = {
   "Kadhai Soya Chaap Gravy": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Punjabi_Chicken_Karahi.JPG/960px-Punjabi_Chicken_Karahi.JPG",
   "Soya Chaap Rogan Josh (Veg Style)": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rogan_Josh_Kashmiri.jpg/960px-Rogan_Josh_Kashmiri.jpg",
   "Crispy Kurkure Soya Chaap": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Fried_momos_of_Salem.jpg",
-  "Soya Chaap Kathi Roll": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chicken_Chilli.JPG/960px-Chicken_Chilli.JPG",
+  "Soya Chaap Kathi Roll": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Achari_chaap_roll_from_Manoj_Naan_Wala%2C_IP_Extension%2C_Delhi_%28July_2025%29.jpg/1280px-Achari_chaap_roll_from_Manoj_Naan_Wala%2C_IP_Extension%2C_Delhi_%28July_2025%29.jpg",
 
   // Continental
   "Cheesy Garlic Bread": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Garlic_bread_baguettes_2.jpg",
